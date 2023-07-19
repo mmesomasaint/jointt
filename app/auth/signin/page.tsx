@@ -1,14 +1,14 @@
 'use client'
-import React, { EventHandler, FormEventHandler } from 'react'
+import {useState, FormEvent} from 'react'
 import signIn from './signin'
 import { useRouter } from 'next/navigation'
 
 function Page() {
-  const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const router = useRouter()
 
-  const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const { result, error } = await signIn(email, password)
