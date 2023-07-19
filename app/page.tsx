@@ -6,7 +6,7 @@ export default function Home() {
           <button className='rounded-xl px-5 py-3 leading-none bg-white border border-blue-600/50 text-blue-600'>
             Sign in
           </button>
-          <button className='rounded-xl px-5 py-3 leading-none bg-white border border-blue-600/50 bg-blue-600 text-white'>
+          <button className='rounded-xl px-5 py-3 leading-none border border-blue-600/50 bg-blue-600 text-white'>
             Sign up
           </button>
         </div>
