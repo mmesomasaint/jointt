@@ -10,5 +10,9 @@ export default function Dashboard() {
   useEffect(() => {
     if (user == null) router.push('/auth/signin')
   }, [user])
-  return <h1>Welcome to the dashboard</h1>
+  return (
+    <div className='p-5'>
+      <h1 className='text-4xl font-extrabold leading-none'>Dashboard</h1>
+    </div>
+  )
 }
