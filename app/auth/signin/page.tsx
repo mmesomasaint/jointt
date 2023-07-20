@@ -21,7 +21,7 @@ function Page() {
     }
 
     // else successful
-    return router.push('/admin')
+    return router.push('/dashboard')
   }
   return (
     <>
