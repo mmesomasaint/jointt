@@ -8,7 +8,7 @@ export default function Avatar({ src }: { src: string | null }) {
       width={350}
       height={350}
       alt='Profile Image'
-      className='rouneded-full border border-black/50'
+      className='w-[250px] h-[250px] rounded-full border border-black/50'
     />
   )
 }
