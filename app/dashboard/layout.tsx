@@ -4,7 +4,7 @@ import SideBar from './components/sidebar'
 
 export const metadata: Metadata = {
   title: 'Joint - Dashboard',
-  description: 'Authentication of Jointt Account',
+  description: 'Your Dashboard',
 }
 
 export default function RootLayout({
