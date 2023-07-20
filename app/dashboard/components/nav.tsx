@@ -3,6 +3,7 @@ import Link from 'next/link'
 export default function Nav() {
   return (
     <div className='flex flex-col justify-start items-start gap-5'>
+      <NavLink href='/dashboard/'>Dashboard</NavLink>
       <NavLink href='/dashboard/events'>Events</NavLink>
       <NavLink href='/dashboard/contracts'>Contracts</NavLink>
       <NavLink href='/dashboard/career'>Career</NavLink>
