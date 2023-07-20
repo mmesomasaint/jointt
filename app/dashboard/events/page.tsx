@@ -14,8 +14,8 @@ export default function Events() {
           <Tab onClick={handleTabs}>Pending</Tab>
           <Tab onClick={handleTabs}>Records</Tab>
         </div>
-        <hr />
       </div>
+      <hr />
       <div className='flex-grow'>This is the display...</div>
     </div>
   )
