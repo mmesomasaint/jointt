@@ -29,19 +29,22 @@ const useErrorHandler = () => {
   const [errors, setErrors] = useState<any[]>([])
 
   const closeError = (i: number) => {
-    setErrors((prevErrors: number[]) => prevErrors.filter((_, id:number) => i !== id))
+    setErrors((prevErrors: number[]) =>
+      prevErrors.filter((_, id: number) => i !== id)
+    )
   }
 
-  const addError = (msg: string) => setErrors(prevErrors => [...prevErrors, msg])
+  const addError = (msg: string) =>
+    setErrors((prevErrors) => [...prevErrors, msg])
 
   const Errors = () => (
     <>
-    {
-      errors.map((msg: string, id: number) => <ErrorMessage message={msg} onClose={() => closeError(id)} />)
-    }
+      {errors.map((msg: string, id: number) => (
+        <ErrorMessage message={msg} onClose={() => closeError(id)} />
+      ))}
     </>
   )
-  return {errors, addError}
+  return { errors, addError }
 }
 
 export default useErrorHandler
