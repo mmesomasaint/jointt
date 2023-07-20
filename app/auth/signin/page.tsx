@@ -23,8 +23,13 @@ function Page() {
   }
   return (
     <>
-      <h1 className='mt-60 mb-30'>Sign up</h1>
-      <form onSubmit={handleForm} className='form'>
+      <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
+        Sign up
+      </h1>
+      <form
+        onSubmit={handleForm}
+        className='flex flex-col justify-start items-start gap-5 ml-5'
+      >
         <label htmlFor='email'>
           <p>Email</p>
           <input
@@ -34,6 +39,7 @@ function Page() {
             name='email'
             id='email'
             placeholder='example@mail.com'
+            className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
         <label htmlFor='password'>
@@ -45,9 +51,15 @@ function Page() {
             name='password'
             id='password'
             placeholder='password'
+            className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
-        <button type='submit'>Sign up</button>
+        <button
+          type='submit'
+          className='rounded-xl px-5 py-3 leading-none border border-blue-600/50 bg-blue-600 text-white'
+        >
+          Sign up
+        </button>
       </form>
     </>
   )
