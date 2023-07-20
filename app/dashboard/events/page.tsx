@@ -1,5 +1,9 @@
+import Text from "@/app/components/text"
+
 export default function Events() {
   return (
-    <h1>Welcome to events page</h1>
+    <div>
+      <Text size='BOLD'>Events</Text>
+    </div>
   )
 }

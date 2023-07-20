@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '../auth/authcontext'
+import Text from '../components/text'
 
 export default function Dashboard() {
   const { user } = useAuthContext()
@@ -12,7 +13,7 @@ export default function Dashboard() {
   }, [user])
   return (
     <div className='p-5'>
-      <h1 className='text-4xl font-extrabold leading-none'>Dashboard</h1>
+      <Text size='BOLD'>Dashboard</Text>
     </div>
   )
 }
