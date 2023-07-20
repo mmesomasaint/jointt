@@ -44,7 +44,7 @@ const useErrorHandler = () => {
       ))}
     </>
   )
-  return { errors, addError }
+  return { errors, addError, Errors }
 }
 
 export default useErrorHandler
