@@ -14,7 +14,7 @@ export default function Text({
     <div
       className={`${size === 'BOLD' && BOLD} ${
         size === 'SEMIBOLD' && SEMIBOLD
-      }${size === 'MEDIUM' && MEDIUM}${size === 'SMALL' && SMALL}`}
+      } ${size === 'MEDIUM' && MEDIUM} ${size === 'SMALL' && SMALL}`}
     >
       {children}
     </div>
