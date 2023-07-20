@@ -16,7 +16,7 @@ function Page() {
     const { result, error } = await signIn(email, password)
 
     if (error) {
-      addError(error.message)
+      addError(error.code.replace('auth/', ''))
       return
     }
 
@@ -26,7 +26,7 @@ function Page() {
   }
   return (
     <>
-      {Errors}
+      <Errors />
       <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
         Sign in
       </h1>
