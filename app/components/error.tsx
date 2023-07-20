@@ -25,4 +25,23 @@ const ErrorMessage = ({ message, onClose }: ErrorMessageType) => {
   ) : null
 }
 
-export default ErrorMessage
+const useErrorHandler = () => {
+  const [errors, setErrors] = useState<any[]>([])
+
+  const closeError = (i: number) => {
+    setErrors((prevErrors: number[]) => prevErrors.filter((_, id:number) => i !== id))
+  }
+
+  const addError = (msg: string) => setErrors(prevErrors => [...prevErrors, msg])
+
+  const Errors = () => (
+    <>
+    {
+      errors.map((msg: string, id: number) => <ErrorMessage message={msg} onClose={() => closeError(id)} />)
+    }
+    </>
+  )
+  return {errors, addError}
+}
+
+export default useErrorHandler
