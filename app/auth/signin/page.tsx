@@ -3,6 +3,7 @@ import { useState, FormEvent } from 'react'
 import signIn from './signin'
 import { useRouter } from 'next/navigation'
 import useErrorHandler from '@/app/components/error'
+import Button from '@/app/components/button'
 
 function Page() {
   const [email, setEmail] = useState('')
@@ -57,12 +58,7 @@ function Page() {
             className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
-        <button
-          type='submit'
-          className='rounded-xl px-5 py-3 leading-none border border-blue-600/50 bg-blue-600 text-white'
-        >
-          Sign in
-        </button>
+        <Button type='submit'>Sign in</Button>
       </form>
     </>
   )
