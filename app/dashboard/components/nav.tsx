@@ -21,7 +21,7 @@ function NavLink({
   children: React.ReactNode
 }) {
   return (
-    <Text size='SEMIBOLD'>
+    <Text size='MEDIUM'>
       <Link href={href}>{children}</Link>
     </Text>
   )
