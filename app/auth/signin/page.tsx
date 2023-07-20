@@ -24,7 +24,7 @@ function Page() {
   return (
     <>
       <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
-        Sign up
+        Sign in
       </h1>
       <form
         onSubmit={handleForm}
