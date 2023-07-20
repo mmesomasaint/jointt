@@ -17,6 +17,7 @@ function Page() {
 
     if (error) {
       addError(error.message)
+      return
     }
 
     // else successful
