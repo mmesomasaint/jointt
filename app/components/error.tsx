@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-const ErrorMessage = ({ message, onClose }) => {
+type ErrorMessageType = {
+  message: string
+  onClose: () => void
+}
+
+const ErrorMessage = ({ message, onClose }: ErrorMessageType) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
