@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { AuthContextProvider } from '../auth/authcontext'
 
 export const metadata: Metadata = {
-  title: 'Joint - Auth',
+  title: 'Joint - Dashboard',
   description: 'Authentication of Jointt Account',
 }
 
