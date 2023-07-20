@@ -1,6 +1,5 @@
 import firebase_app from '../../firebase'
 import { signInWithEmailAndPassword, getAuth, AuthError } from 'firebase/auth'
-import { FirebaseAuthError } from '../types'
 
 const auth = getAuth(firebase_app)
 
