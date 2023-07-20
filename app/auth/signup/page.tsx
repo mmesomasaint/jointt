@@ -2,11 +2,13 @@
 import { useState, FormEvent } from 'react'
 import signUp from './signup'
 import { useRouter } from 'next/navigation'
+import useErrorHandler from '@/app/components/error'
 
 function Page() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
+  const { addError, Errors } = useErrorHandler()
 
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -14,7 +16,8 @@ function Page() {
     const { result, error } = await signUp(email, password)
 
     if (error) {
-      return console.log(error)
+      addError(error.code.replace('auth/', ''))
+      return
     }
 
     // else successful
@@ -23,6 +26,7 @@ function Page() {
   }
   return (
     <>
+      <Errors />
       <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
         Sign up
       </h1>
