@@ -16,9 +16,7 @@ export default function RootLayout({
     <AuthContextProvider>
       <div className='flex gap-0 justify-start items-stretch'>
         <SideBar />
-        <div className='flex-grow'>
-      {children}
-      </div>
+        <div className='flex-grow'>{children}</div>
       </div>
     </AuthContextProvider>
   )
