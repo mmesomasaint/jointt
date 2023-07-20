@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Nav() {
   return (
-    <div className="flex flex-col justify-start items-start gap-5">
+    <div className='flex flex-col justify-start items-start gap-5'>
       <NavLink href='/dashboard/events'>Events</NavLink>
       <NavLink href='/dashboard/contracts'>Contracts</NavLink>
       <NavLink href='/dashboard/career'>Career</NavLink>
@@ -11,12 +11,16 @@ export default function Nav() {
   )
 }
 
-function NavLink({href, children}: {href: string, children: React.ReactNode}) {
+function NavLink({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
   return (
     <div>
-      <Link href={href}>
-        {children}
-      </Link>
+      <Link href={href}>{children}</Link>
     </div>
   )
 }
