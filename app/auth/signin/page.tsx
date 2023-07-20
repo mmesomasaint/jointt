@@ -8,7 +8,7 @@ function Page() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
-  const {addError, Errors} = useErrorHandler()
+  const { addError, Errors } = useErrorHandler()
 
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
