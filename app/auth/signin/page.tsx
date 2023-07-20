@@ -62,7 +62,7 @@ function Page() {
           type='submit'
           className='rounded-xl px-5 py-3 leading-none border border-blue-600/50 bg-blue-600 text-white'
         >
-          Sign up
+          Sign in
         </button>
       </form>
     </>
