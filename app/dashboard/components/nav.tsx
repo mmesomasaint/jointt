@@ -22,7 +22,7 @@ function NavLink({
 }) {
   return (
     <Text size='SEMIBOLD'>
-    <Link href={href}>{children}</Link>
+      <Link href={href}>{children}</Link>
     </Text>
   )
 }
