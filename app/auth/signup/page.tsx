@@ -13,7 +13,7 @@ function Page() {
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const { result, error } = await signUp(email, password)
+    const { _, error } = await signUp(email, password)
 
     if (error) {
       addError(error.code.replace('auth/', ''))
@@ -21,7 +21,6 @@ function Page() {
     }
 
     // else successful
-    console.log(result)
     return router.push('/admin')
   }
   return (
