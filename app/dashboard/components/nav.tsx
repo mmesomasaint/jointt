@@ -1,3 +1,4 @@
+import Text from '@/app/components/text'
 import Link from 'next/link'
 
 export default function Nav() {
@@ -20,8 +21,8 @@ function NavLink({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      <Link href={href}>{children}</Link>
-    </div>
+    <Text size='SEMIBOLD'>
+    <Link href={href}>{children}</Link>
+    </Text>
   )
 }
