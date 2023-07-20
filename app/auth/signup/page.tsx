@@ -13,7 +13,7 @@ function Page() {
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const { _, error } = await signUp(email, password)
+    const { error } = await signUp(email, password)
 
     if (error) {
       addError(error.code.replace('auth/', ''))
