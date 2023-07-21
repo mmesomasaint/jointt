@@ -1,10 +1,12 @@
 export default function Button({
   type,
   disabled,
+  onClick,
   children,
 }: {
   type: 'submit' | 'button' | 'reset' | undefined
   disabled?: boolean
+  onClick?: () => void
   children: React.ReactNode
 }) {
   return (
