@@ -1,8 +1,10 @@
 export default function Text({
   size,
+  className,
   children,
 }: {
   size: 'BOLD' | 'SEMIBOLD' | 'MEDIUM' | 'SMALL'
+  className?: string
   children: React.ReactNode
 }) {
   const BOLD = 'font-bold text-5xl'
@@ -14,7 +16,7 @@ export default function Text({
     <div
       className={`${size === 'BOLD' && BOLD} ${
         size === 'SEMIBOLD' && SEMIBOLD
-      } ${size === 'MEDIUM' && MEDIUM} ${size === 'SMALL' && SMALL}`}
+      } ${size === 'MEDIUM' && MEDIUM} ${size === 'SMALL' && SMALL} ${className}`}
     >
       {children}
     </div>
