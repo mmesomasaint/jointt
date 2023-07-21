@@ -16,7 +16,7 @@ export default function Events() {
           <Tab onClick={handleTabs}>Records</Tab>
         </div>
       </div>
-      <hr />
+      <hr className='bg-black/50' />
       <div className='flex-grow p-3'>
         <NoContent />
       </div>
