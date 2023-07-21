@@ -3,6 +3,8 @@ import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
 import Card from './components/card'
+import Button from '@/app/components/button'
+import Link from 'next/link'
 
 export default function Events() {
   const handleTabs = (filter: string) => {}
@@ -10,7 +12,11 @@ export default function Events() {
   return (
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
       <div className='p-3 pb-1 pt-12'>
+        <div className='flex justify-between gap-10 items-center'>
+          
         <Text size='BOLD'>Events</Text>
+        <Button type='button'><Link href='events/host'>Host Event</Link></Button>
+        </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
           <Tab onClick={() => handleTabs('active')}>Active</Tab>
           <Tab onClick={() => handleTabs('active')}>Pending</Tab>
