@@ -55,3 +55,23 @@ function useEventType() {
 
   return { eventname, eventtype, ChooseEventType }
 }
+
+function useContractorType() {
+  const [contractorTypes, setContractorTypes] = useState<string[]>(['Cook', 'MC', 'Singer', 'Dancers', 'Clowns'])
+  const handleRemove = (id: number) => setContractorTypes(prevTypes => prevTypes.filter((_, _id) => _id !== id))
+
+  const ChooseContractorTypes = () => (
+    <>
+      {
+        contractorTypes.map((type, id) => (
+          <div>
+            <div>{type}</div>
+            <Button type='button' onClick={() => handleRemove(id)}>Remove</Button>
+          </div>
+        ))
+      }
+    </>
+  )
+
+  return {contractorTypes, ChooseContractorTypes}
+}
