@@ -13,9 +13,10 @@ export default function Events() {
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
       <div className='p-3 pb-1 pt-12'>
         <div className='flex justify-between gap-10 items-center'>
-          
-        <Text size='BOLD'>Events</Text>
-        <Button type='button'><Link href='events/host'>Host Event</Link></Button>
+          <Text size='BOLD'>Events</Text>
+          <Button type='button'>
+            <Link href='events/host'>Host Event</Link>
+          </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
           <Tab onClick={() => handleTabs('active')}>Active</Tab>
