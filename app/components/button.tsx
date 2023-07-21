@@ -4,7 +4,7 @@ export default function Button({
   children,
 }: {
   type: 'submit' | 'button' | 'reset' | undefined
-  disabled: boolean
+  disabled?: boolean
   children: React.ReactNode
 }) {
   return (
