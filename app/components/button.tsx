@@ -13,6 +13,7 @@ export default function Button({
     <button
       type={type}
       disabled={disabled}
+      onClick={onClick}
       className='rounded-xl px-5 py-3 leading-none border border-blue-600/50 bg-blue-600 text-white'
     >
       {children}
