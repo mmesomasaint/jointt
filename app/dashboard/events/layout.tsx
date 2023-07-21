@@ -7,12 +7,10 @@ export const metadata: Metadata = {
 
 export default function EventsLayout(props: {
   children: React.ReactNode
-  modal: React.ReactNode
 }) {
   return (
     <>
       <div>{props.children}</div>
-      <div>{props.modal}</div>
     </>
   )
 }
