@@ -18,7 +18,15 @@ export default function Events() {
         </div>
       </div>
       <hr className='bg-black/50' />
-      <div className='flex-grow p-3'>
+      <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3'>
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
         <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
       </div>
     </div>
