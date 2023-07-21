@@ -1,14 +1,18 @@
 import Image from 'next/image'
-import avatar from '../avatar.svg'
+import avatar from '../avatar.jpg'
 
 export default function Avatar({ src }: { src: string | null }) {
   return (
+    <div className='relative w-[18vw] h-[18vw] rounded-full border border-black/50 shadow-md'>
+      
     <Image
       src={src === null ? avatar : src}
-      width={350}
-      height={350}
+      fill
+      priority
+      sizes='20vw'
       alt='Profile Image'
-      className='w-[250px] h-[250px] rounded-full border border-black/50'
+      className='rounded-full'
     />
+    </div>
   )
 }
