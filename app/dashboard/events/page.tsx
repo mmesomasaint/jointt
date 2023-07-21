@@ -2,6 +2,7 @@
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
+import Card from './components/card'
 
 export default function Events() {
   const handleTabs = () => {}
@@ -18,7 +19,7 @@ export default function Events() {
       </div>
       <hr className='bg-black/50' />
       <div className='flex-grow p-3'>
-        <NoContent />
+        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
       </div>
     </div>
   )
