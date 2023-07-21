@@ -16,7 +16,7 @@ export default function RootLayout({
     <AuthContextProvider>
       <div className='flex gap-0 justify-start overflow-hidden h-screen'>
         <SideBar />
-        <div className='flex-grow'>{children}</div>
+        <div className='flex-grow relative'>{children}</div>
       </div>
     </AuthContextProvider>
   )
