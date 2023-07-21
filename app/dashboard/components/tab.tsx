@@ -8,7 +8,7 @@ export default function Tab({
   return (
     <button
       type='button'
-      className='text-black/50 text-xl font-medium leading-none'
+      className='text-black/70 text-xl font-medium leading-none'
       onClick={() => onClick()}
     >
       {children}
