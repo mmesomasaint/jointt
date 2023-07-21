@@ -8,7 +8,7 @@ export default function Events() {
   const handleTabs = () => {}
 
   return (
-    <div className='flex flex-col justify-start gap-0'>
+    <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
       <div className='p-3 pb-1 pt-12'>
         <Text size='BOLD'>Events</Text>
         <div className='mt-16 flex justify-start items-center gap-16'>
@@ -18,7 +18,7 @@ export default function Events() {
         </div>
       </div>
       <hr className='bg-black/50' />
-      <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3'>
+      <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
         <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
         <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
         <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
