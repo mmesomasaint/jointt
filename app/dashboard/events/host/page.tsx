@@ -10,7 +10,7 @@ export default function Host() {
   return (
     <div className="p-3">
       <Text size="SMALL">Host An Event</Text>
-      <Text size='BOLD' className="text-center">CHOOSE EVENT TYPE</Text>
+      <Text size='BOLD' className="text-center mt-20">CHOOSE EVENT TYPE</Text>
         <div className="flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16"><label htmlFor='eventtype'>
           <Text size="SMALL">Event Name</Text>
           <input
