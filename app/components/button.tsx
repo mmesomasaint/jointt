@@ -1,4 +1,12 @@
-export default function Button({type, disabled, children}: {type: "submit" | "button" | "reset" | undefined, disabled: boolean, children: React.ReactNode}) {
+export default function Button({
+  type,
+  disabled,
+  children,
+}: {
+  type: 'submit' | 'button' | 'reset' | undefined
+  disabled: boolean
+  children: React.ReactNode
+}) {
   return (
     <button
       type={type}
