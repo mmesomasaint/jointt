@@ -5,7 +5,7 @@ import NoContent from '../components/nocontent'
 import Card from './components/card'
 
 export default function Events() {
-  const handleTabs = (filter:string) => {}
+  const handleTabs = (filter: string) => {}
 
   return (
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
