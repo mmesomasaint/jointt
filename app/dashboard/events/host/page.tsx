@@ -5,6 +5,7 @@ import Button from '@/app/components/button'
 
 export default function Host() {
   const { eventname, eventtype, ChooseEventType } = useEventType()
+  const {contractorTypes, ChooseContractorTypes} = useContractorType()
 
   return (
     <div className='p-3'>
