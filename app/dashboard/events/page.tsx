@@ -19,16 +19,14 @@ export default function Events() {
       </div>
       <hr className='bg-black/50' />
       <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
-        <Card name='Birthday Party' type='Party' cost={20000} date={new Date()} />
+        {events.length === 0 ? <NoContent /> : events.map(({name, type, cost, date}) => <Card name={name} type={type} cost={cost} date={date} />)}
       </div>
     </div>
   )
 }
+
+type EventType = {name: string, type:string, cost:number, date:Date}
+
+const events: EventType[] = [
+  {name: 'Birthday Party', type:'Party', cost:20000, date: new Date()}
+]
