@@ -49,7 +49,9 @@ function useEventType() {
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
       </label>
-      <Button type='button' disabled={!(eventname && eventtype)}>Next</Button>
+      <Button type='button' disabled={!(eventname && eventtype)}>
+        Next
+      </Button>
     </div>
   )
 
@@ -57,21 +59,28 @@ function useEventType() {
 }
 
 function useContractorType() {
-  const [contractorTypes, setContractorTypes] = useState<string[]>(['Cook', 'MC', 'Singer', 'Dancers', 'Clowns'])
-  const handleRemove = (id: number) => setContractorTypes(prevTypes => prevTypes.filter((_, _id) => _id !== id))
+  const [contractorTypes, setContractorTypes] = useState<string[]>([
+    'Cook',
+    'MC',
+    'Singer',
+    'Dancers',
+    'Clowns',
+  ])
+  const handleRemove = (id: number) =>
+    setContractorTypes((prevTypes) => prevTypes.filter((_, _id) => _id !== id))
 
   const ChooseContractorTypes = () => (
     <>
-      {
-        contractorTypes.map((type, id) => (
-          <div>
-            <div>{type}</div>
-            <Button type='button' onClick={() => handleRemove(id)}>Remove</Button>
-          </div>
-        ))
-      }
+      {contractorTypes.map((type, id) => (
+        <div>
+          <div>{type}</div>
+          <Button type='button' onClick={() => handleRemove(id)}>
+            Remove
+          </Button>
+        </div>
+      ))}
     </>
   )
 
-  return {contractorTypes, ChooseContractorTypes}
+  return { contractorTypes, ChooseContractorTypes }
 }
