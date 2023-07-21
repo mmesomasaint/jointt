@@ -79,6 +79,9 @@ function useContractorType() {
           </Button>
         </div>
       ))}
+      <Button type='button' disabled={contractorTypes.length === 0} className='disabled:bg-gray-600/50 disabled:border-gray-600/50'>
+        Next
+      </Button>
     </>
   )
 
