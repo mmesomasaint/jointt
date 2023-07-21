@@ -4,13 +4,16 @@ import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 
 export default function Host() {
+  const STAGES = [1, 2, 3, 4]
+  const [activeStage, setActiveStage] = useState(STAGES[0]) 
   const { eventname, eventtype, ChooseEventType } = useEventType()
   const {contractorTypes, ChooseContractorTypes} = useContractorType()
 
   return (
     <div className='p-3'>
       <Text size='SMALL'>Host An Event</Text>
-      <ChooseEventType />
+      {activeStage === 1 && <ChooseEventType />}
+      {activeStage === 2 && <ChooseContractorTypes />}
     </div>
   )
 }
