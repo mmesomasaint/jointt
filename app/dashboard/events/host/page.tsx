@@ -17,7 +17,7 @@ export default function Host() {
 function useEventType() {
   const [eventname, setEventName] = useState('')
   const [eventtype, setEventType] = useState('')
-  
+
   const ChooseEventType = () => (
     <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
       <Text size='BOLD' className='text-center mb-10'>
