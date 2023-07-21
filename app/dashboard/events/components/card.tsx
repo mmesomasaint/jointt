@@ -4,7 +4,7 @@ export default function Card({name, type, cost, date}: {name:string, type:string
   return (
     <div className="w-full h-fit p-5 rounded-xl shadow-sm border border-gray-900/30">
       <div className="w-full flex justify-between items-center gap-10 mb-5">
-        <Text size="SEMIBOLD">{name}</Text>
+        <Text size="MEDIUM">{name}</Text>
         <Text size="MEDIUM">N{cost}</Text>
       </div>
       <div className="w-full flex justify-between items-center gap-10">
