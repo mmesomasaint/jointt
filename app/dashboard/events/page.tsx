@@ -1,6 +1,7 @@
 'use client'
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
+import NoContent from '../components/nocontent'
 
 export default function Events() {
   const handleTabs = () => {}
@@ -16,7 +17,9 @@ export default function Events() {
         </div>
       </div>
       <hr />
-      <div className='flex-grow p-3'>This is the display...</div>
+      <div className='flex-grow p-3'>
+        <NoContent />
+      </div>
     </div>
   )
 }
