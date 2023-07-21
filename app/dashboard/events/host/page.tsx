@@ -49,7 +49,7 @@ function useEventType() {
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
       </label>
-      <Button type='button' disabled={!(eventname && eventtype)}>
+      <Button type='button' disabled={!(eventname && eventtype)} className='disabled:bg-gray-600/30'>
         Next
       </Button>
     </div>
