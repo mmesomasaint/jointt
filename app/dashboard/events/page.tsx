@@ -30,7 +30,13 @@ export default function Events() {
           <NoContent />
         ) : (
           events.map(({ name, type, cost, date }) => (
-            <Card key={`${name}=>${date.toLocaleDateString()}`} name={name} type={type} cost={cost} date={date} />
+            <Card
+              key={`${name}=>${date.toLocaleDateString()}`}
+              name={name}
+              type={type}
+              cost={cost}
+              date={date}
+            />
           ))
         )}
       </div>
