@@ -7,16 +7,16 @@ export default function Events() {
 
   return (
     <div className='flex flex-col justify-start gap-0'>
-      <div className='p-3 pt-12'>
+      <div className='p-3 pb-1 pt-12'>
         <Text size='BOLD'>Events</Text>
-        <div className='mt-16 flex justify-start items-center gap-5'>
+        <div className='mt-16 flex justify-start items-center gap-16'>
           <Tab onClick={handleTabs}>Active</Tab>
           <Tab onClick={handleTabs}>Pending</Tab>
           <Tab onClick={handleTabs}>Records</Tab>
         </div>
       </div>
       <hr />
-      <div className='flex-grow'>This is the display...</div>
+      <div className='flex-grow p-3'>This is the display...</div>
     </div>
   )
 }
