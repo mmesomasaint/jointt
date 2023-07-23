@@ -45,7 +45,7 @@ function ChooseEventType({
   setEventName,
   setEventType,
   validated,
-  onNext
+  onNext,
 }: {
   setEventName: (name: string) => void
   setEventType: (type: string) => void
@@ -97,7 +97,7 @@ function ChooseContractorTypes({
   contractorTypes,
   setContractorTypes,
   validated,
-  onNext
+  onNext,
 }: {
   contractorTypes: string[]
   setContractorTypes: (type: (prevTypes: string[]) => string[]) => void
