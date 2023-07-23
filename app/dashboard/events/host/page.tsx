@@ -8,7 +8,13 @@ export default function Host() {
   const [activeStage, setActiveStage] = useState(STAGES[0])
   const [eventName, setEventName] = useState('')
   const [eventType, setEventType] = useState('')
-  const { contractorTypes, ChooseContractorTypes } = useContractorType()
+  const [contractorTypes, setContractorTypes] = useState<string[]>([
+    'Cook',
+    'MC',
+    'Singer',
+    'Dancers',
+    'Clowns',
+  ])
 
   return (
     <div className='p-3'>
@@ -20,7 +26,7 @@ export default function Host() {
           validated={!(eventName && eventType)}
         />
       )}
-      {activeStage === 2 && <ChooseContractorTypes />}
+      {activeStage === 2 && <ChooseContractorTypes contractorTypes={contractorTypes} setContractorTypes={setContractorTypes} validated={contractorTypes.length === 0} />}
     </div>
   )
 }
@@ -107,3 +113,29 @@ function useContractorType() {
 
   return { contractorTypes, ChooseContractorTypes }
 }
+
+function ChooseContractorTypes({contractorTypes, setContractorTypes, validated}: {contractorTypes: string[], setContractorTypes: (type: (prevTypes: string[]) => string[]) => void, validated: boolean}) {
+  const handleRemove = (id: number) => {
+    setContractorTypes((prevTypes: string[]) => prevTypes.filter((_, _id) => _id !== id))
+  }
+  
+  return (
+  <>
+    {contractorTypes.map((type, id) => (
+      <div className='flex justify-start items-center gap-7'>
+        <div>{type}</div>
+        <Button type='button' onClick={() => handleRemove(id)}>
+          Remove
+        </Button>
+      </div>
+    ))}
+    <Button
+      type='button'
+      disabled={validated}
+      className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+    >
+      Next
+    </Button>
+  </>
+)
+    }
