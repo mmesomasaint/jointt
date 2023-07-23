@@ -32,7 +32,7 @@ function useEventType() {
         <input
           onChange={(e) => setEventName(e.target.value)}
           required
-          type='eventname'
+          type='text'
           name='eventname'
           id='eventname'
           value={eventname}
@@ -45,7 +45,7 @@ function useEventType() {
         <input
           onChange={(e) => setEventType(e.target.value)}
           required
-          type='eventtype'
+          type='text'
           name='eventtype'
           id='eventtype'
           value={eventtype}
