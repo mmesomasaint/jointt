@@ -16,7 +16,7 @@ export default function Host() {
     'Clowns',
   ])
 
-  const handleActiveStages = (stage: number) => setActiveStage(stage++)
+  const handleActiveStages = (stage: number) => setActiveStage(++stage)
 
   return (
     <div className='p-3'>
