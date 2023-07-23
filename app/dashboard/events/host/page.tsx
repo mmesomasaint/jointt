@@ -86,40 +86,6 @@ function ChooseEventType({
   )
 }
 
-function useContractorType() {
-  const [contractorTypes, setContractorTypes] = useState<string[]>([
-    'Cook',
-    'MC',
-    'Singer',
-    'Dancers',
-    'Clowns',
-  ])
-  const handleRemove = (id: number) =>
-    setContractorTypes((prevTypes) => prevTypes.filter((_, _id) => _id !== id))
-
-  const ChooseContractorTypes = () => (
-    <>
-      {contractorTypes.map((type, id) => (
-        <div className='flex justify-start items-center gap-7'>
-          <div>{type}</div>
-          <Button type='button' onClick={() => handleRemove(id)}>
-            Remove
-          </Button>
-        </div>
-      ))}
-      <Button
-        type='button'
-        disabled={contractorTypes.length === 0}
-        className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
-      >
-        Next
-      </Button>
-    </>
-  )
-
-  return { contractorTypes, ChooseContractorTypes }
-}
-
 function ChooseContractorTypes({
   contractorTypes,
   setContractorTypes,
