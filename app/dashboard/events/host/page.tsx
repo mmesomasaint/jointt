@@ -76,7 +76,7 @@ function useContractorType() {
   const ChooseContractorTypes = () => (
     <>
       {contractorTypes.map((type, id) => (
-        <div>
+        <div className='flex justify-start items-center gap-7'>
           <div>{type}</div>
           <Button type='button' onClick={() => handleRemove(id)}>
             Remove
