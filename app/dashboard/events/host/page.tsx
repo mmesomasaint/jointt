@@ -27,7 +27,7 @@ function useEventType() {
       <Text size='BOLD' className='text-center mb-10'>
         CHOOSE EVENT TYPE
       </Text>
-      <label htmlFor='eventtype' className='w-full'>
+      <label htmlFor='eventname' className='w-full'>
         <Text size='SMALL'>Event Name</Text>
         <input
           onChange={(e) => setEventName(e.target.value)}
