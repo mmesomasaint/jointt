@@ -16,6 +16,8 @@ export default function Host() {
     'Clowns',
   ])
 
+  const handleActiveStages = (stage: number) => setActiveStage(stage++)
+
   return (
     <div className='p-3'>
       <Text size='SMALL'>Host An Event</Text>
@@ -24,6 +26,7 @@ export default function Host() {
           setEventName={setEventName}
           setEventType={setEventType}
           validated={!(eventName && eventType)}
+          onNext={() => handleActiveStages(1)}
         />
       )}
       {activeStage === 2 && (
@@ -31,6 +34,7 @@ export default function Host() {
           contractorTypes={contractorTypes}
           setContractorTypes={setContractorTypes}
           validated={contractorTypes.length === 0}
+          onNext={() => handleActiveStages(2)}
         />
       )}
     </div>
@@ -41,10 +45,12 @@ function ChooseEventType({
   setEventName,
   setEventType,
   validated,
+  onNext
 }: {
   setEventName: (name: string) => void
   setEventType: (type: string) => void
   validated: boolean
+  onNext: () => void
 }) {
   return (
     <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
@@ -79,6 +85,7 @@ function ChooseEventType({
         type='button'
         disabled={validated}
         className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+        onClick={onNext}
       >
         Next
       </Button>
@@ -90,10 +97,12 @@ function ChooseContractorTypes({
   contractorTypes,
   setContractorTypes,
   validated,
+  onNext
 }: {
   contractorTypes: string[]
   setContractorTypes: (type: (prevTypes: string[]) => string[]) => void
   validated: boolean
+  onNext: () => void
 }) {
   const handleRemove = (id: number) => {
     setContractorTypes((prevTypes: string[]) =>
@@ -115,6 +124,7 @@ function ChooseContractorTypes({
         type='button'
         disabled={validated}
         className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+        onClick={onNext}
       >
         Next
       </Button>
