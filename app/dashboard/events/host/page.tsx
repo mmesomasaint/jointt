@@ -22,22 +22,22 @@ export default function Host() {
     <div className='p-3'>
       <Text size='SMALL'>Host An Event</Text>
       <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
-      {activeStage === 1 && (
-        <ChooseEventType
-          setEventName={setEventName}
-          setEventType={setEventType}
-          validated={!(eventName && eventType)}
-          onNext={() => handleActiveStages(1)}
-        />
-      )}
-      {activeStage === 2 && (
-        <ChooseContractorTypes
-          contractorTypes={contractorTypes}
-          setContractorTypes={setContractorTypes}
-          validated={contractorTypes.length === 0}
-          onNext={() => handleActiveStages(2)}
-        />
-      )}
+        {activeStage === 1 && (
+          <ChooseEventType
+            setEventName={setEventName}
+            setEventType={setEventType}
+            validated={!(eventName && eventType)}
+            onNext={() => handleActiveStages(1)}
+          />
+        )}
+        {activeStage === 2 && (
+          <ChooseContractorTypes
+            contractorTypes={contractorTypes}
+            setContractorTypes={setContractorTypes}
+            validated={contractorTypes.length === 0}
+            onNext={() => handleActiveStages(2)}
+          />
+        )}
       </div>
     </div>
   )
