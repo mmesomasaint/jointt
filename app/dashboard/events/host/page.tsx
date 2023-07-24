@@ -21,6 +21,7 @@ export default function Host() {
   return (
     <div className='p-3'>
       <Text size='SMALL'>Host An Event</Text>
+      <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
       {activeStage === 1 && (
         <ChooseEventType
           setEventName={setEventName}
@@ -37,6 +38,7 @@ export default function Host() {
           onNext={() => handleActiveStages(2)}
         />
       )}
+      </div>
     </div>
   )
 }
@@ -53,7 +55,7 @@ function ChooseEventType({
   onNext: () => void
 }) {
   return (
-    <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
+    <>
       <Text size='BOLD' className='text-center mb-10'>
         CHOOSE EVENT TYPE
       </Text>
@@ -89,7 +91,7 @@ function ChooseEventType({
       >
         Next
       </Button>
-    </div>
+    </>
   )
 }
 
