@@ -115,7 +115,7 @@ function ChooseContractorTypes({
   return (
     <>
       <Text size='BOLD' className='text-center mb-10'>
-        CHOOSE CONTRACTOR TYPE
+        EVENT CONTRACTORS
       </Text>
       {contractorTypes.map((type, id) => (
         <div className='flex justify-start items-center gap-7'>
