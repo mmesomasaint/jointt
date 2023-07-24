@@ -102,6 +102,10 @@ function ChooseContractorTypes({
   validated: boolean
   onNext: () => void
 }) {
+  const [newContractorType, setNewContractorType] = useState('')
+
+  const handleAdd = () => setContractorTypes(prevTypes => [...prevTypes, newContractorType])
+
   const handleRemove = (id: number) => {
     setContractorTypes((prevTypes: string[]) =>
       prevTypes.filter((_, _id) => _id !== id)
@@ -121,6 +125,24 @@ function ChooseContractorTypes({
           </Button>
         </div>
       ))}
+      <div className='flex justify-start items-start gap-3'>
+      <input
+        onChange={(e) => setNewContractorType(e.target.value)}
+        required
+        type='text'
+        name='contractortype'
+        id='contractortype'
+        placeholder='Contractor Type'
+        className='border border-zinc-600/50 rounded-xl p-2 focus:outline-blue-500/50 w-full'
+      />
+      <Button
+        type='button'
+        className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+        onClick={handleAdd}
+      >
+        Add
+      </Button>
+      </div>
       <Button
         type='button'
         disabled={validated}
