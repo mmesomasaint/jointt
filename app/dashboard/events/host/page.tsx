@@ -5,7 +5,7 @@ import Button from '@/app/components/button'
 
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
-  const [activeStage, setActiveStage] = useState(STAGES[0])
+  const [activeStage, setActiveStage] = useState(STAGES[1])
   const [eventName, setEventName] = useState('')
   const [eventType, setEventType] = useState('')
   const [contractorTypes, setContractorTypes] = useState<string[]>([
