@@ -116,7 +116,7 @@ function ChooseContractorTypes({
       <Text size='BOLD' className='text-center mb-10'>
         EVENT CONTRACTORS
       </Text>
-      <div className='flex justify-start items-start gap-3'>
+      <div className='flex justify-start items-start gap-3 w-full mb-5'>
         <input
           onChange={(e) => setNewContractorType(e.target.value)}
           required
@@ -124,7 +124,7 @@ function ChooseContractorTypes({
           name='contractortype'
           id='contractortype'
           placeholder='Contractor Type'
-          className='border border-zinc-600/50 rounded-xl p-2 focus:outline-blue-500/50 w-full'
+          className='flex-grow border border-zinc-600/50 rounded-xl p-2 focus:outline-blue-500/50 w-full'
         />
         <Button
           type='button'
