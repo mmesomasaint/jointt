@@ -107,7 +107,7 @@ function ChooseContractorTypes({
   const handleAdd = () => setContractorTypes(prevTypes => [...prevTypes, newContractorType])
 
   const handleRemove = (id: number) => {
-    setContractorTypes((prevTypes: string[]) =>
+    setContractorTypes((prevTypes) =>
       prevTypes.filter((_, _id) => _id !== id)
     )
   }
