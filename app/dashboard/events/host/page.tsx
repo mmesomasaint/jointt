@@ -116,14 +116,6 @@ function ChooseContractorTypes({
       <Text size='BOLD' className='text-center mb-10'>
         EVENT CONTRACTORS
       </Text>
-      {contractorTypes.map((type, id) => (
-        <div className='flex justify-start items-center gap-7'>
-          <div>{type}</div>
-          <Button type='button' onClick={() => handleRemove(id)}>
-            Remove
-          </Button>
-        </div>
-      ))}
       <div className='flex justify-start items-start gap-3'>
         <input
           onChange={(e) => setNewContractorType(e.target.value)}
@@ -142,6 +134,14 @@ function ChooseContractorTypes({
           Add
         </Button>
       </div>
+      {contractorTypes.map((type, id) => (
+        <div className='flex justify-start items-center gap-7'>
+          <div>{type}</div>
+          <Button type='button' onClick={() => handleRemove(id)}>
+            Remove
+          </Button>
+        </div>
+      ))}
       <Button
         type='button'
         disabled={validated}
