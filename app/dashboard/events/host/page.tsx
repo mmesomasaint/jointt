@@ -150,7 +150,7 @@ function ContractorSelection({
   )
 }
 
-function Contractor({contractor}: {contractor: ContractorType}) {
+function ContractorCard({contractor}: {contractor: ContractorType}) {
   return (
     <div className='rounded-xl bg-blue-600/20 shadow-xl flex justify-between items-center gap-5'>
       <Avatar src={null} />
