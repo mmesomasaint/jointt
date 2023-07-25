@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 
-type EventType = {
+type searchText = {
   name: string
   type: string
   contractors?: string[]
@@ -14,7 +14,7 @@ type EventType = {
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
   const [activeStage, setActiveStage] = useState(STAGES[0])
-  const [event, setEvent] = useState<EventType>({ name: '', type: '' })
+  const [event, setEvent] = useState<searchText>({ name: '', type: '' })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
 
@@ -27,7 +27,7 @@ export default function Host() {
             setEventName={(name: string) =>
               setEvent((prev) => ({ ...prev, name }))
             }
-            setEventType={(type: string) =>
+            setsearchText={(type: string) =>
               setEvent((prev) => ({ ...prev, type }))
             }
             validated={!(event.name && event.type)}
@@ -41,12 +41,12 @@ export default function Host() {
 
 function DefineEvent({
   setEventName,
-  setEventType,
+  setsearchText,
   validated,
   onNext,
 }: {
   setEventName: (name: string) => void
-  setEventType: (type: string) => void
+  setsearchText: (type: string) => void
   validated: boolean
   onNext: () => void
 }) {
@@ -67,14 +67,14 @@ function DefineEvent({
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
       </label>
-      <label htmlFor='eventtype' className='w-full'>
+      <label htmlFor='searchText' className='w-full'>
         <Text size='SMALL'>Event Type</Text>
         <input
-          onChange={(e) => setEventType(e.target.value)}
+          onChange={(e) => setsearchText(e.target.value)}
           required
           type='text'
-          name='eventtype'
-          id='eventtype'
+          name='searchText'
+          id='searchText'
           placeholder='Party'
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
@@ -87,6 +87,39 @@ function DefineEvent({
       >
         Next
       </Button>
+    </>
+  )
+}
+
+type ContractorType = {
+  name: string
+  role: string
+  rate: 1 | 2 | 3 | 4 | 5
+  status: boolean
+}
+
+function ContractorSelection({validated, onNext}: {validated: boolean, onNext: () => void}) {
+  const [searchText, setSearchText] = useState<string>('')
+
+  return (
+    <>
+    <input
+      onChange={(e) => setSearchText(e.target.value)}
+      required
+      type='text'
+      name='searchText'
+      id='searchText'
+      placeholder='Emeka or Dancer or $50/hr'
+      className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+    />
+    <Button
+      type='button'
+      disabled={validated}
+      className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+      onClick={onNext}
+    >
+      Next
+    </Button>
     </>
   )
 }
