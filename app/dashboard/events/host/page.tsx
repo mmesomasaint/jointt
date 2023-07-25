@@ -35,6 +35,9 @@ export default function Host() {
             onNext={() => handleActiveStages(2)}
           />
         )}
+        {activeStage === 3 && (
+          <SelectContractors contractorTypes={contractorTypes} />
+        )}
       </div>
     </div>
   )
