@@ -172,7 +172,7 @@ function SelectContractors({ contractorTypes }: { contractorTypes: string[] }) {
   return (
     <div className='overflow-scroll'>
       <select name='contractorTypes'>
-        {contractorTypes.map(type => (
+        {contractorTypes.map((type) => (
           <option value={type}>{type}</option>
         ))}
       </select>
