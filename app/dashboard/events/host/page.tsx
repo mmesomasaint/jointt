@@ -21,7 +21,7 @@ export default function Host() {
   return (
     <div className='p-3'>
       <Text size='SMALL'>Host An Event</Text>
-      <div className='flex flex-col gap-4 justify-start items-start w-fit mx-auto mt-16'>
+      <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
         {activeStage === 1 && (
           <DefineEvent
             setEventName={(name: string) => setEvent(prev => ({...prev, name}))}
