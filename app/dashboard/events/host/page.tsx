@@ -168,4 +168,18 @@ function SelectContractors({ contractorTypes }: { contractorTypes: string[] }) {
     { name: 'Amadi Johnson', role: 'Dancer', pay: '$5/hr' },
     { name: 'Juliet Ann', role: 'MC', pay: '$7/hr' },
   ]
+
+  return (
+    <div className=''>
+      {contractors.map(({name, role, pay}) => (
+        <div className='p-3 rounded-xl border border-gray-900/20 bg-blue-600/30'>
+        <div className='flex justify-between items-center gap-10'>
+          <span>{name}</span>
+          <span>{pay}</span>
+        </div>
+          <span>{role}</span>
+        </div>
+      ))}
+    </div>
+  )
 }
