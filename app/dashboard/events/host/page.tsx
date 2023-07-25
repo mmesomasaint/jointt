@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
-import { MdClose } from 'react-icons/md'
 
 type EventType = {
   name: string
