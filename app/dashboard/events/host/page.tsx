@@ -140,7 +140,7 @@ function ContractorSelection({
       <Button
         type='button'
         disabled={validated}
-        className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+        className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
         onClick={onNext}
       >
         Next
