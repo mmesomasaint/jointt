@@ -103,7 +103,8 @@ function ContractorSelection({validated, onNext}: {validated: boolean, onNext: (
 
   return (
     <>
-    <input
+    <div className='flex justify-center items-center gap-3'>
+      <input
       onChange={(e) => setSearchText(e.target.value)}
       required
       type='text'
@@ -112,6 +113,7 @@ function ContractorSelection({validated, onNext}: {validated: boolean, onNext: (
       placeholder='Emeka or Dancer or $50/hr'
       className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
     />
+    </div>
     <Button
       type='button'
       disabled={validated}
@@ -123,3 +125,4 @@ function ContractorSelection({validated, onNext}: {validated: boolean, onNext: (
     </>
   )
 }
+
