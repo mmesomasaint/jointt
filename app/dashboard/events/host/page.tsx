@@ -171,12 +171,12 @@ function SelectContractors({ contractorTypes }: { contractorTypes: string[] }) {
 
   return (
     <div className=''>
-      {contractors.map(({name, role, pay}) => (
+      {contractors.map(({ name, role, pay }) => (
         <div className='p-3 rounded-xl border border-gray-900/20 bg-blue-600/30'>
-        <div className='flex justify-between items-center gap-10'>
-          <span>{name}</span>
-          <span>{pay}</span>
-        </div>
+          <div className='flex justify-between items-center gap-10'>
+            <span>{name}</span>
+            <span>{pay}</span>
+          </div>
           <span>{role}</span>
         </div>
       ))}
