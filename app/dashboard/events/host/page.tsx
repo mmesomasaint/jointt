@@ -180,7 +180,7 @@ function SelectContractors({ contractorTypes }: { contractorTypes: string[] }) {
         ))}
       </select>
       {contractors.map(({ name, role, pay }) => (
-        <div className='p-3 rounded-xl border border-gray-900/20 bg-blue-600/30'>
+        <div className='p-3 rounded-xl border border-gray-900/20 bg-blue-600/30 my-3'>
           <div className='flex justify-between items-center gap-10'>
             <span>{name}</span>
             <span>{pay}</span>
