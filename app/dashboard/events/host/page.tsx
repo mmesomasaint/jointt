@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
-import {MdClose} from 'react-icons/md'
+import { MdClose } from 'react-icons/md'
 
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
@@ -136,14 +136,18 @@ function ChooseContractorTypes({
         </Button>
       </div>
       <div className='flex flex-wrap justify-start items-center gap-3'>
-      {contractorTypes.map((type, id) => (
-        <div className='flex justify-start items-center gap-7 bg-blue-600/20 p-2 rounded-xl'>
-          <Text size='SMALL'>{type}</Text>
-          <Button type='button' className='bg-transparent px-0 py-0 w-6 h-6 flex justify-center items-center rounded-full border-red-600' onClick={() => handleRemove(id)}>
-            <MdClose className='text-lg text-red-600' />
-          </Button>
-        </div>
-      ))}
+        {contractorTypes.map((type, id) => (
+          <div className='flex justify-start items-center gap-7 bg-blue-600/20 p-2 rounded-xl'>
+            <Text size='SMALL'>{type}</Text>
+            <Button
+              type='button'
+              className='bg-transparent px-0 py-0 w-6 h-6 flex justify-center items-center rounded-full border-red-600'
+              onClick={() => handleRemove(id)}
+            >
+              <MdClose className='text-lg text-red-600' />
+            </Button>
+          </div>
+        ))}
       </div>
       <Button
         type='button'
