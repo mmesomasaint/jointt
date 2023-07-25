@@ -13,7 +13,7 @@ type EventType = {
 
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
-  const [activeStage, setActiveStage] = useState(STAGES[2])
+  const [activeStage, setActiveStage] = useState(STAGES[0])
   const [event, setEvent] = useState<EventType>({name: '', type: ''})
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
