@@ -130,6 +130,12 @@ function ContractorSelection({
           <option value='name'>name</option>
           <option value='pay'>pay</option>
         </select>
+      <Button
+        type='button'
+        className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+      >
+        Add
+      </Button>
       </div>
       <Button
         type='button'
