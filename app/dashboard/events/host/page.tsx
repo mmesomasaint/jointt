@@ -144,7 +144,7 @@ function ChooseContractorTypes({
               className='bg-transparent px-0 py-0 w-6 h-6 flex justify-center items-center rounded-full border-red-600'
               onClick={() => handleRemove(id)}
             >
-              <MdClose className='text-lg text-red-600' />
+              <MdClose className='text-base text-red-600' />
             </Button>
           </div>
         ))}
