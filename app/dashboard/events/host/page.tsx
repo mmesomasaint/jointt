@@ -170,7 +170,7 @@ function SelectContractors({ contractorTypes }: { contractorTypes: string[] }) {
   ]
 
   return (
-    <div className=''>
+    <div className='overflow-scroll'>
       {contractors.map(({ name, role, pay }) => (
         <div className='p-3 rounded-xl border border-gray-900/20 bg-blue-600/30'>
           <div className='flex justify-between items-center gap-10'>
