@@ -160,3 +160,9 @@ function ChooseContractorTypes({
     </>
   )
 }
+
+function SelectContractors({contractorTypes}: {contractorTypes: string[]}) {
+  const contractors: {name:string, role:string, pay:string}[] = [
+    {name: 'Obi CUbana', role: 'Structural', pay: '$30/hr'}, {name: 'Nneoma James', role: 'Cook', pay: '$10/hr'}, {name: 'Amadi Johnson', role: 'Dancer', pay: '$5/hr'}, {name: 'Juliet Ann', role: 'MC', pay: '$7/hr'}
+  ]
+}
