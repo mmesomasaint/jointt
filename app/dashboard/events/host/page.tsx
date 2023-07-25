@@ -7,7 +7,7 @@ import { MdClose } from 'react-icons/md'
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
   const DEFAULTCONTRACTORS = ['Cook', 'MC', 'Singer', 'Dancers', 'Clowns']
-  const [activeStage, setActiveStage] = useState(STAGES[1])
+  const [activeStage, setActiveStage] = useState(STAGES[2])
   const [eventName, setEventName] = useState('')
   const [eventType, setEventType] = useState('')
   const [contractorTypes, setContractorTypes] =
