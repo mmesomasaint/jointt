@@ -14,7 +14,7 @@ type EventType = {
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
   const [activeStage, setActiveStage] = useState(STAGES[0])
-  const [event, setEvent] = useState<EventType>({name: '', type: ''})
+  const [event, setEvent] = useState<EventType>({ name: '', type: '' })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
 
@@ -24,8 +24,12 @@ export default function Host() {
       <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
         {activeStage === 1 && (
           <DefineEvent
-            setEventName={(name: string) => setEvent(prev => ({...prev, name}))}
-            setEventType={(type: string) => setEvent(prev => ({...prev, type}))}
+            setEventName={(name: string) =>
+              setEvent((prev) => ({ ...prev, name }))
+            }
+            setEventType={(type: string) =>
+              setEvent((prev) => ({ ...prev, type }))
+            }
             validated={!(event.name && event.type)}
             onNext={() => handleActiveStages(1)}
           />
