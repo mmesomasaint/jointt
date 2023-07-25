@@ -150,15 +150,36 @@ function ContractorSelection({
   )
 }
 
-function ContractorCard({contractor}: {contractor: ContractorType}) {
+function ContractorCard({ contractor }: { contractor: ContractorType }) {
   return (
     <div className='rounded-xl bg-blue-600/20 shadow-xl flex justify-between items-center gap-5'>
       <Avatar src={null} />
       <div className='flex flex-col gap-2 justify-start items-start'>
-        <div className='flex justify-start items-center gap-2'><span className='text-lg font-medium text-black/70'>name:</span>&nsbp;<span className='text-lg font-medium text-blue-600'>{contractor.name}</span></div>
-        <div className='flex justify-start items-center gap-2'><span className='text-lg font-medium text-black/70'>role:</span>&nsbp;<span className='text-lg font-medium text-blue-600'>{contractor.role}</span></div>
-        <div className='flex justify-start items-center gap-2'><span className='text-lg font-medium text-black/70'>rate:</span>&nsbp;<span className='text-lg font-medium text-blue-600'>{contractor.rate}/5</span></div>
-        <div className='flex justify-start items-center gap-2'><span className='text-lg font-medium text-black/70'>status:</span>&nsbp;<span className='text-lg font-medium text-blue-600'>{contractor.status ? 'available' : 'unavailable'}</span></div>
+        <div className='flex justify-start items-center gap-2'>
+          <span className='text-lg font-medium text-black/70'>name:</span>&nsbp;
+          <span className='text-lg font-medium text-blue-600'>
+            {contractor.name}
+          </span>
+        </div>
+        <div className='flex justify-start items-center gap-2'>
+          <span className='text-lg font-medium text-black/70'>role:</span>&nsbp;
+          <span className='text-lg font-medium text-blue-600'>
+            {contractor.role}
+          </span>
+        </div>
+        <div className='flex justify-start items-center gap-2'>
+          <span className='text-lg font-medium text-black/70'>rate:</span>&nsbp;
+          <span className='text-lg font-medium text-blue-600'>
+            {contractor.rate}/5
+          </span>
+        </div>
+        <div className='flex justify-start items-center gap-2'>
+          <span className='text-lg font-medium text-black/70'>status:</span>
+          &nsbp;
+          <span className='text-lg font-medium text-blue-600'>
+            {contractor.status ? 'available' : 'unavailable'}
+          </span>
+        </div>
       </div>
     </div>
   )
