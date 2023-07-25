@@ -100,6 +100,7 @@ type ContractorType = {
 
 function ContractorSelection({validated, onNext}: {validated: boolean, onNext: () => void}) {
   const [searchText, setSearchText] = useState<string>('')
+  const [filter, setFilter] = useState<string>('name')
 
   return (
     <>
@@ -113,6 +114,12 @@ function ContractorSelection({validated, onNext}: {validated: boolean, onNext: (
       placeholder='Emeka or Dancer or $50/hr'
       className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
     />
+    <select name='filter' defaultValue={filter} onChange={(e) => setFilter(e.target.value)}>
+      <option value='category'>category</option>
+      <option value='role'>role</option>
+      <option value='name'>name</option>
+      <option value='pay'>pay</option>
+    </select>
     </div>
     <Button
       type='button'
