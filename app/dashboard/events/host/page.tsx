@@ -101,13 +101,13 @@ type ContractorType = {
 }
 
 const contractors: ContractorType[] = [
-  { id: "ghi", name: 'Emeka Ike', role: 'Dancer', rate: 3, status: true },
-  { id: "abc", name: 'Sheila Van', role: 'Cook', rate: 4, status: true },
-  { id: "def", name: 'Mimi Eze', role: 'Singer', rate: 3, status: true },
-  { id: "xyz", name: 'Sisu Dim', role: 'Singer', rate: 2, status: false },
-  { id: "mno", name: 'Dami Dre', role: 'Cook', rate: 4, status: true },
-  { id: "jkl", name: 'Simi Ade', role: 'Dancer', rate: 3, status: false },
-  { id: "stu", name: 'Dr. Dre', role: 'Dancer', rate: 4, status: true },
+  { id: 'ghi', name: 'Emeka Ike', role: 'Dancer', rate: 3, status: true },
+  { id: 'abc', name: 'Sheila Van', role: 'Cook', rate: 4, status: true },
+  { id: 'def', name: 'Mimi Eze', role: 'Singer', rate: 3, status: true },
+  { id: 'xyz', name: 'Sisu Dim', role: 'Singer', rate: 2, status: false },
+  { id: 'mno', name: 'Dami Dre', role: 'Cook', rate: 4, status: true },
+  { id: 'jkl', name: 'Simi Ade', role: 'Dancer', rate: 3, status: false },
+  { id: 'stu', name: 'Dr. Dre', role: 'Dancer', rate: 4, status: true },
 ]
 
 function ContractorSelection({
@@ -122,9 +122,9 @@ function ContractorSelection({
   const [added, setAdded] = useState<ContractorType[]>([])
 
   const handleAdd = (contractor: ContractorType) => {
-    const idx = added.findIndex(contr => contr.id === contractor.id)
+    const idx = added.findIndex((contr) => contr.id === contractor.id)
     if (idx !== -1) return
-    setAdded(pre => [...pre, contractor])
+    setAdded((pre) => [...pre, contractor])
   }
 
   return (
@@ -158,7 +158,11 @@ function ContractorSelection({
       </div>
       <div className='my-5 grid grid-cols-5 gap-7 place-item-stretch'>
         {contractors.map((contractor) => (
-          <ContractorCard contractor={contractor} onClick={() => handleAdd(contractor)} isAdded={added.includes(contractor)} />
+          <ContractorCard
+            contractor={contractor}
+            onClick={() => handleAdd(contractor)}
+            isAdded={added.includes(contractor)}
+          />
         ))}
       </div>
       <Button
@@ -173,9 +177,22 @@ function ContractorSelection({
   )
 }
 
-function ContractorCard({ contractor, onClick, isAdded }: { contractor: ContractorType, onClick: () => void, isAdded?: boolean }) {
+function ContractorCard({
+  contractor,
+  onClick,
+  isAdded,
+}: {
+  contractor: ContractorType
+  onClick: () => void
+  isAdded?: boolean
+}) {
   return (
-    <div className={`${isAdded ? 'bg-gray-900/30' : 'bg-blue-600/20'} rounded-xl shadow-xl flex justify-between items-center gap-5`} onClick={onClick}>
+    <div
+      className={`${
+        isAdded ? 'bg-gray-900/30' : 'bg-blue-600/20'
+      } rounded-xl shadow-xl flex justify-between items-center gap-5`}
+      onClick={onClick}
+    >
       <Avatar src={null} />
       <div className='flex flex-col gap-2 justify-start items-start'>
         <div className='flex justify-start items-center gap-2'>
