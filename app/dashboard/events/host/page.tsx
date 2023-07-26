@@ -4,7 +4,7 @@ import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
 
-type searchText = {
+type Event = {
   name: string
   type: string
   contractors?: string[]
@@ -15,7 +15,7 @@ type searchText = {
 export default function Host() {
   const STAGES = [1, 2, 3, 4]
   const [activeStage, setActiveStage] = useState(STAGES[0])
-  const [event, setEvent] = useState<searchText>({ name: '', type: '' })
+  const [event, setEvent] = useState<Event>({ name: '', type: '' })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
 
