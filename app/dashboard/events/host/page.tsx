@@ -96,18 +96,18 @@ type ContractorType = {
   id: string
   name: string
   role: string
-  rate: 1 | 2 | 3 | 4 | 5
+  ratings: 1 | 2 | 3 | 4 | 5
   status: boolean
 }
 
 const contractors: ContractorType[] = [
-  { id: 'ghi', name: 'Emeka Ike', role: 'Dancer', rate: 3, status: true },
-  { id: 'abc', name: 'Sheila Van', role: 'Cook', rate: 4, status: true },
-  { id: 'def', name: 'Mimi Eze', role: 'Singer', rate: 3, status: true },
-  { id: 'xyz', name: 'Sisu Dim', role: 'Singer', rate: 2, status: false },
-  { id: 'mno', name: 'Dami Dre', role: 'Cook', rate: 4, status: true },
-  { id: 'jkl', name: 'Simi Ade', role: 'Dancer', rate: 3, status: false },
-  { id: 'stu', name: 'Dr. Dre', role: 'Dancer', rate: 4, status: true },
+  { id: 'ghi', name: 'Emeka Ike', role: 'Dancer', ratings: 3, status: true },
+  { id: 'abc', name: 'Sheila Van', role: 'Cook', ratings: 4, status: true },
+  { id: 'def', name: 'Mimi Eze', role: 'Singer', ratings: 3, status: true },
+  { id: 'xyz', name: 'Sisu Dim', role: 'Singer', ratings: 2, status: false },
+  { id: 'mno', name: 'Dami Dre', role: 'Cook', ratings: 4, status: true },
+  { id: 'jkl', name: 'Simi Ade', role: 'Dancer', ratings: 3, status: false },
+  { id: 'stu', name: 'Dr. Dre', role: 'Dancer', ratings: 4, status: true },
 ]
 
 function ContractorSelection({
@@ -208,9 +208,9 @@ function ContractorCard({
           </span>
         </div>
         <div className='flex justify-start items-center gap-2'>
-          <span className='text-lg font-medium text-black/70'>rate:</span>&nsbp;
+          <span className='text-lg font-medium text-black/70'>ratings:</span>&nsbp;
           <span className='text-lg font-medium text-blue-600'>
-            {contractor.rate}/5
+            {contractor.ratings}/5
           </span>
         </div>
         <div className='flex justify-start items-center gap-2'>
