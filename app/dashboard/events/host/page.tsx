@@ -98,16 +98,17 @@ type ContractorType = {
   role: string
   ratings: 1 | 2 | 3 | 4 | 5
   status: boolean
+  pay: number
 }
 
 const contractors: ContractorType[] = [
-  { id: 'ghi', name: 'Emeka Ike', role: 'Dancer', ratings: 3, status: true },
-  { id: 'abc', name: 'Sheila Van', role: 'Cook', ratings: 4, status: true },
-  { id: 'def', name: 'Mimi Eze', role: 'Singer', ratings: 3, status: true },
-  { id: 'xyz', name: 'Sisu Dim', role: 'Singer', ratings: 2, status: false },
-  { id: 'mno', name: 'Dami Dre', role: 'Cook', ratings: 4, status: true },
-  { id: 'jkl', name: 'Simi Ade', role: 'Dancer', ratings: 3, status: false },
-  { id: 'stu', name: 'Dr. Dre', role: 'Dancer', ratings: 4, status: true },
+  { id: 'ghi', name: 'Emeka Ike', role: 'Dancer', ratings: 3, status: true, pay: 10 },
+  { id: 'abc', name: 'Sheila Van', role: 'Cook', ratings: 4, status: true, pay: 20 },
+  { id: 'def', name: 'Mimi Eze', role: 'Singer', ratings: 3, status: true, pay: 25 },
+  { id: 'xyz', name: 'Sisu Dim', role: 'Singer', ratings: 2, status: false, pay: 15 },
+  { id: 'mno', name: 'Dami Dre', role: 'Cook', ratings: 4, status: true, pay: 30 },
+  { id: 'jkl', name: 'Simi Ade', role: 'Dancer', ratings: 3, status: false, pay: 15 },
+  { id: 'stu', name: 'Dr. Dre', role: 'Dancer', ratings: 4, status: true, pay: 10 },
 ]
 
 function ContractorSelection({
@@ -213,12 +214,19 @@ function ContractorCard({
             {contractor.ratings}/5
           </span>
         </div>
+      </div>
+      <div className='flex justify-start items-center gap-5'>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>status:</span>
           &nsbp;
           <span className='text-lg font-medium text-blue-600'>
             {contractor.status ? 'available' : 'unavailable'}
           </span>
+        </div>
+        <div>
+          <span className='text-xl font-medium text-blue-600/70'>$</span>
+          <span className='text-2xl font-semibold text-blue-600/70'>50</span>
+          <span className='text-lg font-semibold text-blue-600/70'>/hr</span>
         </div>
       </div>
     </div>
