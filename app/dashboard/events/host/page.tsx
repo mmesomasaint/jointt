@@ -100,13 +100,13 @@ type ContractorType = {
 }
 
 const contractors: ContractorType[] = [
-  {name: "Emeka Ike", role: "Dancer", rate: 3, status: true},
-  {name: "Sheila Van", role: "Cook", rate: 4, status: true},
-  {name: "Mimi Eze", role: "Singer", rate: 3, status: true},
-  {name: "Sisu Dim", role: "Singer", rate: 2, status: false},
-  {name: "Dami Dre", role: "Cook", rate: 4, status: true},
-  {name: "Simi Ade", role: "Dancer", rate: 3, status: false},
-  {name: "Dr. Dre", role: "Dancer", rate: 4, status: true}
+  { name: 'Emeka Ike', role: 'Dancer', rate: 3, status: true },
+  { name: 'Sheila Van', role: 'Cook', rate: 4, status: true },
+  { name: 'Mimi Eze', role: 'Singer', rate: 3, status: true },
+  { name: 'Sisu Dim', role: 'Singer', rate: 2, status: false },
+  { name: 'Dami Dre', role: 'Cook', rate: 4, status: true },
+  { name: 'Simi Ade', role: 'Dancer', rate: 3, status: false },
+  { name: 'Dr. Dre', role: 'Dancer', rate: 4, status: true },
 ]
 
 function ContractorSelection({
