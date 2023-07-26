@@ -149,7 +149,7 @@ function ContractorSelection({
         </Button>
       </div>
       <div className='my-5 grid grid-cols-5 gap-7 place-item-stretch'>
-        {contractors.map(contractor => (
+        {contractors.map((contractor) => (
           <ContractorCard contractor={contractor} />
         ))}
       </div>
