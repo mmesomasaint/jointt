@@ -28,7 +28,7 @@ export default function Host() {
             setEventName={(name: string) =>
               setEvent((prev) => ({ ...prev, name }))
             }
-            setsearchText={(type: string) =>
+            setEventType={(type: string) =>
               setEvent((prev) => ({ ...prev, type }))
             }
             validated={!(event.name && event.type)}
@@ -42,12 +42,12 @@ export default function Host() {
 
 function DefineEvent({
   setEventName,
-  setsearchText,
+  setEventType,
   validated,
   onNext,
 }: {
   setEventName: (name: string) => void
-  setsearchText: (type: string) => void
+  setEventType: (type: string) => void
   validated: boolean
   onNext: () => void
 }) {
@@ -68,14 +68,14 @@ function DefineEvent({
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
       </label>
-      <label htmlFor='searchText' className='w-full'>
+      <label htmlFor='eventtype' className='w-full'>
         <Text size='SMALL'>Event Type</Text>
         <input
-          onChange={(e) => setsearchText(e.target.value)}
+          onChange={(e) => setEventType(e.target.value)}
           required
           type='text'
-          name='searchText'
-          id='searchText'
+          name='eventtype'
+          id='eventtype'
           placeholder='Party'
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
