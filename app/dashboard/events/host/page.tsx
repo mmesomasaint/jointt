@@ -161,20 +161,23 @@ const contractors: ContractorType[] = [
 ]
 
 function ContractorSelection({
+  addedContractors,
+  setAddedContractors,
   validated,
   onNext,
 }: {
+  addedContractors: string[]
+  setAddedContractors: (value: (pre: string[]) => string[]) => void
   validated: boolean
   onNext: () => void
 }) {
   const [searchText, setSearchText] = useState<string>('')
   const [filter, setFilter] = useState<string>('name')
-  const [added, setAdded] = useState<ContractorType[]>([])
 
-  const handleAdd = (contractor: ContractorType) => {
-    const idx = added.findIndex((contr) => contr.id === contractor.id)
+  const handleAdd = (id: string) => {
+    const idx = addedContractors.findIndex((_id) => _id === id)
     if (idx !== -1) return
-    setAdded((pre) => [...pre, contractor])
+    setAddedContractors((pre) => [...pre, id])
   }
 
   return (
@@ -210,8 +213,8 @@ function ContractorSelection({
         {contractors.map((contractor) => (
           <ContractorCard
             contractor={contractor}
-            onClick={() => handleAdd(contractor)}
-            isAdded={added.includes(contractor)}
+            onClick={() => handleAdd(contractor.id)}
+            isAdded={addedContractors.includes(contractor.id)}
           />
         ))}
       </div>
