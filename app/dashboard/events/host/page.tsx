@@ -222,7 +222,7 @@ function ContractorSelection({
           Add
         </Button>
       </div>
-      <div className='my-5 grid grid-cols-5 gap-7 place-item-stretch'>
+      <div className='my-5 grid grid-cols-3 gap-7 place-item-stretch'>
         {contractors.map((contractor) => (
           <ContractorCard
             contractor={contractor}
