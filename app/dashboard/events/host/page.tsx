@@ -259,7 +259,7 @@ function ContractorCard({
       } rounded-xl shadow-xl flex justify-between items-center gap-5`}
       onClick={onClick}
     >
-      <Avatar src={null} />
+      <Avatar.Small src={null} />
       <div className='flex flex-col gap-2 justify-start items-start'>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>name:</span>&nbsp;
