@@ -263,40 +263,40 @@ function ContractorCard({
         <Avatar.Small src={null} />
         <div className='flex flex-col justify-start items-start'>
           <div className='flex justify-start items-center'>
-            <span className='text-sm font-medium text-black/70'>name:</span>
+            <span className='text-base font-medium text-black/70'>name:</span>
             &nbsp;
-            <span className='text-sm font-medium text-blue-600'>
+            <span className='text-base font-medium text-blue-600'>
               {contractor.name}
             </span>
           </div>
           <div className='flex justify-start items-center'>
-            <span className='text-sm font-medium text-black/70'>role:</span>
+            <span className='text-base font-medium text-black/70'>role:</span>
             &nbsp;
-            <span className='text-sm font-medium text-blue-600'>
+            <span className='text-base font-medium text-blue-600'>
               {contractor.role}
             </span>
           </div>
           <div className='flex justify-start items-center'>
-            <span className='text-sm font-medium text-black/70'>ratings:</span>
+            <span className='text-base font-medium text-black/70'>ratings:</span>
             &nbsp;
-            <span className='text-sm font-medium text-blue-600'>
+            <span className='text-base font-medium text-blue-600'>
               {contractor.ratings}/5
             </span>
           </div>
-        </div>
-      </div>
-      <div className='flex justify-start items-center gap-5'>
-        <div className='flex justify-start items-center'>
-          <span className='text-lg font-medium text-black/70'>status:</span>
-          &nbsp;
-          <span className='text-lg font-medium text-blue-600'>
+          <div className='flex justify-start items-center'>
+            <span className='text-base font-medium text-black/70'>status:</span>
+            &nbsp;
+            <span className='text-base font-medium text-blue-600'>
             {contractor.status ? 'available' : 'unavailable'}
-          </span>
-        </div>
-        <div>
-          <span className='text-xl font-medium text-blue-600/70'>$</span>
-          <span className='text-2xl font-semibold text-blue-600/70'>50</span>
-          <span className='text-lg font-semibold text-blue-600/70'>/hr</span>
+            </span>
+          </div>
+          <div className='flex justify-start items-center'>
+            <span className='text-base font-medium text-black/70'>pay:</span>
+            &nbsp;
+            <span className='text-base font-medium text-blue-600'>
+              ${contractor.pay}/hr
+            </span>
+          </div>
         </div>
       </div>
     </div>
