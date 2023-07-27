@@ -256,7 +256,7 @@ function ContractorCard({
     <div
       className={`${
         isAdded ? 'bg-gray-900/30' : 'bg-blue-600/20'
-      } rounded-xl shadow-xl flex flex-col justify-start items-stretch gap-5`}
+      } rounded-xl shadow-xl flex flex-col justify-start items-stretch gap-5 p-4`}
       onClick={onClick}
     >
       <div className='grid grid-cols-2 place-items-stretch'>
