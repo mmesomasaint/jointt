@@ -187,10 +187,10 @@ function ContractorSelection({
   const [searchText, setSearchText] = useState<string>('')
   const [filter, setFilter] = useState<string>('name')
 
-  const handleAdd = (id: string) => {
-    const idx = addedContractors.findIndex((_id) => _id === id)
-    if (idx !== -1) return
-    setAddedContractors([...addedContractors, id])
+  const handleAdd = (newId: string) => {
+    const loc = addedContractors.findIndex((id) => id === newId)
+    if (loc !== -1) return
+    setAddedContractors([...addedContractors, newId])
   }
 
   return (
