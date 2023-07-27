@@ -259,7 +259,7 @@ function ContractorCard({
       } rounded-xl shadow-xl flex flex-col justify-start items-stretch gap-5 p-4`}
       onClick={onClick}
     >
-      <div className='grid grid-cols-2 place-items-stretch'>
+      <div className='grid grid-cols-2 place-items-stretch items-center'>
         <Avatar.Small src={null} />
         <div className='flex flex-col justify-start items-start'>
           <div className='flex justify-start items-center'>
