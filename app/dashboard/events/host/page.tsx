@@ -38,10 +38,12 @@ export default function Host() {
         {activeStage === 2 && (
           <ContractorSelection
             addedContractors={event.contractors || []}
-            setAddedContractors={(contractors: string[]) => setEvent({
-              ...event,
-              contractors,
-            })}
+            setAddedContractors={(contractors: string[]) =>
+              setEvent({
+                ...event,
+                contractors,
+              })
+            }
             validated={
               event.contractors !== undefined && event.contractors.length > 0
             }
