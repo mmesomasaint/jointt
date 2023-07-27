@@ -209,7 +209,7 @@ function ContractorSelection({
           name='filter'
           defaultValue={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className='border-2 border-blue-600/50 p-[0.76rem] font-semibold text-lg focus:outline-blue-600/50'
+          className='border-2 border-r-0 border-blue-600/50 p-[0.76rem] font-semibold text-lg focus:outline-blue-600/50'
         >
           <option value='category'>category</option>
           <option value='role'>role</option>
