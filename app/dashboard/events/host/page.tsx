@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
@@ -38,7 +38,7 @@ export default function Host() {
         {activeStage === 2 && (
           <ContractorSelection
             addedContractors={event.contractors || []}
-            setAddedContractors={(contractors: string[]) => ({
+            setAddedContractors={(contractors: string[]) => setEvent({
               ...event,
               contractors,
             })}
@@ -189,8 +189,9 @@ function ContractorSelection({
 
   const handleAdd = (newId: string) => {
     const loc = addedContractors.findIndex((id) => id === newId)
-    if (loc !== -1) return
-    setAddedContractors([...addedContractors, newId])
+    if (loc === -1) {
+      setAddedContractors([...addedContractors, newId])
+    }
   }
 
   return (
