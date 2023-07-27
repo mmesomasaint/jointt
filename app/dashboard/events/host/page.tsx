@@ -262,20 +262,20 @@ function ContractorCard({
       <Avatar src={null} />
       <div className='flex flex-col gap-2 justify-start items-start'>
         <div className='flex justify-start items-center gap-2'>
-          <span className='text-lg font-medium text-black/70'>name:</span>&nsbp;
+          <span className='text-lg font-medium text-black/70'>name:</span>&nbsp;
           <span className='text-lg font-medium text-blue-600'>
             {contractor.name}
           </span>
         </div>
         <div className='flex justify-start items-center gap-2'>
-          <span className='text-lg font-medium text-black/70'>role:</span>&nsbp;
+          <span className='text-lg font-medium text-black/70'>role:</span>&nbsp;
           <span className='text-lg font-medium text-blue-600'>
             {contractor.role}
           </span>
         </div>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>ratings:</span>
-          &nsbp;
+          &nbsp;
           <span className='text-lg font-medium text-blue-600'>
             {contractor.ratings}/5
           </span>
@@ -284,7 +284,7 @@ function ContractorCard({
       <div className='flex justify-start items-center gap-5'>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>status:</span>
-          &nsbp;
+          &nbsp;
           <span className='text-lg font-medium text-blue-600'>
             {contractor.status ? 'available' : 'unavailable'}
           </span>
