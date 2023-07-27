@@ -195,7 +195,7 @@ function ContractorSelection({
 
   return (
     <>
-      <div className='flex justify-center items-center gap-3 w-full'>
+      <div className='flex justify-center items-center w-full'>
         <input
           onChange={(e) => setSearchText(e.target.value)}
           required
