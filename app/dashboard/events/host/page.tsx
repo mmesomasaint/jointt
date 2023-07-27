@@ -191,6 +191,10 @@ function ContractorSelection({
     const loc = addedContractors.findIndex((id) => id === newId)
     if (loc === -1) {
       setAddedContractors([...addedContractors, newId])
+    } else {
+      const startSub = addedContractors.slice(0, loc)
+      const endSub = addedContractors.slice(loc + 1)
+      setAddedContractors([...startSub, ...endSub])
     }
   }
 
