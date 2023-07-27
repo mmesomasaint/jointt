@@ -219,7 +219,7 @@ function ContractorSelection({
           type='button'
           className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
         >
-          Add
+          Search
         </Button>
       </div>
       <div className='my-5 grid grid-cols-2 gap-7 place-items-stretch w-full'>
