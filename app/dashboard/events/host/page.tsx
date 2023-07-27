@@ -203,13 +203,13 @@ function ContractorSelection({
           name='searchText'
           id='searchText'
           placeholder='Emeka or Dancer or $50/hr'
-          className='grow border-2 border-blue-600/50 rounded-xl rounded-r-none p-3 focus:outline-blue-500/50 w-full'
+          className='grow border-2 border-r-0 border-blue-600/50 rounded-xl rounded-r-none p-3 focus:outline-blue-500/50 w-full'
         />
         <select
           name='filter'
           defaultValue={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className='border-2 border-blue-600/50 p-3 font-medium text-lg focus:outline-blue-600/50'
+          className='border-2 border-blue-600/50 p-[0.76rem] font-semibold text-lg focus:outline-blue-600/50'
         >
           <option value='category'>category</option>
           <option value='role'>role</option>
