@@ -226,6 +226,7 @@ function ContractorSelection({
       <div className='my-5 grid grid-cols-2 gap-7 place-items-stretch w-full'>
         {contractors.map((contractor) => (
           <ContractorCard
+            key={contractor.id}
             contractor={contractor}
             onClick={() => handleAdd(contractor.id)}
             isAdded={addedContractors.includes(contractor.id)}
