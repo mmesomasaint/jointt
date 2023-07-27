@@ -218,7 +218,7 @@ function ContractorSelection({
         </select>
         <Button
           type='button'
-          className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 px-6 py-[1.04rem] rounded-l-none'
         >
           Search
         </Button>
