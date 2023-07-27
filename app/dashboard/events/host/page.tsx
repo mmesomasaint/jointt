@@ -35,6 +35,9 @@ export default function Host() {
             onNext={() => handleActiveStages(1)}
           />
         )}
+        {activeStage === 2 && (
+          <ContractorSelection addedContractors={event.contractors || []} setAddedContractors={(contractors: string[]) => ({...event, contractors})} validated={(event.contractors !== undefined)} onNext={() => handleActiveStages(2)}/>
+        )}
       </div>
     </div>
   )
@@ -167,7 +170,7 @@ function ContractorSelection({
   onNext,
 }: {
   addedContractors: string[]
-  setAddedContractors: (value: (pre: string[]) => string[]) => void
+  setAddedContractors: (value: string[]) => void
   validated: boolean
   onNext: () => void
 }) {
@@ -177,7 +180,7 @@ function ContractorSelection({
   const handleAdd = (id: string) => {
     const idx = addedContractors.findIndex((_id) => _id === id)
     if (idx !== -1) return
-    setAddedContractors((pre) => [...pre, id])
+    setAddedContractors([...addedContractors, id])
   }
 
   return (
