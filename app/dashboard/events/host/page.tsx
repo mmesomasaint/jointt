@@ -203,7 +203,7 @@ function ContractorSelection({
           name='searchText'
           id='searchText'
           placeholder='Emeka or Dancer or $50/hr'
-          className='grow border-2 border-blue-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+          className='grow border-2 border-blue-600/50 rounded-xl rounded-r-none p-3 focus:outline-blue-500/50 w-full'
         />
         <select
           name='filter'
