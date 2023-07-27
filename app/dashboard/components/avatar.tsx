@@ -22,12 +22,12 @@ function Big({src}: AvatarType) {
 
 function Small({src}: AvatarType) {
   return (
-    <div className='relative w-[12vw] h-[12vw] rounded-full border border-black/50 shadow-md'>
+    <div className='relative w-[7vw] h-[7vw] rounded-full border border-black/50 shadow-md'>
       <Image
         src={src === null ? avatar : src}
         fill
         priority
-        sizes='14vw'
+        sizes='10vw'
         alt='Small Profile Image'
         className='rounded-full'
       />
