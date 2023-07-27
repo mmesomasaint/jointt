@@ -277,7 +277,9 @@ function ContractorCard({
             </span>
           </div>
           <div className='flex justify-start items-center'>
-            <span className='text-base font-medium text-black/70'>ratings:</span>
+            <span className='text-base font-medium text-black/70'>
+              ratings:
+            </span>
             &nbsp;
             <span className='text-base font-medium text-blue-600'>
               {contractor.ratings}/5
@@ -287,7 +289,7 @@ function ContractorCard({
             <span className='text-base font-medium text-black/70'>status:</span>
             &nbsp;
             <span className='text-base font-medium text-blue-600'>
-            {contractor.status ? 'available' : 'unavailable'}
+              {contractor.status ? 'available' : 'unavailable'}
             </span>
           </div>
           <div className='flex justify-start items-center'>
