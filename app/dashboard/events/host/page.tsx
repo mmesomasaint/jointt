@@ -256,10 +256,10 @@ function ContractorCard({
     <div
       className={`${
         isAdded ? 'bg-gray-900/30' : 'bg-blue-600/20'
-      } rounded-xl shadow-xl flex justify-between items-center gap-5`}
+      } rounded-xl shadow-xl flex flex-col justify-start items-stretch gap-5`}
       onClick={onClick}
     >
-      <Avatar.Small src={null} />
+      <div className='grid grid-cols-2 place-items-stretch gap-5'><Avatar.Small src={null} />
       <div className='flex flex-col gap-2 justify-start items-start'>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>name:</span>&nbsp;
@@ -280,7 +280,7 @@ function ContractorCard({
             {contractor.ratings}/5
           </span>
         </div>
-      </div>
+      </div></div>
       <div className='flex justify-start items-center gap-5'>
         <div className='flex justify-start items-center gap-2'>
           <span className='text-lg font-medium text-black/70'>status:</span>
