@@ -31,7 +31,7 @@ export default function Host() {
             setEventType={(type: string) =>
               setEvent((prev) => ({ ...prev, type }))
             }
-            validated={!(event.name && event.type)}
+            validated={(event.name && event.type)}
             onNext={() => handleActiveStages(1)}
           />
         )}
@@ -93,7 +93,7 @@ function DefineEvent({
       </label>
       <Button
         type='button'
-        disabled={validated}
+        disabled={!validated}
         className='disabled:bg-gray-600/50 disabled:border-gray-600/50'
         onClick={onNext}
       >
