@@ -234,7 +234,7 @@ function ContractorSelection({
       </div>
       <Button
         type='button'
-        disabled={validated}
+        disabled={!validated}
         className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
         onClick={onNext}
       >
