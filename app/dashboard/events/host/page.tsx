@@ -195,7 +195,7 @@ function ContractorSelection({
 
   return (
     <>
-      <div className='flex justify-center items-center gap-3'>
+      <div className='flex justify-center items-center gap-3 w-full'>
         <input
           onChange={(e) => setSearchText(e.target.value)}
           required
@@ -203,7 +203,7 @@ function ContractorSelection({
           name='searchText'
           id='searchText'
           placeholder='Emeka or Dancer or $50/hr'
-          className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+          className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
         <select
           name='filter'
