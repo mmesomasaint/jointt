@@ -31,7 +31,7 @@ export default function Host() {
             setEventType={(type: string) =>
               setEvent((prev) => ({ ...prev, type }))
             }
-            validated={(event.name && event.type)}
+            validated={(event.name.length > 0 && event.type.length > 0)}
             onNext={() => handleActiveStages(1)}
           />
         )}
@@ -42,7 +42,7 @@ export default function Host() {
               ...event,
               contractors,
             })}
-            validated={event.contractors !== undefined}
+            validated={event.contractors !== undefined && event.contractors.length > 0}
             onNext={() => handleActiveStages(2)}
           />
         )}
