@@ -259,34 +259,34 @@ function ContractorCard({
       } rounded-xl shadow-xl flex flex-col justify-start items-stretch gap-5`}
       onClick={onClick}
     >
-      <div className='grid grid-cols-2 place-items-stretch gap-5'>
+      <div className='grid grid-cols-2 place-items-stretch'>
         <Avatar.Small src={null} />
-        <div className='flex flex-col gap-2 justify-start items-start'>
-          <div className='flex justify-start items-center gap-2'>
-            <span className='text-lg font-medium text-black/70'>name:</span>
+        <div className='flex flex-col justify-start items-start'>
+          <div className='flex justify-start items-center'>
+            <span className='text-sm font-medium text-black/70'>name:</span>
             &nbsp;
-            <span className='text-lg font-medium text-blue-600'>
+            <span className='text-sm font-medium text-blue-600'>
               {contractor.name}
             </span>
           </div>
-          <div className='flex justify-start items-center gap-2'>
-            <span className='text-lg font-medium text-black/70'>role:</span>
+          <div className='flex justify-start items-center'>
+            <span className='text-sm font-medium text-black/70'>role:</span>
             &nbsp;
-            <span className='text-lg font-medium text-blue-600'>
+            <span className='text-sm font-medium text-blue-600'>
               {contractor.role}
             </span>
           </div>
-          <div className='flex justify-start items-center gap-2'>
-            <span className='text-lg font-medium text-black/70'>ratings:</span>
+          <div className='flex justify-start items-center'>
+            <span className='text-sm font-medium text-black/70'>ratings:</span>
             &nbsp;
-            <span className='text-lg font-medium text-blue-600'>
+            <span className='text-sm font-medium text-blue-600'>
               {contractor.ratings}/5
             </span>
           </div>
         </div>
       </div>
       <div className='flex justify-start items-center gap-5'>
-        <div className='flex justify-start items-center gap-2'>
+        <div className='flex justify-start items-center'>
           <span className='text-lg font-medium text-black/70'>status:</span>
           &nbsp;
           <span className='text-lg font-medium text-blue-600'>
