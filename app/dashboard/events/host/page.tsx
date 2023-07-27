@@ -36,7 +36,15 @@ export default function Host() {
           />
         )}
         {activeStage === 2 && (
-          <ContractorSelection addedContractors={event.contractors || []} setAddedContractors={(contractors: string[]) => ({...event, contractors})} validated={(event.contractors !== undefined)} onNext={() => handleActiveStages(2)}/>
+          <ContractorSelection
+            addedContractors={event.contractors || []}
+            setAddedContractors={(contractors: string[]) => ({
+              ...event,
+              contractors,
+            })}
+            validated={event.contractors !== undefined}
+            onNext={() => handleActiveStages(2)}
+          />
         )}
       </div>
     </div>
