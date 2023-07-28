@@ -318,8 +318,10 @@ function ContractorCard({
 
 function ContractorRecruitment({
   selectedContractorIDs,
+  onRecruit
 }: {
   selectedContractorIDs: string[]
+  onRecruit: () => void
 }) {
   const getContractor = (id: string) =>
     contractors.find((contractor) => contractor.id === id)
@@ -330,6 +332,7 @@ function ContractorRecruitment({
         const contractor = getContractor(id)
 
         return (
+          <>
           <div
             key={id}
             className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3'
@@ -341,6 +344,14 @@ function ContractorRecruitment({
               <Text size='SMALL'>{contractor?.pay}</Text>
             </div>
           </div>
+      <Button
+        type='button'
+        className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+        onClick={onRecruit}
+      >
+        Send Recruitment Request
+      </Button>
+          </>
         )
       })}
     </div>
