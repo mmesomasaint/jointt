@@ -18,6 +18,7 @@ export default function Host() {
   const [event, setEvent] = useState<Event>({ name: '', type: '' })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
+  const handleRecruitment = () => {}
 
   return (
     <div className='p-3 h-full overflow-scroll'>
