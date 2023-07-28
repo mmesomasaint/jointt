@@ -364,7 +364,7 @@ function ContractorRecruitment({
           return (
             <div
               key={id}
-              className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/10 p-3 w-full'
+              className='even:bg-blue-600/10 p-3 w-full'
             >
               <div className='grid grid-cols-4 place-items-stretch items-center gap-3 w-full'>
                 <Text size='SMALL' className='text-center'>
