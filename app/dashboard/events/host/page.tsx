@@ -316,17 +316,24 @@ function ContractorCard({
   )
 }
 
-
-function ContractorRecruitment({selectedContractorIDs}: {selectedContractorIDs: string[]}) {
-  const getContractor = (id: string) => contractors.find(contractor => contractor.id === id)
+function ContractorRecruitment({
+  selectedContractorIDs,
+}: {
+  selectedContractorIDs: string[]
+}) {
+  const getContractor = (id: string) =>
+    contractors.find((contractor) => contractor.id === id)
 
   return (
     <div className='flex flex-col items-start justify-start gap-0'>
-      {selectedContractorIDs.map((id => {
+      {selectedContractorIDs.map((id) => {
         const contractor = getContractor(id)
 
         return (
-          <div key={id} className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3'>
+          <div
+            key={id}
+            className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3'
+          >
             <div className='flex justify-evenly items-center gap-5'>
               <Text size='SMALL'>{contractor?.name}</Text>
               <Text size='SMALL'>{contractor?.role}</Text>
@@ -335,7 +342,7 @@ function ContractorRecruitment({selectedContractorIDs}: {selectedContractorIDs: 
             </div>
           </div>
         )
-      }))}
+      })}
     </div>
   )
 }
