@@ -362,10 +362,7 @@ function ContractorRecruitment({
           const contractor = getContractor(id)
 
           return (
-            <div
-              key={id}
-              className='even:bg-blue-600/10 p-3 w-full'
-            >
+            <div key={id} className='even:bg-blue-600/10 p-3 w-full'>
               <div className='grid grid-cols-4 place-items-stretch items-center gap-3 w-full'>
                 <Text size='SMALL' className='text-center'>
                   {contractor?.name}
