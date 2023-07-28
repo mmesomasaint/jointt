@@ -202,6 +202,7 @@ function ContractorSelection({
 
   return (
     <>
+      <form>
       <div className='flex justify-center items-center w-full'>
         <input
           onChange={(e) => setSearchText(e.target.value)}
@@ -224,12 +225,13 @@ function ContractorSelection({
           <option value='pay'>pay</option>
         </select>
         <Button
-          type='button'
+          type='submit'
           className='disabled:bg-gray-600/50 disabled:border-gray-600/50 px-6 py-[1.04rem] rounded-l-none'
         >
           Search
         </Button>
       </div>
+      </form>
       <div className='my-5 grid grid-cols-2 gap-7 place-items-stretch w-full'>
         {contractors.map((contractor) => (
           <ContractorCard
