@@ -8,6 +8,9 @@ type Event = {
   name: string
   type: string
   contractors?: string[]
+  totalCost?: number
+  activeFrom?: string
+  activeTo?: string
   created: string
 }
 
