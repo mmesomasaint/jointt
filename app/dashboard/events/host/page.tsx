@@ -55,12 +55,14 @@ export default function Host() {
               event.contractors !== undefined && event.contractors.length > 0
             }
             onNext={() => handleActiveStages(2)}
+            onBack={() => handleActiveStages(0)}
           />
         )}
         {activeStage === 3 && (
           <ContractorRecruitment
             selectedContractorIDs={event.contractors || []}
             onRecruit={handleRecruitment}
+            onBack={() => handleActiveStages(1)}
           />
         )}
       </div>
@@ -193,11 +195,13 @@ function ContractorSelection({
   setAddedContractors,
   validated,
   onNext,
+  onBack
 }: {
   addedContractors: string[]
   setAddedContractors: (value: string[]) => void
   validated: boolean
   onNext: () => void
+  onBack: () => void
 }) {
   const [searchText, setSearchText] = useState<string>('')
   const [filter, setFilter] = useState<string>('name')
@@ -255,6 +259,14 @@ function ContractorSelection({
           />
         ))}
       </div>
+      <div className='flex justify-start items-center gap-10'>
+      <Button
+        type='button'
+        className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+        onClick={onBack}
+      >
+        Back
+      </Button>
       <Button
         type='button'
         disabled={!validated}
@@ -263,6 +275,7 @@ function ContractorSelection({
       >
         Next
       </Button>
+      </div>
     </>
   )
 }
@@ -332,9 +345,11 @@ function ContractorCard({
 function ContractorRecruitment({
   selectedContractorIDs,
   onRecruit,
+  onBack
 }: {
   selectedContractorIDs: string[]
   onRecruit: () => void
+  onBack: () => void
 }) {
   const getContractor = (id: string) =>
     contractors.find((contractor) => contractor.id === id)
@@ -380,6 +395,14 @@ function ContractorRecruitment({
             </div>
           )
         })}
+        <div className='flex justify-start items-center gap-10'>
+        <Button
+          type='button'
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+          onClick={onBack}
+        >
+          Back
+        </Button>
         <Button
           type='button'
           className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
@@ -387,6 +410,7 @@ function ContractorRecruitment({
         >
           Send Recruitment Request
         </Button>
+        </div>
       </div>
     </>
   )
