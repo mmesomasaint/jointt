@@ -215,7 +215,7 @@ function ContractorSelection({
 
   return (
     <>
-      <form>
+      <form className='w-full'>
         <div className='flex justify-center items-center w-full'>
           <input
             onChange={(e) => setSearchText(e.target.value)}
