@@ -203,34 +203,34 @@ function ContractorSelection({
   return (
     <>
       <form>
-      <div className='flex justify-center items-center w-full'>
-        <input
-          onChange={(e) => setSearchText(e.target.value)}
-          required
-          type='text'
-          name='searchText'
-          id='searchText'
-          placeholder='Emeka or Dancer or $50/hr'
-          className='grow border-2 border-r-0 border-blue-600/50 rounded-xl rounded-r-none p-3 focus:outline-blue-500/50 w-full'
-        />
-        <select
-          name='filter'
-          defaultValue={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          className='border-2 border-r-0 border-blue-600/50 p-[0.76rem] font-semibold text-lg focus:outline-blue-600/50 text-black/70'
-        >
-          <option value='category'>category</option>
-          <option value='role'>role</option>
-          <option value='name'>name</option>
-          <option value='pay'>pay</option>
-        </select>
-        <Button
-          type='submit'
-          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 px-6 py-[1.04rem] rounded-l-none'
-        >
-          Search
-        </Button>
-      </div>
+        <div className='flex justify-center items-center w-full'>
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            required
+            type='text'
+            name='searchText'
+            id='searchText'
+            placeholder='Emeka or Dancer or $50/hr'
+            className='grow border-2 border-r-0 border-blue-600/50 rounded-xl rounded-r-none p-3 focus:outline-blue-500/50 w-full'
+          />
+          <select
+            name='filter'
+            defaultValue={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className='border-2 border-r-0 border-blue-600/50 p-[0.76rem] font-semibold text-lg focus:outline-blue-600/50 text-black/70'
+          >
+            <option value='category'>category</option>
+            <option value='role'>role</option>
+            <option value='name'>name</option>
+            <option value='pay'>pay</option>
+          </select>
+          <Button
+            type='submit'
+            className='disabled:bg-gray-600/50 disabled:border-gray-600/50 px-6 py-[1.04rem] rounded-l-none'
+          >
+            Search
+          </Button>
+        </div>
       </form>
       <div className='my-5 grid grid-cols-2 gap-7 place-items-stretch w-full'>
         {contractors.map((contractor) => (
