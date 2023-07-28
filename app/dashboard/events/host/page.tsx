@@ -51,6 +51,9 @@ export default function Host() {
             onNext={() => handleActiveStages(2)}
           />
         )}
+        {activeStage === 3 && (
+          <ContractorRecruitment selectedContractorIDs={event.contractors || []} onRecruit={handleRecruitment} />
+        )}
       </div>
     </div>
   )
