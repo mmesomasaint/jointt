@@ -32,6 +32,8 @@ export default function Host() {
       <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
         {activeStage === 1 && (
           <DefineEvent
+            eventName={event.name}
+            eventType={event.type}
             setEventName={(name: string) =>
               setEvent((prev) => ({ ...prev, name }))
             }
@@ -71,11 +73,15 @@ export default function Host() {
 }
 
 function DefineEvent({
+  eventName,
+  eventType,
   setEventName,
   setEventType,
   validated,
   onNext,
 }: {
+  eventName: string
+  eventType: string
   setEventName: (name: string) => void
   setEventType: (type: string) => void
   validated: boolean
@@ -94,6 +100,7 @@ function DefineEvent({
           type='text'
           name='eventname'
           id='eventname'
+          value={eventName}
           placeholder="Dora's Dedication"
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
@@ -106,6 +113,7 @@ function DefineEvent({
           type='text'
           name='eventtype'
           id='eventtype'
+          value={eventType}
           placeholder='Party'
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
