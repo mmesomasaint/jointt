@@ -341,9 +341,9 @@ function ContractorRecruitment({
 
   return (
     <>
-      <div className='flex flex-col items-start justify-start gap-0'>
-        <div className='p-3'>
-          <div className='grid grid-cols-4 place-items-stretch items-center gap-3'>
+      <div className='flex flex-col items-start justify-start gap-0 w-full'>
+        <div className='p-3 w-full'>
+          <div className='grid grid-cols-4 place-items-stretch items-center gap-3 w-full'>
             <Text size='SMALL' className='text-center'>
               Name
             </Text>
@@ -364,9 +364,9 @@ function ContractorRecruitment({
           return (
             <div
               key={id}
-              className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3'
+              className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3 w-full'
             >
-              <div className='grid grid-cols-4 place-items-stretch items-center gap-3'>
+              <div className='grid grid-cols-4 place-items-stretch items-center gap-3 w-full'>
                 <Text size='SMALL' className='text-center'>
                   {contractor?.name}
                 </Text>
