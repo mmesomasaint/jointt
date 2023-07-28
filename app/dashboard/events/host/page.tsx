@@ -329,6 +329,14 @@ function ContractorRecruitment({
   return (
     <>
       <div className='flex flex-col items-start justify-start gap-0'>
+        <div className='p-3'>
+          <div className='grid grid-cols-4 place-items-stretch items-center gap-3'>
+                <Text size='SMALL' className='text-center'>Name</Text>
+                <Text size='SMALL' className='text-center'>Role</Text>
+                <Text size='SMALL' className='text-center'>Ratings</Text>
+                <Text size='SMALL' className='text-center'>Pay</Text>
+          </div>
+        </div>
         {selectedContractorIDs.map((id) => {
           const contractor = getContractor(id)
 
