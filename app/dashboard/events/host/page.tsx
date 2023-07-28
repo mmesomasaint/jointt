@@ -337,11 +337,11 @@ function ContractorRecruitment({
               key={id}
               className='border-b first:border-t last:border-b-0 border-gray-600/40 bg-blue-600/20 p-3'
             >
-              <div className='flex justify-evenly items-center gap-5'>
-                <Text size='SMALL'>{contractor?.name}</Text>
-                <Text size='SMALL'>{contractor?.role}</Text>
-                <Text size='SMALL'>{contractor?.ratings}</Text>
-                <Text size='SMALL'>{contractor?.pay}</Text>
+              <div className='grid grid-cols-4 place-items-stretch items-center gap-3'>
+                <Text size='SMALL' className='text-center'>{contractor?.name}</Text>
+                <Text size='SMALL' className='text-center'>{contractor?.role}</Text>
+                <Text size='SMALL' className='text-center'>{contractor?.ratings}</Text>
+                <Text size='SMALL' className='text-center'>{contractor?.pay}</Text>
               </div>
             </div>
           )
