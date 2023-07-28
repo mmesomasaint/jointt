@@ -52,7 +52,10 @@ export default function Host() {
           />
         )}
         {activeStage === 3 && (
-          <ContractorRecruitment selectedContractorIDs={event.contractors || []} onRecruit={handleRecruitment} />
+          <ContractorRecruitment
+            selectedContractorIDs={event.contractors || []}
+            onRecruit={handleRecruitment}
+          />
         )}
       </div>
     </div>
