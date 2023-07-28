@@ -14,7 +14,11 @@ type Event = {
 export default function Host() {
   const STAGES = [1, 2, 3]
   const [activeStage, setActiveStage] = useState(STAGES[1])
-  const [event, setEvent] = useState<Event>({ name: '', type: '', created: new Date().toLocaleDateString() })
+  const [event, setEvent] = useState<Event>({
+    name: '',
+    type: '',
+    created: new Date().toLocaleDateString(),
+  })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = () => {}
