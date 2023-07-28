@@ -195,7 +195,7 @@ function ContractorSelection({
   setAddedContractors,
   validated,
   onNext,
-  onBack
+  onBack,
 }: {
   addedContractors: string[]
   setAddedContractors: (value: string[]) => void
@@ -260,21 +260,21 @@ function ContractorSelection({
         ))}
       </div>
       <div className='flex justify-start items-center gap-10'>
-      <Button
-        type='button'
-        className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
-        onClick={onBack}
-      >
-        Back
-      </Button>
-      <Button
-        type='button'
-        disabled={!validated}
-        className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
-        onClick={onNext}
-      >
-        Next
-      </Button>
+        <Button
+          type='button'
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+          onClick={onBack}
+        >
+          Back
+        </Button>
+        <Button
+          type='button'
+          disabled={!validated}
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+          onClick={onNext}
+        >
+          Next
+        </Button>
       </div>
     </>
   )
@@ -345,7 +345,7 @@ function ContractorCard({
 function ContractorRecruitment({
   selectedContractorIDs,
   onRecruit,
-  onBack
+  onBack,
 }: {
   selectedContractorIDs: string[]
   onRecruit: () => void
@@ -396,20 +396,20 @@ function ContractorRecruitment({
           )
         })}
         <div className='flex justify-start items-center gap-10'>
-        <Button
-          type='button'
-          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
-          onClick={onBack}
-        >
-          Back
-        </Button>
-        <Button
-          type='button'
-          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
-          onClick={onRecruit}
-        >
-          Send Recruitment Request
-        </Button>
+          <Button
+            type='button'
+            className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+            onClick={onBack}
+          >
+            Back
+          </Button>
+          <Button
+            type='button'
+            className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+            onClick={onRecruit}
+          >
+            Send Recruitment Request
+          </Button>
         </div>
       </div>
     </>
