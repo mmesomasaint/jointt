@@ -344,16 +344,16 @@ function ContractorRecruitment({
       <div className='flex flex-col items-start justify-start gap-0 w-full'>
         <div className='p-3 w-full'>
           <div className='grid grid-cols-4 place-items-stretch items-center gap-3 w-full'>
-            <Text size='SMALL' className='text-center'>
+            <Text size='MEDIUM' className='text-center'>
               Name
             </Text>
-            <Text size='SMALL' className='text-center'>
+            <Text size='MEDIUM' className='text-center'>
               Role
             </Text>
-            <Text size='SMALL' className='text-center'>
+            <Text size='MEDIUM' className='text-center'>
               Ratings
             </Text>
-            <Text size='SMALL' className='text-center'>
+            <Text size='MEDIUM' className='text-center'>
               Pay
             </Text>
           </div>
