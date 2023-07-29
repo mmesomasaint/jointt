@@ -5,6 +5,7 @@ import dayjs from 'dayjs'
 import { DatePicker } from '@mui/x-date-pickers'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import addData from '../../addData'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
@@ -31,7 +32,9 @@ export default function Host() {
   })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
-  const handleRecruitment = () => {}
+  const handleRecruitment = async () => {
+    const {result, error} = await addData('events', event)
+  }
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
