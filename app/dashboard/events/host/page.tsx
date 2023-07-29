@@ -153,7 +153,9 @@ function DefineEvent({
         <label htmlFor='eventstartdate' className='w-full'>
           <Text size='SMALL'>Start Date</Text>
           <DatePicker
-            onChange={(newDate) => setEventStartDate(newDate?.format("MM/DD/YYYY"))}
+            onChange={(newDate) =>
+              setEventStartDate(newDate?.format('MM/DD/YYYY'))
+            }
             value={dayjs(eventStartDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
@@ -161,7 +163,9 @@ function DefineEvent({
         <label htmlFor='eventenddate' className='w-full'>
           <Text size='SMALL'>End Date</Text>
           <DatePicker
-            onChange={(newDate) => setEventEndDate(newDate?.format("MM/DD/YYYY"))}
+            onChange={(newDate) =>
+              setEventEndDate(newDate?.format('MM/DD/YYYY'))
+            }
             value={dayjs(eventEndDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
