@@ -37,12 +37,16 @@ export default function Host() {
           <DefineEvent
             eventName={event.name}
             eventType={event.type}
+            eventStartDate={event.startDate}
+            eventEndDate={event.endDate}
             setEventName={(name: string) =>
               setEvent((prev) => ({ ...prev, name }))
             }
             setEventType={(type: string) =>
               setEvent((prev) => ({ ...prev, type }))
             }
+            setEventStartDate={(startDate: string) => setEvent((prev) => ({...prev, startDate}))}
+            setEventEndDate={(endDate: string) => setEvent((prev) => ({...prev, endDate}))}
             validated={event.name.length > 0 && event.type.length > 0}
             onNext={() => handleActiveStages(1)}
           />
@@ -78,15 +82,23 @@ export default function Host() {
 function DefineEvent({
   eventName,
   eventType,
+  eventStartDate,
+  eventEndDate,
   setEventName,
   setEventType,
+  setEventStartDate,
+  setEventEndDate,
   validated,
   onNext,
 }: {
   eventName: string
   eventType: string
+  eventStartDate: string
+  eventEndDate: string | undefined
   setEventName: (name: string) => void
   setEventType: (type: string) => void
+  setEventStartDate: (startDate: string) => void
+  setEventEndDate: (endDate: string) => void
   validated: boolean
   onNext: () => void
 }) {
@@ -121,6 +133,22 @@ function DefineEvent({
           className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
         />
       </label>
+      <div className='flex justify-evenly items-center gap-10 w-full'>
+      <label htmlFor='eventstartdate' className='w-full'>
+        <Text size='SMALL'>Start Date</Text>
+        <DatePicker
+          id='eventstartdate'
+          className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+        />
+      </label>
+      <label htmlFor='eventenddate' className='w-full'>
+        <Text size='SMALL'>End Date</Text>
+        <DatePicker
+          id='eventenddate'
+          className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+        />
+      </label>
+      </div>
       <Button
         type='button'
         disabled={!validated}
