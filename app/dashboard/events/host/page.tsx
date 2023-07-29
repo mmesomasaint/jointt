@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { BsCheckLg } from 'react-icons/bs'
+import DatePicker from 'react-date-picker'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
@@ -10,8 +11,8 @@ type Event = {
   type: string
   contractors?: string[]
   totalCost?: number
-  activeFrom: string
-  activeTo?: string
+  startDate: string
+  endDate?: string
   created: string
 }
 
