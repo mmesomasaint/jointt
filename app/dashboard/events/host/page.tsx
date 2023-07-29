@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import { BsCheckLg } from 'react-icons/bs'
-import DatePicker from 'react-date-picker'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
