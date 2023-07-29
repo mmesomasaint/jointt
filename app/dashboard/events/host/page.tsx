@@ -16,10 +16,10 @@ type Event = {
   type: string
   contractors?: string[]
   totalCost?: number
-  startDate: string
-  endDate: string
+  startDate: number
+  endDate: number
   hostId: string | undefined
-  created: string
+  created: number
 }
 
 export default function Host() {
@@ -29,10 +29,10 @@ export default function Host() {
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
-    startDate: new Date().toLocaleDateString(),
-    endDate: new Date().toLocaleDateString(),
+    startDate: new Date().getTime(),
+    endDate: new Date().getTime(),
     hostId: user?.uid,
-    created: new Date().toLocaleDateString(),
+    created: new Date().getTime(),
   })
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
@@ -57,14 +57,14 @@ export default function Host() {
               setEventType={(type: string) =>
                 setEvent((prev) => ({ ...prev, type }))
               }
-              setEventStartDate={(startDate: string | undefined) =>
+              setEventStartDate={(startDate: number | undefined) =>
                 setEvent((prev) => ({
                   ...prev,
-                  ['startDate']: startDate || '',
+                  ['startDate']: startDate || 0,
                 }))
               }
-              setEventEndDate={(endDate: string | undefined) =>
-                setEvent((prev) => ({ ...prev, ['endDate']: endDate || '' }))
+              setEventEndDate={(endDate: number | undefined) =>
+                setEvent((prev) => ({ ...prev, ['endDate']: endDate || 0 }))
               }
               validated={event.name.length > 0 && event.type.length > 0}
               onNext={() => handleActiveStages(1)}
@@ -113,12 +113,12 @@ function DefineEvent({
 }: {
   eventName: string
   eventType: string
-  eventStartDate: string
-  eventEndDate: string
+  eventStartDate: number
+  eventEndDate: number
   setEventName: (name: string) => void
   setEventType: (type: string) => void
-  setEventStartDate: (startDate: string | undefined) => void
-  setEventEndDate: (endDate: string | undefined) => void
+  setEventStartDate: (startDate: number | undefined) => void
+  setEventEndDate: (endDate: number | undefined) => void
   validated: boolean
   onNext: () => void
 }) {
@@ -160,7 +160,7 @@ function DefineEvent({
           <Text size='SMALL'>Start Date</Text>
           <DatePicker
             onChange={(newDate) =>
-              setEventStartDate(newDate?.format('MM/DD/YYYY'))
+              setEventStartDate(newDate?.toDate().getTime())
             }
             value={dayjs(eventStartDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
@@ -170,7 +170,7 @@ function DefineEvent({
           <Text size='SMALL'>End Date</Text>
           <DatePicker
             onChange={(newDate) =>
-              setEventEndDate(newDate?.format('MM/DD/YYYY'))
+              setEventEndDate(newDate?.toDate().getTime())
             }
             value={dayjs(eventEndDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
