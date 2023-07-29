@@ -32,6 +32,7 @@ export default function Host() {
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = () => {}
+  console.log(event)
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -152,16 +153,16 @@ function DefineEvent({
         <label htmlFor='eventstartdate' className='w-full'>
           <Text size='SMALL'>Start Date</Text>
           <DatePicker
-            onChange={(e) => setEventStartDate(e?.toLocaleDateString())}
-            value={new Date(Date.parse(eventStartDate))}
+            onChange={(newDate) => setEventStartDate(newDate?.format("MM/DD/YYYY"))}
+            value={dayjs(eventStartDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
         <label htmlFor='eventenddate' className='w-full'>
           <Text size='SMALL'>End Date</Text>
           <DatePicker
-            onChange={(e) => setEventEndDate(e?.toLocaleDateString())}
-            value={new Date(Date.parse(eventEndDate))}
+            onChange={(newDate) => setEventEndDate(newDate?.format("MM/DD/YYYY"))}
+            value={dayjs(eventEndDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
