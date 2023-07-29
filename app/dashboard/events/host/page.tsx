@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import {BsCheckLg} from 'react-icons/bs'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
@@ -301,9 +302,12 @@ function ContractorCard({
     <div
       className={`${
         isAdded ? 'bg-gray-900/30' : 'bg-blue-600/20'
-      } rounded-xl shadow-md flex flex-col justify-start items-stretch gap-5 p-4`}
+      } relative rounded-xl shadow-md flex flex-col justify-start items-stretch gap-5 p-4`}
       onClick={onClick}
     >
+      {isAdded && (<div className='absolute top-2 right-2 w-fit'>
+        <BsCheckLg className='text-blue-600 text-xl' />
+      </div>)}
       <div className='grid grid-cols-2 place-items-stretch items-center'>
         <Avatar.Small src={null} />
         <div className='flex flex-col justify-start items-start'>
