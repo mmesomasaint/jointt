@@ -3,7 +3,7 @@ import { getFirestore, doc, setDoc } from 'firebase/firestore'
 
 const db = getFirestore(firebase_app)
 
-export default async function addData(
+export default async function setData(
   collection: string,
   id: string,
   data: object
