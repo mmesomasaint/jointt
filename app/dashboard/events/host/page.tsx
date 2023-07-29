@@ -10,7 +10,7 @@ type Event = {
   type: string
   contractors?: string[]
   totalCost?: number
-  activeFrom?: string
+  activeFrom: string
   activeTo?: string
   created: string
 }
@@ -21,6 +21,7 @@ export default function Host() {
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
+    activeFrom: '',
     created: new Date().toLocaleDateString(),
   })
 
