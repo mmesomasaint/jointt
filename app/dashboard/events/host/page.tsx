@@ -37,7 +37,7 @@ export default function Host() {
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = async () => {
-    const {result, error} = await addData('events', event)
+    const { result, error } = await addData('events', event)
   }
 
   return (
@@ -169,9 +169,7 @@ function DefineEvent({
         <label htmlFor='eventenddate' className='w-full'>
           <Text size='SMALL'>End Date</Text>
           <DatePicker
-            onChange={(newDate) =>
-              setEventEndDate(newDate?.toDate().getTime())
-            }
+            onChange={(newDate) => setEventEndDate(newDate?.toDate().getTime())}
             value={dayjs(eventEndDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
