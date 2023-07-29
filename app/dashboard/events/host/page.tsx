@@ -14,7 +14,7 @@ type Event = {
   contractors?: string[]
   totalCost?: number
   startDate: string
-  endDate?: string
+  endDate: string
   created: string
 }
 
@@ -25,6 +25,7 @@ export default function Host() {
     name: '',
     type: '',
     startDate: new Date().toLocaleDateString(),
+    endDate: new Date().toLocaleDateString(),
     created: new Date().toLocaleDateString(),
   })
 
@@ -51,7 +52,7 @@ export default function Host() {
             setEventStartDate={(startDate: string) =>
               setEvent((prev) => ({ ...prev, startDate }))
             }
-            setEventEndDate={(endDate: string | undefined) =>
+            setEventEndDate={(endDate: string) =>
               setEvent((prev) => ({ ...prev, endDate }))
             }
             validated={event.name.length > 0 && event.type.length > 0}
@@ -102,11 +103,11 @@ function DefineEvent({
   eventName: string
   eventType: string
   eventStartDate: string
-  eventEndDate: string | undefined
+  eventEndDate: string
   setEventName: (name: string) => void
   setEventType: (type: string) => void
   setEventStartDate: (startDate: string) => void
-  setEventEndDate: (endDate: string | undefined) => void
+  setEventEndDate: (endDate: string) => void
   validated: boolean
   onNext: () => void
 }) {
