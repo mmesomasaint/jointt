@@ -22,7 +22,7 @@ export default function Host() {
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
-    activeFrom: '',
+    startDate: '',
     created: new Date().toLocaleDateString(),
   })
 
