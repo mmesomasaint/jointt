@@ -9,6 +9,7 @@ import addData from '../../addData'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
+import { useAuthContext } from '@/app/auth/authcontext'
 
 type Event = {
   name: string
@@ -17,10 +18,12 @@ type Event = {
   totalCost?: number
   startDate: string
   endDate: string
+  hostId: string | undefined
   created: string
 }
 
 export default function Host() {
+  const { user } = useAuthContext()
   const STAGES = [1, 2, 3]
   const [activeStage, setActiveStage] = useState(STAGES[1])
   const [event, setEvent] = useState<Event>({
@@ -28,6 +31,7 @@ export default function Host() {
     type: '',
     startDate: new Date().toLocaleDateString(),
     endDate: new Date().toLocaleDateString(),
+    hostId: user?.uid,
     created: new Date().toLocaleDateString(),
   })
 
