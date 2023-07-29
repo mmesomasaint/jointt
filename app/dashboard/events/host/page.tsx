@@ -1,6 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { BsCheckLg } from 'react-icons/bs'
+import { DatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
@@ -21,7 +24,7 @@ export default function Host() {
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
-    startDate: '',
+    startDate: new Date().toLocaleDateString(),
     created: new Date().toLocaleDateString(),
   })
 
@@ -29,6 +32,7 @@ export default function Host() {
   const handleRecruitment = () => {}
 
   return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
     <div className='p-3 h-full overflow-auto'>
       <Text size='SMALL'>Host An Event</Text>
       <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
@@ -47,7 +51,7 @@ export default function Host() {
             setEventStartDate={(startDate: string) =>
               setEvent((prev) => ({ ...prev, startDate }))
             }
-            setEventEndDate={(endDate: string) =>
+            setEventEndDate={(endDate: string | undefined) =>
               setEvent((prev) => ({ ...prev, endDate }))
             }
             validated={event.name.length > 0 && event.type.length > 0}
@@ -79,6 +83,7 @@ export default function Host() {
         )}
       </div>
     </div>
+    </LocalizationProvider>
   )
 }
 
@@ -101,10 +106,12 @@ function DefineEvent({
   setEventName: (name: string) => void
   setEventType: (type: string) => void
   setEventStartDate: (startDate: string) => void
-  setEventEndDate: (endDate: string) => void
+  setEventEndDate: (endDate: string | undefined) => void
   validated: boolean
   onNext: () => void
 }) {
+  const now = new Date().toLocaleDateString()
+
   return (
     <>
       <Text size='BOLD' className='text-center mb-10'>
@@ -140,14 +147,16 @@ function DefineEvent({
         <label htmlFor='eventstartdate' className='w-full'>
           <Text size='SMALL'>Start Date</Text>
           <DatePicker
-            id='eventstartdate'
+            onChange={(e) => setEventStartDate(e?.toLocaleDateString() || now)}
+            value={new Date(Date.parse(eventStartDate))}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
         <label htmlFor='eventenddate' className='w-full'>
           <Text size='SMALL'>End Date</Text>
           <DatePicker
-            id='eventenddate'
+            onChange={(e) => setEventEndDate(e?.toLocaleDateString() || now)}
+            value={new Date(Date.parse(eventEndDate))}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
