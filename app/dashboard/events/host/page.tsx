@@ -32,7 +32,6 @@ export default function Host() {
 
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = () => {}
-  console.log(event)
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
