@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import { BsCheckLg } from 'react-icons/bs'
 import dayjs from 'dayjs'
-import { DatePicker } from '@mui/x-date-pickers';
-import { LocalizationProvider } from '@mui/x-date-pickers';
+import { DatePicker } from '@mui/x-date-pickers'
+import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
@@ -35,56 +35,59 @@ export default function Host() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <div className='p-3 h-full overflow-auto'>
-      <Text size='SMALL'>Host An Event</Text>
-      <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
-        {activeStage === 1 && (
-          <DefineEvent
-            eventName={event.name}
-            eventType={event.type}
-            eventStartDate={event.startDate}
-            eventEndDate={event.endDate}
-            setEventName={(name: string) =>
-              setEvent((prev) => ({ ...prev, name }))
-            }
-            setEventType={(type: string) =>
-              setEvent((prev) => ({ ...prev, type }))
-            }
-            setEventStartDate={(startDate: string | undefined) =>
-              setEvent((prev) => ({ ...prev, ['startDate']: startDate || '' }))
-            }
-            setEventEndDate={(endDate: string | undefined) =>
-              setEvent((prev) => ({ ...prev, ['endDate']: endDate || '' }))
-            }
-            validated={event.name.length > 0 && event.type.length > 0}
-            onNext={() => handleActiveStages(1)}
-          />
-        )}
-        {activeStage === 2 && (
-          <ContractorSelection
-            addedContractors={event.contractors || []}
-            setAddedContractors={(contractors: string[]) =>
-              setEvent({
-                ...event,
-                contractors,
-              })
-            }
-            validated={
-              event.contractors !== undefined && event.contractors.length > 0
-            }
-            onNext={() => handleActiveStages(2)}
-            onBack={() => handleActiveStages(0)}
-          />
-        )}
-        {activeStage === 3 && (
-          <ContractorRecruitment
-            selectedContractorIDs={event.contractors || []}
-            onRecruit={handleRecruitment}
-            onBack={() => handleActiveStages(1)}
-          />
-        )}
+      <div className='p-3 h-full overflow-auto'>
+        <Text size='SMALL'>Host An Event</Text>
+        <div className='flex flex-col gap-4 justify-start items-start w-[70%] mx-auto mt-16'>
+          {activeStage === 1 && (
+            <DefineEvent
+              eventName={event.name}
+              eventType={event.type}
+              eventStartDate={event.startDate}
+              eventEndDate={event.endDate}
+              setEventName={(name: string) =>
+                setEvent((prev) => ({ ...prev, name }))
+              }
+              setEventType={(type: string) =>
+                setEvent((prev) => ({ ...prev, type }))
+              }
+              setEventStartDate={(startDate: string | undefined) =>
+                setEvent((prev) => ({
+                  ...prev,
+                  ['startDate']: startDate || '',
+                }))
+              }
+              setEventEndDate={(endDate: string | undefined) =>
+                setEvent((prev) => ({ ...prev, ['endDate']: endDate || '' }))
+              }
+              validated={event.name.length > 0 && event.type.length > 0}
+              onNext={() => handleActiveStages(1)}
+            />
+          )}
+          {activeStage === 2 && (
+            <ContractorSelection
+              addedContractors={event.contractors || []}
+              setAddedContractors={(contractors: string[]) =>
+                setEvent({
+                  ...event,
+                  contractors,
+                })
+              }
+              validated={
+                event.contractors !== undefined && event.contractors.length > 0
+              }
+              onNext={() => handleActiveStages(2)}
+              onBack={() => handleActiveStages(0)}
+            />
+          )}
+          {activeStage === 3 && (
+            <ContractorRecruitment
+              selectedContractorIDs={event.contractors || []}
+              onRecruit={handleRecruitment}
+              onBack={() => handleActiveStages(1)}
+            />
+          )}
+        </div>
       </div>
-    </div>
     </LocalizationProvider>
   )
 }
