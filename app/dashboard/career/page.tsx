@@ -1,9 +1,9 @@
-import {useState} from 'react'
-import Text from "@/app/components/text"
-import Button from "@/app/components/button"
-import Link from "next/link"
-import Tab from "../components/tab"
-import NoContent from "../components/nocontent"
+import { useState } from 'react'
+import Text from '@/app/components/text'
+import Button from '@/app/components/button'
+import Link from 'next/link'
+import Tab from '../components/tab'
+import NoContent from '../components/nocontent'
 
 export default function Career() {
   const [activeTab, setActiveTab] = useState<string>('Profile')
@@ -17,11 +17,11 @@ export default function Career() {
             <Link href='events/host'>Activate Career</Link>
           </Button>
         </div>
-        <div className="flex justify-between items-center gap-10">
-        <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab onClick={() => setActiveTab('Jobs')}>Jobs</Tab>
-          <Tab onClick={() => setActiveTab('Recent')}>Recent</Tab>
-        </div>
+        <div className='flex justify-between items-center gap-10'>
+          <div className='mt-16 flex justify-start items-center gap-16'>
+            <Tab onClick={() => setActiveTab('Jobs')}>Jobs</Tab>
+            <Tab onClick={() => setActiveTab('Recent')}>Recent</Tab>
+          </div>
           <Tab onClick={() => setActiveTab('Profile')}>Profile</Tab>
         </div>
       </div>
