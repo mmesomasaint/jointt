@@ -42,7 +42,10 @@ export default function Career() {
   return (
     <>
       {showActivatePrompt && (
-        <ActivatePrompt handleClose={() => setShowActivatePrompt(false)} handleActivate={() => setActiveTab('Activate')} />
+        <ActivatePrompt
+          handleClose={() => setShowActivatePrompt(false)}
+          handleActivate={() => setActiveTab('Activate')}
+        />
       )}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
@@ -72,14 +75,17 @@ export default function Career() {
   )
 }
 
-function ActivatePrompt({handleClose, handleActivate}: {handleClose: () => void, handleActivate: () => void}) {
+function ActivatePrompt({
+  handleClose,
+  handleActivate,
+}: {
+  handleClose: () => void
+  handleActivate: () => void
+}) {
   return (
     <Modal>
       <div className='rounded-xl p-7 bg-white relative w-[50%] text-black flex flex-col gap-2 items-center justify-start'>
-        <div
-          className='absolute top-2 right-2 w-fit'
-          onClick={handleClose}
-        >
+        <div className='absolute top-2 right-2 w-fit' onClick={handleClose}>
           <MdClose className='text-blue-600 text-xl' />
         </div>
         <Text size='BOLD'>Activate!</Text>
