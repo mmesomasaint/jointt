@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { BsCheckLg } from 'react-icons/bs'
+import { useRouter } from 'next/navigation'
 import dayjs from 'dayjs'
 import { DatePicker } from '@mui/x-date-pickers'
 import { LocalizationProvider } from '@mui/x-date-pickers'
@@ -10,6 +11,7 @@ import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Avatar from '../../components/avatar'
 import { useAuthContext } from '@/app/auth/authcontext'
+import Modal from '../../components/modal'
 
 type Event = {
   name: string
@@ -483,5 +485,25 @@ function ContractorRecruitment({
         </div>
       </div>
     </>
+  )
+}
+
+function SuccessCard() {
+  const router = useRouter()
+
+  return (
+    <Modal>
+    <div className='rounded-xl p-4 relative w-[50%] text-white flex flex-col gap-2 items-center justify-start'>
+      <Text size='BOLD'>SUCCESSFULL</Text>
+      <Text size='SMALL'>Your Event Was Created Successfully</Text>
+          <Button
+            type='button'
+            className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+            onClick={() => router.back()}
+          >
+            Close
+          </Button>
+    </div>
+    </Modal>
   )
 }
