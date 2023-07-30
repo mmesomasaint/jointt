@@ -18,7 +18,7 @@ type Event = {
   totalCost?: number
   startDate: number
   endDate: number
-  hostId: string | undefined
+  hostId?: string
   created: number
 }
 
