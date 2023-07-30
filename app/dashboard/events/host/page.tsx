@@ -493,17 +493,17 @@ function SuccessCard() {
 
   return (
     <Modal>
-    <div className='rounded-xl p-4 relative w-[50%] text-white flex flex-col gap-2 items-center justify-start'>
-      <Text size='BOLD'>SUCCESSFULL</Text>
-      <Text size='SMALL'>Your Event Was Created Successfully</Text>
-          <Button
-            type='button'
-            className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
-            onClick={() => router.back()}
-          >
-            Close
-          </Button>
-    </div>
+      <div className='rounded-xl p-4 relative w-[50%] text-white flex flex-col gap-2 items-center justify-start'>
+        <Text size='BOLD'>SUCCESSFULL</Text>
+        <Text size='SMALL'>Your Event Was Created Successfully</Text>
+        <Button
+          type='button'
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+          onClick={() => router.back()}
+        >
+          Close
+        </Button>
+      </div>
     </Modal>
   )
 }
