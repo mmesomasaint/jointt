@@ -27,7 +27,7 @@ type Event = {
 export default function Host() {
   const { user } = useAuthContext()
   const STAGES = [1, 2, 3, 4]
-  const [activeStage, setActiveStage] = useState(STAGES[3])
+  const [activeStage, setActiveStage] = useState(STAGES[0])
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
