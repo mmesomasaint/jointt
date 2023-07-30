@@ -26,8 +26,8 @@ type Event = {
 
 export default function Host() {
   const { user } = useAuthContext()
-  const STAGES = [1, 2, 3]
-  const [activeStage, setActiveStage] = useState(STAGES[0])
+  const STAGES = [1, 2, 3, 4]
+  const [activeStage, setActiveStage] = useState(STAGES[3])
   const [event, setEvent] = useState<Event>({
     name: '',
     type: '',
@@ -40,6 +40,8 @@ export default function Host() {
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = async () => {
     const { result, error } = await addData('events', event)
+    if (error) return
+    handleActiveStages(3)
   }
 
   return (
