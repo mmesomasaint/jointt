@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import avatar from '../avatar.jpg'
 
-export default function Avatar({ src }: { src: string | null }) {
+type AvatarType = {
+  src: string | null
+}
+
+function Big({src}: AvatarType) {
   return (
     <div className='relative w-[18vw] h-[18vw] rounded-full border border-black/50 shadow-md'>
       <Image
@@ -9,9 +13,28 @@ export default function Avatar({ src }: { src: string | null }) {
         fill
         priority
         sizes='20vw'
-        alt='Profile Image'
+        alt='Big Profile Image'
         className='rounded-full'
       />
     </div>
   )
 }
+
+function Small({src}: AvatarType) {
+  return (
+    <div className='relative w-[10vw] h-[10vw] rounded-full border border-black/50 shadow-md'>
+      <Image
+        src={src === null ? avatar : src}
+        fill
+        priority
+        sizes='15vw'
+        alt='Small Profile Image'
+        className='rounded-full'
+      />
+    </div>
+  )
+}
+
+const Avatar = {Big, Small}
+
+export default Avatar

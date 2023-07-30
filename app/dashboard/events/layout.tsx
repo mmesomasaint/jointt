@@ -10,7 +10,7 @@ export default function EventsLayout(props: {
 }) {
   return (
     <>
-      <div>{props.children}</div>
+      <div className='h-full'>{props.children}</div>
     </>
   )
 }
