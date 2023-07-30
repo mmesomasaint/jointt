@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
@@ -17,13 +19,11 @@ export default function Career() {
             <Link href='events/host'>Activate Career</Link>
           </Button>
         </div>
-        <div className='flex justify-between items-center gap-10'>
-          <div className='mt-16 flex justify-start items-center gap-16'>
+          <div className='mt-16 flex justify-center items-center gap-16'>
             <Tab onClick={() => setActiveTab('Jobs')}>Jobs</Tab>
             <Tab onClick={() => setActiveTab('Recent')}>Recent</Tab>
-          </div>
           <Tab onClick={() => setActiveTab('Profile')}>Profile</Tab>
-        </div>
+          </div>
       </div>
       <hr className='bg-black/50' />
       <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
