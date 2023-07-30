@@ -40,7 +40,10 @@ export default function Host() {
   const handleActiveStages = (stage: number) => setActiveStage(++stage)
   const handleRecruitment = async () => {
     const { result, error } = await addData('events', event)
-    if (error) return
+    if (error) {
+      console.log("An error occured:\n", error)
+      return
+    }
     handleActiveStages(3)
   }
 
