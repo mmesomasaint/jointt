@@ -496,7 +496,7 @@ function SuccessCard() {
 
   return (
     <Modal>
-      <div className='rounded-xl p-4 relative w-[50%] text-white flex flex-col gap-2 items-center justify-start'>
+      <div className='rounded-xl p-7 bg-white relative w-[50%] text-black flex flex-col gap-2 items-center justify-start'>
         <Text size='BOLD'>SUCCESSFULL</Text>
         <Text size='SMALL'>Your Event Was Created Successfully</Text>
         <Button
