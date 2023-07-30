@@ -97,9 +97,7 @@ export default function Host() {
               onBack={() => handleActiveStages(1)}
             />
           )}
-          {activeStage === 4 && (
-            <SuccessCard />
-          )}
+          {activeStage === 4 && <SuccessCard />}
         </div>
       </div>
     </LocalizationProvider>
