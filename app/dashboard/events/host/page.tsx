@@ -41,7 +41,7 @@ export default function Host() {
   const handleRecruitment = async () => {
     const { result, error } = await addData('events', event)
     if (error) {
-      console.log("An error occured:\n", error)
+      console.log('An error occured:\n', error)
       return
     }
     handleActiveStages(3)
