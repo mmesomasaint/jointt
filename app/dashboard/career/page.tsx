@@ -101,3 +101,7 @@ function ActivatePrompt({
     </Modal>
   )
 }
+
+function ActivationForm({role, pay, status, setRole, setPay, setStatus}: {role: string, pay: number, status: string, setRole: () => void, setPay: () => void, setStatus: () => void}) {
+  
+}
