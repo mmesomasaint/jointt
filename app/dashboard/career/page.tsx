@@ -181,6 +181,20 @@ export default function Career() {
             ) : (
               <NoContent />
             ))}
+          {activeTab === 'Recent' &&
+            (Jobs.length > 0 ? (
+              Jobs.map((job) => (
+                <JobCard
+                  title={job.title}
+                  desc={job.description}
+                  roles={job.roles}
+                  budget={job.budget}
+                  expireDate={job.expiryDate}
+                />
+              ))
+            ) : (
+              <NoContent />
+            ))}
         </div>
       </div>
     </>
