@@ -181,7 +181,7 @@ function ActivationForm({
   return (
     <Modal>
       <form
-        className='p-4 rounded-xl bg-white text-black'
+        className='p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
         onSubmit={onSubmitForm}
       >
         <label htmlFor='name' className='w-full'>
