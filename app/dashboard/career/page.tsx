@@ -104,7 +104,10 @@ export default function Career() {
   useEffect(() => {
     const isCareerActive = async () => {
       const userData = await getUserCareerData()
-      if (userData?.docs?.length) setIsActivated(true)
+      if (userData?.docs?.length) {
+        setIsActivated(true)
+        setShowActivatePrompt(false)
+      }
       else setIsActivated(false)
     }
 
