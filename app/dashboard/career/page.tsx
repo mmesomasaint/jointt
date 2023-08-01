@@ -57,7 +57,8 @@ export default function Career() {
       return
     }
 
-    console.log('Profile created successfully... ', result)
+    setIsActivated(true)
+    setActiveTab('Jobs')
   }
 
   useEffect(() => {
