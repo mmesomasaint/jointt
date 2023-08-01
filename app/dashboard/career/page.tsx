@@ -63,7 +63,10 @@ export default function Career() {
       {showActivatePrompt && (
         <ActivatePrompt
           handleClose={() => setShowActivatePrompt(false)}
-          handleActivate={() => setActiveTab('Activate')}
+          handleActivate={() => {
+            setShowActivatePrompt(false)
+            setActiveTab('Activate')
+          }}
         />
       )}
       {activeTab === 'Activate' && (
