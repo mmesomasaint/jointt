@@ -213,7 +213,8 @@ function ActivationForm({
           </label>
           <label htmlFor='pay' className='w-full'>
             <Text size='SMALL'>Pay</Text>
-            $
+            <div className='flex justify-start items-center gap-1'>
+            <Text size='SMALL'>$</Text>
             <input
               onChange={(e) => setPay(parseInt(e.target.value))}
               required
@@ -224,7 +225,8 @@ function ActivationForm({
               placeholder='50'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
-            /hr
+            <Text size='SMALL'>/hr</Text>
+            </div>
           </label>
           <label htmlFor='pay' className='w-full'>
             <Text size='SMALL'>Available</Text>
