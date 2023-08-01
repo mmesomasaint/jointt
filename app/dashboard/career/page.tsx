@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { MdClose } from 'react-icons/md'
+import Checkbox from '@mui/material/Checkbox'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import Tab from '../components/tab'
@@ -165,6 +166,10 @@ function ActivationForm({
               placeholder='50'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />/hr
+          </label>
+          <label htmlFor='pay' className='w-full'>
+            <Text size='SMALL'>Available</Text>
+            <Checkbox value={status} onChange={(_, newStatus) => setStatus(newStatus)} />
           </label>
           </div>
         </form>
