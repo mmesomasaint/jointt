@@ -23,7 +23,7 @@ export default function Career() {
   const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Profile')
   const [isActivated, setIsActivated] = useState<boolean>(false)
-  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(true)
+  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>((isActivated === false))
   const [careerProfile, setCareerProfile] = useState<CareerProfileType>({
     name: '',
     role: '',
@@ -31,7 +31,7 @@ export default function Career() {
     status: false,
     userId: user?.uid
   })
-  
+
   const getUserCareerData = async () => {
     const { result, error } = await getDataWithQuery(
       'contractors',
@@ -63,6 +63,9 @@ export default function Career() {
           handleClose={() => setShowActivatePrompt(false)}
           handleActivate={() => setActiveTab('Activate')}
         />
+      )}
+      {activeTab === 'Activate' && (
+        <ActivationForm name={careerProfile.name} role={careerProfile.role} pay={careerProfile.pay} status={careerProfile.status} setName={(name: string) => setCareerProfile(prev => ({...prev, name}))} setRole={(role: string) => setCareerProfile(prev => ({...prev, role}))} setPay={(pay: number) => setCareerProfile(prev => ({...prev, pay}))} setStatus={(status: boolean) => setCareerProfile(prev => ({...prev, status}))} />
       )}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
