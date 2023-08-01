@@ -165,7 +165,7 @@ function ActivationForm({
 }) {
   return (
     <Modal>
-      <form>
+      <form className='p-4 rounded-xl bg-white text-black'>
         <label htmlFor='name' className='w-full'>
           <Text size='SMALL'>Name</Text>
           <input
