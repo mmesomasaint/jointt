@@ -166,18 +166,6 @@ function ActivationForm({
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />/hr
           </label>
-          <label htmlFor='status' className='w-full'>
-            <Text size='SMALL'>Status</Text>
-            <input
-              onChange={(e) => setStatus(e.target.value)}
-              required
-              type='checkbox'
-              name='status'
-              id='status'
-              value={status}
-              className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
-            />
-          </label>
           </div>
         </form>
       </Modal>
