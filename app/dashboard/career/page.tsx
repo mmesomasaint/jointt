@@ -102,6 +102,26 @@ function ActivatePrompt({
   )
 }
 
-function ActivationForm({name, role, pay, status, setRole, setPay, setStatus}: {name: string, role: string, pay: number, status: string, setRole: () => void, setPay: () => void, setStatus: () => void}) {
-
+function ActivationForm({name, role, pay, status, setName, setRole, setPay, setStatus}: {name: string, role: string, pay: number, status: string, setName: (newName: string) => void, setRole: () => void, setPay: () => void, setStatus: () => void}) {
+  return (
+    <>
+      <Modal>
+      <form >
+      <label htmlFor='name' className='w-full'>
+        <Text size='SMALL'>Name</Text>
+        <input
+          onChange={(e) => setName(e.target.value)}
+          required
+          type='text'
+          name='name'
+          id='name'
+          value={name}
+          placeholder='Party'
+          className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+        />
+      </label>
+      </form>
+      </Modal>
+    </>
+  )
 }
