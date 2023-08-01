@@ -10,6 +10,7 @@ import getDataWithQuery from '../getQuery'
 import addData from '../addData'
 import ActivationForm from './components/activationform'
 import ActivatePrompt from './components/activateprompt'
+import JobCard from './components/jobCard'
 
 type CareerProfileType = {
   name: string
@@ -167,6 +168,7 @@ export default function Career() {
         <hr className='bg-black/50' />
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
           {isActivated && <NoContent />}
+          {activeTab === "Jobs" && (Jobs.length > 0 ? Jobs.map(job => (<JobCard title={job.title} desc={job.description} roles={job.roles} budget={job.budget} expireDate={job.expiryDate} />)) : <NoContent />)}
         </div>
       </div>
     </>
