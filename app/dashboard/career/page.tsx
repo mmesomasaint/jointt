@@ -10,6 +10,7 @@ import NoContent from '../components/nocontent'
 import { useAuthContext } from '@/app/auth/authcontext'
 import getDataWithQuery from '../getQuery'
 import Modal from '../components/modal'
+import addData from '../addData'
 
 type CareerProfileType = {
   name: string
@@ -46,6 +47,17 @@ export default function Career() {
       return null
     }
     return result
+  }
+
+  const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const {result, error} = await addData('career_profiles', careerProfile)
+    if (error) {
+      console.log("Profile Activation Error: ", error)
+      return
+    }
+
+    console.log("Profile created successfully... ", result)
   }
 
   useEffect(() => {
@@ -87,6 +99,7 @@ export default function Career() {
           setStatus={(status: boolean) =>
             setCareerProfile((prev) => ({ ...prev, status }))
           }
+          onSubmitForm={handleSubmitForm}
         />
       )}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
@@ -153,6 +166,7 @@ function ActivationForm({
   setRole,
   setPay,
   setStatus,
+  onSubmitForm
 }: {
   name: string
   role: string
@@ -162,10 +176,11 @@ function ActivationForm({
   setRole: (newRole: string) => void
   setPay: (newPay: number) => void
   setStatus: (newStatus: boolean) => void
+  onSubmitForm: (e: React.FormEvent<HTMLFormElement>) => void
 }) {
   return (
     <Modal>
-      <form className='p-4 rounded-xl bg-white text-black'>
+      <form className='p-4 rounded-xl bg-white text-black' onSubmit={onSubmitForm}>
         <label htmlFor='name' className='w-full'>
           <Text size='SMALL'>Name</Text>
           <input
@@ -216,6 +231,12 @@ function ActivationForm({
             />
           </label>
         </div>
+        <Button
+          type='submit'
+          className='disabled:bg-gray-600/50 disabled:border-gray-600/50 mt-5'
+        >
+          Activate
+        </Button>
       </form>
     </Modal>
   )
