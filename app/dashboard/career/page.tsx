@@ -164,61 +164,59 @@ function ActivationForm({
   setStatus: (newStatus: boolean) => void
 }) {
   return (
-    <>
-      <Modal>
-        <form>
-          <label htmlFor='name' className='w-full'>
-            <Text size='SMALL'>Name</Text>
+    <Modal>
+      <form>
+        <label htmlFor='name' className='w-full'>
+          <Text size='SMALL'>Name</Text>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            required
+            type='text'
+            name='name'
+            id='name'
+            value={name}
+            placeholder='Party'
+            className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+          />
+        </label>
+        <div className='flex justify-evenly items-center gap-5'>
+          <label htmlFor='role' className='w-full'>
+            <Text size='SMALL'>Role</Text>
             <input
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setRole(e.target.value)}
               required
               type='text'
-              name='name'
-              id='name'
-              value={name}
-              placeholder='Party'
+              name='role'
+              id='role'
+              value={role}
+              placeholder='Dancer'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
           </label>
-          <div className='flex justify-evenly items-center gap-5'>
-            <label htmlFor='role' className='w-full'>
-              <Text size='SMALL'>Role</Text>
-              <input
-                onChange={(e) => setRole(e.target.value)}
-                required
-                type='text'
-                name='role'
-                id='role'
-                value={role}
-                placeholder='Dancer'
-                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
-              />
-            </label>
-            <label htmlFor='pay' className='w-full'>
-              <Text size='SMALL'>Pay</Text>
-              $
-              <input
-                onChange={(e) => setPay(parseInt(e.target.value))}
-                required
-                type='number'
-                name='pay'
-                id='pay'
-                value={pay}
-                placeholder='50'
-                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
-              />
-              /hr
-            </label>
-            <label htmlFor='pay' className='w-full'>
-              <Text size='SMALL'>Available</Text>
-              <Checkbox
-                value={status}
-                onChange={(_, newStatus) => setStatus(newStatus)}
-              />
-            </label>
-          </div>
-        </form>
-      </Modal>
-    </>
+          <label htmlFor='pay' className='w-full'>
+            <Text size='SMALL'>Pay</Text>
+            $
+            <input
+              onChange={(e) => setPay(parseInt(e.target.value))}
+              required
+              type='number'
+              name='pay'
+              id='pay'
+              value={pay}
+              placeholder='50'
+              className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+            />
+            /hr
+          </label>
+          <label htmlFor='pay' className='w-full'>
+            <Text size='SMALL'>Available</Text>
+            <Checkbox
+              value={status}
+              onChange={(_, newStatus) => setStatus(newStatus)}
+            />
+          </label>
+        </div>
+      </form>
+    </Modal>
   )
 }
