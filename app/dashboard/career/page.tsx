@@ -11,11 +11,27 @@ import { useAuthContext } from '@/app/auth/authcontext'
 import getDataWithQuery from '../getQuery'
 import Modal from '../components/modal'
 
+type CareerProfileType = {
+  name: string
+  role: string
+  pay: number
+  status: boolean
+  userId?: string
+}
+
 export default function Career() {
   const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Profile')
   const [isActivated, setIsActivated] = useState<boolean>(false)
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(true)
+  const [careerProfile, setCareerProfile] = useState<CareerProfileType>({
+    name: '',
+    role: '',
+    pay: 0,
+    status: false,
+    userId: user?.uid
+  })
+  
   const getUserCareerData = async () => {
     const { result, error } = await getDataWithQuery(
       'contractors',
