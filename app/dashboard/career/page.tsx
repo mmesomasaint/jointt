@@ -51,13 +51,13 @@ export default function Career() {
 
   const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const {result, error} = await addData('career_profiles', careerProfile)
+    const { result, error } = await addData('career_profiles', careerProfile)
     if (error) {
-      console.log("Profile Activation Error: ", error)
+      console.log('Profile Activation Error: ', error)
       return
     }
 
-    console.log("Profile created successfully... ", result)
+    console.log('Profile created successfully... ', result)
   }
 
   useEffect(() => {
@@ -166,7 +166,7 @@ function ActivationForm({
   setRole,
   setPay,
   setStatus,
-  onSubmitForm
+  onSubmitForm,
 }: {
   name: string
   role: string
@@ -180,7 +180,10 @@ function ActivationForm({
 }) {
   return (
     <Modal>
-      <form className='p-4 rounded-xl bg-white text-black' onSubmit={onSubmitForm}>
+      <form
+        className='p-4 rounded-xl bg-white text-black'
+        onSubmit={onSubmitForm}
+      >
         <label htmlFor='name' className='w-full'>
           <Text size='SMALL'>Name</Text>
           <input
