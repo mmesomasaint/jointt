@@ -62,7 +62,7 @@ const Jobs: JobType[] = [
 
 export default function Career() {
   const { user } = useAuthContext()
-  const [activeTab, setActiveTab] = useState<string>('Profile')
+  const [activeTab, setActiveTab] = useState<string>('Jobs')
   const [isActivated, setIsActivated] = useState<boolean>(false)
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(
     isActivated === false
