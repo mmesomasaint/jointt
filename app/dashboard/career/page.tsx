@@ -77,7 +77,7 @@ export default function Career() {
 
   const getUserCareerData = async () => {
     const { result, error } = await getDataWithQuery(
-      'contractors',
+      'career_profiles',
       'userId',
       '==',
       user?.uid
