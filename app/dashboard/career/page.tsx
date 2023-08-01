@@ -102,6 +102,6 @@ function ActivatePrompt({
   )
 }
 
-function ActivationForm({role, pay, status, setRole, setPay, setStatus}: {role: string, pay: number, status: string, setRole: () => void, setPay: () => void, setStatus: () => void}) {
-  
+function ActivationForm({name, role, pay, status, setRole, setPay, setStatus}: {name: string, role: string, pay: number, status: string, setRole: () => void, setPay: () => void, setStatus: () => void}) {
+
 }
