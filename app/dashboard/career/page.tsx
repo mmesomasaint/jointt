@@ -20,6 +20,46 @@ type CareerProfileType = {
   userId?: string
 }
 
+type JobType = {
+  title: string
+  description: string
+  budget: number
+  roles: string[]
+  hostId?: string
+  expiryDate: number
+  created: number
+}
+
+const Jobs: JobType[] = [
+  {
+    title: "A cook for birthday party",
+    description: "I need a cook for a birthday party of daughter",
+    budget: 400,
+    roles: ['Cook', 'Caterer', 'Chef'],
+    hostId: '',
+    expiryDate: 10003450,
+    created: 1245246454
+  },
+  {
+    title: "A dancer for birthday party",
+    description: "I need a dancer for a birthday party of daughter",
+    budget: 400,
+    roles: ['Break Dancer', 'Mime', 'Dancer'],
+    hostId: '',
+    expiryDate: 1013423450,
+    created: 1234246454
+  },
+  {
+    title: "A DJ for Night party",
+    description: "I need a dj for a secret surprise night party",
+    budget: 400,
+    roles: ['DJ', 'Sound Engineer'],
+    hostId: '',
+    expiryDate: 10003450,
+    created: 1245246454
+  }
+]
+
 export default function Career() {
   const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Profile')
