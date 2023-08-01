@@ -107,8 +107,7 @@ export default function Career() {
       if (userData?.docs?.length) {
         setIsActivated(true)
         setShowActivatePrompt(false)
-      }
-      else setIsActivated(false)
+      } else setIsActivated(false)
     }
 
     isCareerActive()
@@ -168,7 +167,20 @@ export default function Career() {
         <hr className='bg-black/50' />
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
           {isActivated && <NoContent />}
-          {activeTab === "Jobs" && (Jobs.length > 0 ? Jobs.map(job => (<JobCard title={job.title} desc={job.description} roles={job.roles} budget={job.budget} expireDate={job.expiryDate} />)) : <NoContent />)}
+          {activeTab === 'Jobs' &&
+            (Jobs.length > 0 ? (
+              Jobs.map((job) => (
+                <JobCard
+                  title={job.title}
+                  desc={job.description}
+                  roles={job.roles}
+                  budget={job.budget}
+                  expireDate={job.expiryDate}
+                />
+              ))
+            ) : (
+              <NoContent />
+            ))}
         </div>
       </div>
     </>
