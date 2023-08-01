@@ -23,13 +23,15 @@ export default function Career() {
   const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Profile')
   const [isActivated, setIsActivated] = useState<boolean>(false)
-  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>((isActivated === false))
+  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(
+    isActivated === false
+  )
   const [careerProfile, setCareerProfile] = useState<CareerProfileType>({
     name: '',
     role: '',
     pay: 0,
     status: false,
-    userId: user?.uid
+    userId: user?.uid,
   })
 
   const getUserCareerData = async () => {
@@ -65,7 +67,24 @@ export default function Career() {
         />
       )}
       {activeTab === 'Activate' && (
-        <ActivationForm name={careerProfile.name} role={careerProfile.role} pay={careerProfile.pay} status={careerProfile.status} setName={(name: string) => setCareerProfile(prev => ({...prev, name}))} setRole={(role: string) => setCareerProfile(prev => ({...prev, role}))} setPay={(pay: number) => setCareerProfile(prev => ({...prev, pay}))} setStatus={(status: boolean) => setCareerProfile(prev => ({...prev, status}))} />
+        <ActivationForm
+          name={careerProfile.name}
+          role={careerProfile.role}
+          pay={careerProfile.pay}
+          status={careerProfile.status}
+          setName={(name: string) =>
+            setCareerProfile((prev) => ({ ...prev, name }))
+          }
+          setRole={(role: string) =>
+            setCareerProfile((prev) => ({ ...prev, role }))
+          }
+          setPay={(pay: number) =>
+            setCareerProfile((prev) => ({ ...prev, pay }))
+          }
+          setStatus={(status: boolean) =>
+            setCareerProfile((prev) => ({ ...prev, status }))
+          }
+        />
       )}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
@@ -159,37 +178,41 @@ function ActivationForm({
             />
           </label>
           <div className='flex justify-evenly items-center gap-5'>
-          <label htmlFor='role' className='w-full'>
-            <Text size='SMALL'>Role</Text>
-            <input
-              onChange={(e) => setRole(e.target.value)}
-              required
-              type='text'
-              name='role'
-              id='role'
-              value={role}
-              placeholder='Dancer'
-              className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
-            />
-          </label>
-          <label htmlFor='pay' className='w-full'>
-            <Text size='SMALL'>Pay</Text>
-            $
-            <input
-              onChange={(e) => setPay(parseInt(e.target.value))}
-              required
-              type='number'
-              name='pay'
-              id='pay'
-              value={pay}
-              placeholder='50'
-              className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
-            />/hr
-          </label>
-          <label htmlFor='pay' className='w-full'>
-            <Text size='SMALL'>Available</Text>
-            <Checkbox value={status} onChange={(_, newStatus) => setStatus(newStatus)} />
-          </label>
+            <label htmlFor='role' className='w-full'>
+              <Text size='SMALL'>Role</Text>
+              <input
+                onChange={(e) => setRole(e.target.value)}
+                required
+                type='text'
+                name='role'
+                id='role'
+                value={role}
+                placeholder='Dancer'
+                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+              />
+            </label>
+            <label htmlFor='pay' className='w-full'>
+              <Text size='SMALL'>Pay</Text>
+              $
+              <input
+                onChange={(e) => setPay(parseInt(e.target.value))}
+                required
+                type='number'
+                name='pay'
+                id='pay'
+                value={pay}
+                placeholder='50'
+                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
+              />
+              /hr
+            </label>
+            <label htmlFor='pay' className='w-full'>
+              <Text size='SMALL'>Available</Text>
+              <Checkbox
+                value={status}
+                onChange={(_, newStatus) => setStatus(newStatus)}
+              />
+            </label>
           </div>
         </form>
       </Modal>
