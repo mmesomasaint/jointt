@@ -115,11 +115,11 @@ function ActivationForm({
   name: string
   role: string
   pay: number
-  status: string
+  status: boolean
   setName: (newName: string) => void
-  setRole: () => void
-  setPay: () => void
-  setStatus: () => void
+  setRole: (newRole: string) => void
+  setPay: (newPay: number) => void
+  setStatus: (newStatus: boolean) => void
 }) {
   return (
     <>
@@ -156,9 +156,9 @@ function ActivationForm({
             <Text size='SMALL'>Pay</Text>
             $
             <input
-              onChange={(e) => setPay(e.target.value)}
+              onChange={(e) => setPay(parseInt(e.target.value))}
               required
-              type='text'
+              type='number'
               name='pay'
               id='pay'
               value={pay}
