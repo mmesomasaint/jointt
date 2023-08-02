@@ -49,19 +49,22 @@ type JobType = {
 
 export default function CreateJobForm() {
   const [job, setJob] = useState<JobType>({
-  title: '',
-  description: '',
-  budget: Number(),
-  roles: [],
-  eventId: '',
-  expiryDate: Date.now(),
+    title: '',
+    description: '',
+    budget: Number(),
+    roles: [],
+    eventId: '',
+    expiryDate: Date.now(),
   })
-  const setTitle = (title: string) => setJob(prev => ({...prev, title}))
-  const setDescription = (description: string) => setJob(prev => ({...prev, description}))
-  const setBudget = (budget: number) => setJob(prev => ({...prev, budget}))
-  const setRoles = (roles: string[]) => setJob(prev => ({...prev, roles}))
-  const setEventId = (eventId: string) => setJob(prev => ({...prev, eventId}))
-  const setExpiryDate = (expiryDate: number) => setJob(prev => ({...prev, expiryDate}))
+  const setTitle = (title: string) => setJob((prev) => ({ ...prev, title }))
+  const setDescription = (description: string) =>
+    setJob((prev) => ({ ...prev, description }))
+  const setBudget = (budget: number) => setJob((prev) => ({ ...prev, budget }))
+  const setRoles = (roles: string[]) => setJob((prev) => ({ ...prev, roles }))
+  const setEventId = (eventId: string) =>
+    setJob((prev) => ({ ...prev, eventId }))
+  const setExpiryDate = (expiryDate: number) =>
+    setJob((prev) => ({ ...prev, expiryDate }))
   const getName = (id: string) => events.find((event) => event.id === id)?.name
 
   const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
