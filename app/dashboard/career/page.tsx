@@ -160,14 +160,15 @@ export default function Career() {
             )}
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <Tab onClick={() => setActiveTab('Jobs')} active={activeTab === "Jobs"}>Jobs</Tab>
-            <Tab onClick={() => setActiveTab('Recent')} active={activeTab === "Recent"}>Recent</Tab>
+            <Tab onClick={() => setActiveTab('Listing')} active={activeTab === "Listing"}>Listing</Tab>
+            <Tab onClick={() => setActiveTab('Requests')} active={activeTab === "Requests"}>Requests</Tab>
+            <Tab onClick={() => setActiveTab('Created')} active={activeTab === "Created"}>Created</Tab>
           </div>
         </div>
         <hr className='bg-black/50' />
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
           {!isActivated && <NoContent />}
-          {activeTab === 'Jobs' &&
+          {activeTab === 'Listing' &&
             (Jobs.length > 0 ? (
               Jobs.map((job) => (
                 <JobCard
@@ -181,7 +182,7 @@ export default function Career() {
             ) : (
               <NoContent />
             ))}
-          {activeTab === 'Recent' &&
+          {activeTab === 'Requests' &&
             (Jobs.length > 0 ? (
               Jobs.map((job) => (
                 <JobCard
