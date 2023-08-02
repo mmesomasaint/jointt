@@ -18,6 +18,7 @@ export default function JobPage({
   created: number
 }) {
   return (
+    <Modal>
     <div className='rounded-xl bg-gray-600/10 text-black p-5 border border-gray-600/50 w-[70%] focus:bg-blue-600/10'>
       <Text size='SEMIBOLD'>{title}</Text>
       <div className='flex justify-start items-center gap-1'>
@@ -56,5 +57,6 @@ export default function JobPage({
         Apply Now
       </Button>
     </div>
+    </Modal>
   )
 }
