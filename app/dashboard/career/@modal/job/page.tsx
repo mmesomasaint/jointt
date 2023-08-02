@@ -1,6 +1,6 @@
 import Button from '@/app/components/button'
 import Text from '@/app/components/text'
-import Modal from '../../components/modal'
+import Modal from '@/app/dashboard/components/modal'
 
 export default function JobPage({
   title,
