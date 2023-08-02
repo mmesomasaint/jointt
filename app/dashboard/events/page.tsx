@@ -19,9 +19,9 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab onClick={() => handleTabs('active')}>Active</Tab>
-          <Tab onClick={() => handleTabs('active')}>Pending</Tab>
-          <Tab onClick={() => handleTabs('active')}>Records</Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>Active</Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>Pending</Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>Records</Tab>
         </div>
       </div>
       <hr className='bg-black/50' />

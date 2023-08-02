@@ -160,8 +160,8 @@ export default function Career() {
             )}
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <Tab onClick={() => setActiveTab('Jobs')}>Jobs</Tab>
-            <Tab onClick={() => setActiveTab('Recent')}>Recent</Tab>
+            <Tab onClick={() => setActiveTab('Jobs')} active={activeTab === "Jobs"}>Jobs</Tab>
+            <Tab onClick={() => setActiveTab('Recent')} active={activeTab === "Recent"}>Recent</Tab>
           </div>
         </div>
         <hr className='bg-black/50' />
