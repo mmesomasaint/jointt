@@ -29,6 +29,13 @@ export default function JobPage({
           <Text size='SMALL'>{new Date(expireDate).toLocaleDateString()}</Text>
         </div>
         <hr className='bg-black/50' />
+        <div className="flex flex-col gap-2">
+        <Text size="SMALL">Description:&nbsp;</Text>
+        <Text size="SMALL">{desc}</Text>
+        </div>
+        <hr className="bg-black/50" />
+        <div className="flex flex-col gap-2">
+          <Text size="SMALL">Roles:&nbsp;</Text>
       <div className='flex justify-start items-center gap-3'>
         {roles.map((role) => (
           <div key={role} className='rounded-xl bg-gray-900/50 p-2 shadow-xl'>
@@ -36,12 +43,14 @@ export default function JobPage({
           </div>
         ))}
       </div>
+      </div>
       <div className='flex justify-between items-center gap-10'>
         <div className='flex justify-start items-center gap-1'>
-          <Text size='SMALL'>Budge:</Text>
+          <Text size='SMALL'>Budget:</Text>
           <Text size='SMALL'>{budget}</Text>
         </div>
       </div>
+      <Button type="button" className="mt-4">Apply Now</Button>
     </div>
   )
 }
