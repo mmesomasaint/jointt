@@ -1,7 +1,9 @@
 export default function Tab({
+  active,
   onClick,
   children,
 }: {
+  active: boolean
   onClick: () => void
   children: React.ReactNode
 }) {
