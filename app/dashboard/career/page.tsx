@@ -146,7 +146,9 @@ export default function Career() {
           onSubmitForm={handleSubmitForm}
         />
       )}
-      {activeTab === "Create Job" && (<CreateJobForm exitFn={() => setActiveTab("Created")} />)}
+      {activeTab === 'Create Job' && (
+        <CreateJobForm exitFn={() => setActiveTab('Created')} />
+      )}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
           <div className='flex justify-between gap-10 items-center'>
@@ -186,7 +188,9 @@ export default function Career() {
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
           {!isActivated && <NoContent />}
           {activeTab === 'Created' && (
-            <Button type='button' onClick={() => setActiveTab('Create Job')}>Create Job</Button>
+            <Button type='button' onClick={() => setActiveTab('Create Job')}>
+              Create Job
+            </Button>
           )}
           {activeTab === 'Listing' &&
             (Jobs.length > 0 ? (
