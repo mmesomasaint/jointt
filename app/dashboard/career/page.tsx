@@ -161,7 +161,7 @@ export default function Career() {
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
             <Tab onClick={() => setActiveTab('Listing')} active={activeTab === "Listing"}>Listing</Tab>
-            <Tab onClick={() => setActiveTab('Requests')} active={activeTab === "Requests"}>Requests</Tab>
+            <Tab onClick={() => setActiveTab('Invites')} active={activeTab === "Invites"}>Invites</Tab>
             <Tab onClick={() => setActiveTab('Created')} active={activeTab === "Created"}>Created</Tab>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function Career() {
             ) : (
               <NoContent />
             ))}
-          {activeTab === 'Requests' &&
+          {activeTab === 'Invites' &&
             (Jobs.length > 0 ? (
               Jobs.map((job) => (
                 <JobCard
