@@ -1,29 +1,34 @@
+import {useState} from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import Text from '@/app/components/text'
 import Modal from '../../components/modal'
 import Button from '@/app/components/button'
+import addData from '../../addData'
 
-export default function ActivationForm({
-  name,
-  role,
-  pay,
-  status,
-  setName,
-  setRole,
-  setPay,
-  setStatus,
-  onSubmitForm,
-}: {
-  name: string
-  role: string
-  pay: number
-  status: boolean
-  setName: (newName: string) => void
-  setRole: (newRole: string) => void
-  setPay: (newPay: number) => void
-  setStatus: (newStatus: boolean) => void
-  onSubmitForm: (e: React.FormEvent<HTMLFormElement>) => void
-}) {
+export default function ActivationForm({exitFn}: {exitFn: () => void}) {
+  const [profile, setProfile] = useState({
+    name: '',
+    role: '',
+    pay: Number(),
+    status: false,
+  })
+  const setName = (name: string) => setProfile(prev => ({...prev, name}))
+  const setRole = (role: string) => setProfile(prev => ({...prev, role}))
+  const setPay = (pay: number) => setProfile(prev => ({...prev, pay}))
+  const setStatus = (status: boolean) => setProfile(prev => ({...prev, status}))
+
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const { result, error } = await addData('career_profiles', profile)
+    if (error) {
+      console.log('Profile Activation Error: ', error)
+      return
+    }
+
+    exitFn()
+  }
+
   return (
     <Modal>
       <form
@@ -38,7 +43,7 @@ export default function ActivationForm({
             type='text'
             name='name'
             id='name'
-            value={name}
+            value={profile.name}
             placeholder='Party'
             className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
           />
@@ -52,7 +57,7 @@ export default function ActivationForm({
               type='text'
               name='role'
               id='role'
-              value={role}
+              value={profile.role}
               placeholder='Dancer'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
@@ -67,7 +72,7 @@ export default function ActivationForm({
                 type='number'
                 name='pay'
                 id='pay'
-                value={pay}
+                value={profile.pay}
                 placeholder='50'
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
               />
@@ -77,7 +82,7 @@ export default function ActivationForm({
           <label htmlFor='pay' className='w-full'>
             <Text size='SMALL'>Available</Text>
             <Checkbox
-              value={status}
+              value={profile.status}
               onChange={(_, newStatus) => setStatus(newStatus)}
             />
           </label>

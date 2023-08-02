@@ -98,8 +98,6 @@ export default function Career() {
       return
     }
 
-    setIsActivated(true)
-    setActiveTab('Jobs')
   }
 
   useEffect(() => {
@@ -129,24 +127,10 @@ export default function Career() {
         />
       )}
       {activeTab === 'Activate' && (
-        <ActivationForm
-          name={careerProfile.name}
-          role={careerProfile.role}
-          pay={careerProfile.pay}
-          status={careerProfile.status}
-          setName={(name: string) =>
-            setCareerProfile((prev) => ({ ...prev, name }))
-          }
-          setRole={(role: string) =>
-            setCareerProfile((prev) => ({ ...prev, role }))
-          }
-          setPay={(pay: number) =>
-            setCareerProfile((prev) => ({ ...prev, pay }))
-          }
-          setStatus={(status: boolean) =>
-            setCareerProfile((prev) => ({ ...prev, status }))
-          }
-          onSubmitForm={handleSubmitForm}
+        <ActivationForm exitFn={() => {
+          setIsActivated(true)
+          setActiveTab('Jobs')
+        }}
         />
       )}
       {activeTab === 'Create Job' && (
