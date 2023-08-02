@@ -90,10 +90,10 @@ export default function CreateJobForm({title, description, budget, roles, eventI
             <option value="Carterer">Dancer</option>
             <option value="Mimer">Dancer</option>
           </Select>
-        <label htmlFor='eventenddate' className='w-full'>
-          <Text size='SMALL'>End Date</Text>
+        <label htmlFor='expiryDate' className='w-full'>
+          <Text size='SMALL'>Expiry Date</Text>
           <DatePicker
-            onChange={(newDate) => setExpiryDate(newDate?.toDate().getTime())}
+            onChange={(newDate) => setExpiryDate(newDate?.toDate().getTime() || Date.now())}
             value={dayjs(expiryDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
