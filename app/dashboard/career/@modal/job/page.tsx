@@ -19,7 +19,7 @@ export default function JobPage({
 }) {
   return (
     <Modal>
-      <div className='rounded-xl bg-gray-600/10 text-black p-5 border border-gray-600/50 w-[70%] focus:bg-blue-600/10'>
+      <div className='rounded-xl bg-white text-black p-5 w-[90%]'>
         <Text size='SEMIBOLD'>{title}</Text>
         <div className='flex justify-start items-center gap-1'>
           <Text size='SMALL' className='text-gray-900/70'>
