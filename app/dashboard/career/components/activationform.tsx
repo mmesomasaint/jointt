@@ -1,21 +1,22 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import Text from '@/app/components/text'
 import Modal from '../../components/modal'
 import Button from '@/app/components/button'
 import addData from '../../addData'
 
-export default function ActivationForm({exitFn}: {exitFn: () => void}) {
+export default function ActivationForm({ exitFn }: { exitFn: () => void }) {
   const [profile, setProfile] = useState({
     name: '',
     role: '',
     pay: Number(),
     status: false,
   })
-  const setName = (name: string) => setProfile(prev => ({...prev, name}))
-  const setRole = (role: string) => setProfile(prev => ({...prev, role}))
-  const setPay = (pay: number) => setProfile(prev => ({...prev, pay}))
-  const setStatus = (status: boolean) => setProfile(prev => ({...prev, status}))
+  const setName = (name: string) => setProfile((prev) => ({ ...prev, name }))
+  const setRole = (role: string) => setProfile((prev) => ({ ...prev, role }))
+  const setPay = (pay: number) => setProfile((prev) => ({ ...prev, pay }))
+  const setStatus = (status: boolean) =>
+    setProfile((prev) => ({ ...prev, status }))
 
   const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
