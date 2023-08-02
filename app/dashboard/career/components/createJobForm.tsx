@@ -39,6 +39,7 @@ export default function CreateJobForm({title, description, budget, roles, eventI
 
   return (
     <Modal>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <form
         className='p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
         onSubmit={onSubmitForm}
@@ -92,8 +93,8 @@ export default function CreateJobForm({title, description, budget, roles, eventI
         <label htmlFor='eventenddate' className='w-full'>
           <Text size='SMALL'>End Date</Text>
           <DatePicker
-            onChange={(newDate) => setEventEndDate(newDate?.toDate().getTime())}
-            value={dayjs(eventEndDate)}
+            onChange={(newDate) => setExpiryDate(newDate?.toDate().getTime())}
+            value={dayjs(expiryDate)}
             className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
@@ -108,6 +109,7 @@ export default function CreateJobForm({title, description, budget, roles, eventI
           Create Job
         </Button>
       </form>
+      </LocalizationProvider>
     </Modal>
   )
 }
