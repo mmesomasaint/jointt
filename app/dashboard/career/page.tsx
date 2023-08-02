@@ -37,7 +37,7 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['Cook', 'Caterer', 'Chef'],
     hostId: '',
-    expiryDate: 10003450,
+    expiryDate: 171333303450,
     created: 1245246454,
   },
   {
@@ -46,7 +46,7 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['Break Dancer', 'Mime', 'Dancer'],
     hostId: '',
-    expiryDate: 1013423450,
+    expiryDate: 1713433323450,
     created: 1234246454,
   },
   {
@@ -55,7 +55,7 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['DJ', 'Sound Engineer'],
     hostId: '',
-    expiryDate: 10003450,
+    expiryDate: 17103333450,
     created: 1245246454,
   },
 ]
