@@ -7,6 +7,7 @@ import { Select } from '@mui/material'
 import Modal from '../../components/modal'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
+import addData from '../../addData'
 
 const eventIds: string[] = [
   'eedadfaer',
@@ -67,10 +68,15 @@ export default function CreateJobForm() {
     setJob((prev) => ({ ...prev, expiryDate }))
   const getName = (id: string) => events.find((event) => event.id === id)?.name
 
-  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     // Send request and log errors/successes.
+    const {result, error} = await addData('jobs', job)
+    if (error) {
+      console.log("Job Creation Failed: ", error)
+      return
+    }
   }
 
   return (
