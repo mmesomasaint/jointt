@@ -48,7 +48,7 @@ type JobType = {
   expiryDate: number
 }
 
-export default function CreateJobForm() {
+export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
   const [job, setJob] = useState<JobType>({
     title: '',
     description: '',
@@ -77,6 +77,8 @@ export default function CreateJobForm() {
       console.log("Job Creation Failed: ", error)
       return
     }
+
+    exitFn()
   }
 
   return (
