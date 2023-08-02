@@ -37,8 +37,8 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['Cook', 'Caterer', 'Chef'],
     hostId: '',
-    expiryDate: 171333303450,
-    created: 1245246454,
+    expiryDate: new Date(Date.parse('1/07/2025')).getTime(),
+    created: new Date(Date.parse('12/06/2023')).getTime(),
   },
   {
     title: 'A dancer for birthday party',
@@ -46,8 +46,8 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['Break Dancer', 'Mime', 'Dancer'],
     hostId: '',
-    expiryDate: 1713433323450,
-    created: 1234246454,
+    expiryDate: new Date(Date.parse('12/16/2023')).getTime(),
+    created: new Date(Date.parse('1/07/2023')).getTime(),
   },
   {
     title: 'A DJ for Night party',
@@ -55,8 +55,8 @@ const Jobs: JobType[] = [
     budget: 400,
     roles: ['DJ', 'Sound Engineer'],
     hostId: '',
-    expiryDate: 17103333450,
-    created: 1245246454,
+    expiryDate: new Date(Date.parse('10/21/2023')).getTime(),
+    created: new Date(Date.parse('17/02/2023')).getTime(),
   },
 ]
 
