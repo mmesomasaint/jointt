@@ -10,7 +10,7 @@ export default function Tab({
   return (
     <button
       type='button'
-      className='text-black/70 text-xl font-medium leading-none'
+      className={`${active ? 'bg-blue-600 text-white' : 'bg-white text-black'} text-black/70 text-xl font-medium leading-none`}
       onClick={onClick}
     >
       {children}
