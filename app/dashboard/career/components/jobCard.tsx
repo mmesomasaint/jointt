@@ -14,7 +14,7 @@ export default function JobCard({
   expireDate: number
 }) {
   return (
-    <div className='rounded-xl bg-white text-black p-5'>
+    <div className='rounded-xl bg-gray-600/10 text-black p-5 border border-gray-600/50 w-[70%] focus:bg-blue-600/10'>
       <Text size='SEMIBOLD'>{title}</Text>
       <Text size='SMALL'>{desc}</Text>
       <div className='flex justify-start items-center gap-3'>
