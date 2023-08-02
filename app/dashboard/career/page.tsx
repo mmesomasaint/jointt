@@ -172,7 +172,7 @@ export default function Career() {
           </div>
         </div>
         <hr className='bg-black/50' />
-        <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
+        <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-auto'>
           {!isActivated && <NoContent />}
           {activeTab === 'Created' && (
             <Button type='button' onClick={() => setActiveTab('Create Job')}>
