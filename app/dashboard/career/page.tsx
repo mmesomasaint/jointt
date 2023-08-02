@@ -11,6 +11,7 @@ import addData from '../addData'
 import ActivationForm from './components/activationform'
 import ActivatePrompt from './components/activateprompt'
 import JobCard from './components/jobCard'
+import CreateJobForm from './components/createJobForm'
 
 type CareerProfileType = {
   name: string
@@ -145,6 +146,7 @@ export default function Career() {
           onSubmitForm={handleSubmitForm}
         />
       )}
+      {activeTab === "Create Job" && (<CreateJobForm exitFn={() => setActiveTab("Created")} />)}
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
           <div className='flex justify-between gap-10 items-center'>
