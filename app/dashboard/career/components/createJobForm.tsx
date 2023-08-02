@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SelectInput from '@mui/material/Select/SelectInput'
 import dayjs from 'dayjs'
 import { DatePicker } from '@mui/x-date-pickers'
@@ -38,38 +39,37 @@ const events: { id: string; name: string }[] = [
   },
 ]
 
-type CreateJobFormType = {
+type JobType = {
   title: string
   description: string
   budget: number
   roles: string[]
   eventId: string
   expiryDate: number
-  setTitle: (newTitle: string) => void
-  setDescription: (newDescription: string) => void
-  setBudget: (newBudget: number) => void
-  setRoles: (newRoles: string[]) => void
-  setEventId: (newEventId: string) => void
-  setExpiryDate: (newExpiryDate: number) => void
-  onSubmitForm: (e: React.FormEvent<HTMLFormElement>) => void
 }
 
-export default function CreateJobForm({
-  title,
-  description,
-  budget,
-  roles,
-  eventId,
-  expiryDate,
-  setTitle,
-  setDescription,
-  setBudget,
-  setRoles,
-  setEventId,
-  setExpiryDate,
-  onSubmitForm,
-}: CreateJobFormType) {
+export default function CreateJobForm() {
+  const [job, setJob] = useState<JobType>({
+  title: '',
+  description: '',
+  budget: Number(),
+  roles: [],
+  eventId: '',
+  expiryDate: Date.now(),
+  })
+  const setTitle = (title: string) => setJob(prev => ({...prev, title}))
+  const setDescription = (description: string) => setJob(prev => ({...prev, description}))
+  const setBudget = (budget: number) => setJob(prev => ({...prev, budget}))
+  const setRoles = (roles: string[]) => setJob(prev => ({...prev, roles}))
+  const setEventId = (eventId: string) => setJob(prev => ({...prev, eventId}))
+  const setExpiryDate = (expiryDate: number) => setJob(prev => ({...prev, expiryDate}))
   const getName = (id: string) => events.find((event) => event.id === id)?.name
+
+  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    // Send request and log errors/successes.
+  }
 
   return (
     <Modal>
@@ -86,7 +86,7 @@ export default function CreateJobForm({
               type='text'
               name='title'
               id='title'
-              value={title}
+              value={job.title}
               placeholder='Party'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
@@ -99,7 +99,7 @@ export default function CreateJobForm({
               type='text'
               name='description'
               id='description'
-              value={description}
+              value={job.description}
               placeholder='Party'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
@@ -112,7 +112,7 @@ export default function CreateJobForm({
               type='number'
               name='budget'
               id='budget'
-              value={budget}
+              value={job.budget}
               placeholder='Party'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
@@ -120,7 +120,7 @@ export default function CreateJobForm({
           <div className='flex justify-between items-center gap-10'>
             <Select
               multiple
-              value={roles}
+              value={job.roles}
               defaultValue={['Dancer']}
               onChange={(e) =>
                 setRoles(
@@ -141,14 +141,14 @@ export default function CreateJobForm({
                 onChange={(newDate) =>
                   setExpiryDate(newDate?.toDate().getTime() || Date.now())
                 }
-                value={dayjs(expiryDate)}
+                value={dayjs(job.expiryDate)}
                 className='grow border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
               />
             </label>
           </div>
           <Select
             multiple
-            value={eventId}
+            value={job.eventId}
             defaultValue={eventIds[0]}
             onChange={(e) => setEventId(e.target.value)}
           >
