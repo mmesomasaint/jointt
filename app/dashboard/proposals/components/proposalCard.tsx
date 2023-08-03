@@ -1,7 +1,17 @@
 import Button from '@/app/components/button'
 import Text from '@/app/components/text'
 
-export default function ProposalCard({from, jobTitle, text, created}: {from: string, jobTitle: string, text: string, created: number}) {
+export default function ProposalCard({
+  from,
+  jobTitle,
+  text,
+  created,
+}: {
+  from: string
+  jobTitle: string
+  text: string
+  created: number
+}) {
   return (
     <div className='w-[70%] bg-gray-600/10 shadow-md p-5 rounded-xl'>
       <div className='flex justify-between items-center gap-10'>
