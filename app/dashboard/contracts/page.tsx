@@ -76,7 +76,7 @@ export default function Contracts() {
           </div>
         </div>
         <hr className='bg-black/50' />
-        <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-auto'>
+        <div className='flex-grow p-3 flex flex-col justify-start items-center gap-5 overflow-auto'>
           {contracts.length > 0 ? (
             contracts.map((contract) => (
               <ContractCard
