@@ -157,7 +157,6 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
             </label>
           </div>
           <Select
-            multiple
             value={job.eventId}
             defaultValue={eventIds[0]}
             onChange={(e) => setEventId(e.target.value)}
