@@ -6,7 +6,7 @@ export default function ProposalCard() {
     <div className='w-[70%] bg-gray-600/10 shadow-md p-5 rounded-xl'>
       <div className='flex justify-between items-center gap-10'>
         <div className='flex justify-start items-center gap-2'>
-          <Text size='SMALL'>By:</Text>
+          <Text size='SMALL'>From:</Text>
           <Text size='SMALL'>Dr. R. Didiumini</Text>
         </div>
         <div className='flex justify-start items-center gap-2'>
