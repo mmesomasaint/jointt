@@ -141,9 +141,9 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
               }
             >
               <option value='Dancer'>Dancer</option>
-              <option value='MC'>Dancer</option>
-              <option value='Carterer'>Dancer</option>
-              <option value='Mimer'>Dancer</option>
+              <option value='MC'>MC</option>
+              <option value='Carterer'>Carterer</option>
+              <option value='Mimer'>Mimer</option>
             </Select>
             <label htmlFor='expiryDate' className='w-full'>
               <Text size='SMALL'>Expiry Date</Text>
