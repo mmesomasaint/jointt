@@ -88,6 +88,7 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
           className='p-10 flex flex-col gap-3 rounded-xl bg-white text-black'
           onSubmit={onSubmitForm}
         >
+          <Text size='SEMIBOLD'>Create A Job</Text>
           <label htmlFor='title' className='w-full'>
             <Text size='SMALL'>Title</Text>
             <input
