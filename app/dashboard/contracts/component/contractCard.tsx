@@ -16,7 +16,7 @@ export default function ContractCard({
   endDate: number
 }) {
   return (
-    <div className='bg-gray-600/10 border border-gray-600/50 shadow-xl p-5 rounded-xl'>
+    <div className='w-[70%] bg-gray-600/10 shadow-md p-5 rounded-xl'>
       <div className='flex flex-col gap-3'>
         <div className='flex justify-between items-center gap-10'>
           <div className='flex justify-start items-center gap-2'>
