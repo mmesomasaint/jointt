@@ -8,6 +8,7 @@ export default function Nav() {
       <NavLink href='/dashboard/events'>Events</NavLink>
       <NavLink href='/dashboard/contracts'>Contracts</NavLink>
       <NavLink href='/dashboard/career'>Career</NavLink>
+      <NavLink href='/dashboard/proposals'>Proposals</NavLink>
       <NavLink href='/dashboard/settings'>Settings</NavLink>
     </div>
   )
