@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
