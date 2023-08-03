@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {MdClose} from 'react-icons/md'
 import dayjs from 'dayjs'
 import { DatePicker } from '@mui/x-date-pickers'
 import { LocalizationProvider } from '@mui/x-date-pickers'
@@ -85,9 +86,12 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
     <Modal>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form
-          className='p-10 flex flex-col gap-3 rounded-xl bg-white text-black'
+          className='relative p-10 flex flex-col gap-3 rounded-xl bg-white text-black'
           onSubmit={onSubmitForm}
         >
+        <div className='absolute top-2 right-2 w-fit' onClick={exitFn}>
+          <MdClose className='text-blue-600 text-xl' />
+        </div>
           <Text size='SEMIBOLD'>Create A Job</Text>
           <label htmlFor='title' className='w-full'>
             <Text size='SMALL'>Title</Text>
