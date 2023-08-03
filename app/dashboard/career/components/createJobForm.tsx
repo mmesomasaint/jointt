@@ -97,7 +97,7 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
               name='title'
               id='title'
               value={job.title}
-              placeholder='Party'
+              placeholder='A Dancer For a Party'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
           </label>
@@ -110,7 +110,7 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
               name='description'
               id='description'
               value={job.description}
-              placeholder='Party'
+              placeholder='...some dancers for a kids party...'
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50 w-full'
             />
           </label>
