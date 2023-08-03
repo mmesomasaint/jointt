@@ -77,7 +77,20 @@ export default function Contracts() {
         </div>
         <hr className='bg-black/50' />
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-auto'>
-          {contracts.length > 0 ? contracts.map(contract => <ContractCard title={contract.title} role={contract.role} host={contract.host} recipient={contract.recipient} startDate={contract.startDate} endDate={contract.endDate} />) : <NoContent />}
+          {contracts.length > 0 ? (
+            contracts.map((contract) => (
+              <ContractCard
+                title={contract.title}
+                role={contract.role}
+                host={contract.host}
+                recipient={contract.recipient}
+                startDate={contract.startDate}
+                endDate={contract.endDate}
+              />
+            ))
+          ) : (
+            <NoContent />
+          )}
         </div>
       </div>
     </>
