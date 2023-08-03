@@ -85,7 +85,7 @@ export default function CreateJobForm({exitFn}: {exitFn: () => void}) {
     <Modal>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form
-          className='p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
+          className='p-10 flex flex-col gap-3 rounded-xl bg-white text-black'
           onSubmit={onSubmitForm}
         >
           <label htmlFor='title' className='w-full'>
