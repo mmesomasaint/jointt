@@ -25,7 +25,7 @@ export default function Events() {
         </div>
       </div>
       <hr className='bg-black/50' />
-      <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-scroll'>
+      <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-y-auto'>
         {events.length === 0 ? (
           <NoContent />
         ) : (
