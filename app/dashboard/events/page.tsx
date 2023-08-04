@@ -5,6 +5,7 @@ import Card from './components/card'
 import Button from '@/app/components/button'
 import Link from 'next/link'
 import type { Tab } from '../components/tab'
+import getDataWithQuery from '../getQuery'
 
 const tabs: Tab[] = [
   {
@@ -34,6 +35,22 @@ const tabs: Tab[] = [
 ]
 
 export default function Events() {
+  const onTabSwitch = async (active: string) => {
+    const activeTab = tabs.find(tab => tab.title === active)
+
+    if (activeTab) {
+    // Run query based on active tab.
+    const query = activeTab.query
+    const {result, error} = await getDataWithQuery("events", query.fieldpath, query.op, query.value)
+    if (error) {
+      console.log("Error Fetching Events: ", error)
+      return
+    }
+
+    console.log("Fetching Events Successfull")
+    }
+  }
+
   return (
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
       <div className='p-3 pb-1 pt-12'>
