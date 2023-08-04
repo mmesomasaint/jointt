@@ -26,8 +26,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{
   proposal: ProposalType
-}> = async () => {
-  // Fetch proposal based on id passed...
+}> = async ({params}) => {
+  // Fetch proposal based on id passed to params...
 
   const proposal = {
     jobTitle: 'Birthday For My 3yo Daughter',
