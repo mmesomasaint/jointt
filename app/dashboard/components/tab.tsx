@@ -8,9 +8,11 @@ import {
 
 export default function TabHandler({
   titles,
+  onSwitch,
   initialTitle,
 }: {
   titles: string[]
+  onSwitch?: (value: string) => void
   initialTitle?: string
 }) {
   const [activeTab, setActiveTab] = useState<string>(initialTitle || titles[0])
@@ -20,7 +22,10 @@ export default function TabHandler({
       {titles.map((title) => (
         <Tab
           key={title}
-          onClick={() => setActiveTab(title)}
+          onClick={() => {
+            setActiveTab(title)
+            onSwitch && onSwitch(title)
+          }}
           active={activeTab === title}
         >
           {title}
