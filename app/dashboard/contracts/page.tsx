@@ -5,6 +5,7 @@ import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import ContractCard from './component/contractCard'
 import type { Tab } from '../components/tab'
+import getDataWithQuery from '../getQuery'
 
 type Contract = {
   title: string
@@ -70,6 +71,26 @@ const contracts: Contract[] = [
 ]
 
 export default function Contracts() {
+  const onTabSwitch = async (active: string) => {
+    const activeTab = tabs.find((tab) => tab.title === active)
+
+    if (activeTab) {
+      const query = activeTab.query
+      const { result, error } = await getDataWithQuery(
+        'contracts',
+        query.fieldpath,
+        query.op,
+        query.value
+      )
+      if (error) {
+        console.log('Error Fetching Contracts: ', error)
+        return
+      }
+
+      console.log('Fetching Contracts Successfull', result)
+    }
+  }
+
   return (
     <>
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
@@ -78,7 +99,7 @@ export default function Contracts() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={['Host', 'Recipient']} />
+            <TabHandler titles={['Host', 'Recipient']} onSwitch={active => onTabSwitch(active)} />
           </div>
         </div>
         <hr className='bg-black/50' />
