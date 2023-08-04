@@ -1,8 +1,5 @@
-'use client'
-
-import { useState } from 'react'
 import Text from '@/app/components/text'
-import Tab from '../components/tab'
+import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import ContractCard from './component/contractCard'
 
@@ -51,8 +48,6 @@ const contracts: ContractType[] = [
 ]
 
 export default function Contracts() {
-  const [activeTab, setActiveTab] = useState<string>('Host')
-
   return (
     <>
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
@@ -61,18 +56,7 @@ export default function Contracts() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <Tab
-              onClick={() => setActiveTab('Host')}
-              active={activeTab === 'Host'}
-            >
-              Host
-            </Tab>
-            <Tab
-              onClick={() => setActiveTab('Recipient')}
-              active={activeTab === 'Recipient'}
-            >
-              Recipient
-            </Tab>
+            <TabHandler titles={['Host', 'Recipient']} initialTitle='Host' />
           </div>
         </div>
         <hr className='bg-black/50' />

@@ -1,16 +1,11 @@
-'use client'
-
-import { useState } from 'react'
 import Text from '@/app/components/text'
-import Tab from '../components/tab'
+import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import Card from './components/card'
 import Button from '@/app/components/button'
 import Link from 'next/link'
 
 export default function Events() {
-  const [activeTab, setActiveTab] = useState<string>('')
-
   return (
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
       <div className='p-3 pb-1 pt-12'>
@@ -21,24 +16,7 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab
-            onClick={() => setActiveTab('Active')}
-            active={activeTab === 'Active'}
-          >
-            Active
-          </Tab>
-          <Tab
-            onClick={() => setActiveTab('Pending')}
-            active={activeTab === 'Pending'}
-          >
-            Pending
-          </Tab>
-          <Tab
-            onClick={() => setActiveTab('Records')}
-            active={activeTab === 'Records'}
-          >
-            Records
-          </Tab>
+          <TabHandler titles={['Active', 'Pending', 'Completed']} initialTitle='Active' />
         </div>
       </div>
       <hr className='bg-black/50' />
