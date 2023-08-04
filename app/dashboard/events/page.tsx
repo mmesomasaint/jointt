@@ -44,12 +44,13 @@ export default function Events() {
   )
 }
 
-type EventType = { name: string; type: string; cost: number; date: Date }
+type StatusType = 'PENDING' | 'ONGOING' | 'COMPLETED'
+type EventType = { name: string; type: string; cost: number; status: StatusType; date: Date }
 
 const events: EventType[] = [
-  { name: 'Birthday Party', type: 'Party', cost: 20000, date: new Date() },
-  { name: 'Child Dedication', type: 'Party', cost: 8000, date: new Date() },
-  { name: 'Convocation', type: 'Party', cost: 2000, date: new Date() },
-  { name: 'Burn Fire', type: 'Party', cost: 3000, date: new Date() },
-  { name: 'Burial', type: 'Memorial', cost: 30000, date: new Date() },
+  { name: 'Birthday Party', type: 'Party', cost: 20000, status: "COMPLETED", date: new Date() },
+  { name: 'Child Dedication', type: 'Party', cost: 8000, status: "ONGOING", date: new Date() },
+  { name: 'Convocation', type: 'Party', cost: 2000, status: "PENDING", date: new Date() },
+  { name: 'Burn Fire', type: 'Party', cost: 3000, status: "ONGOING", date: new Date() },
+  { name: 'Burial', type: 'Memorial', cost: 30000, status: "COMPLETED", date: new Date() },
 ]
