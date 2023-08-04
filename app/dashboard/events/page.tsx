@@ -36,18 +36,23 @@ const tabs: Tab[] = [
 
 export default function Events() {
   const onTabSwitch = async (active: string) => {
-    const activeTab = tabs.find(tab => tab.title === active)
+    const activeTab = tabs.find((tab) => tab.title === active)
 
     if (activeTab) {
-    // Run query based on active tab.
-    const query = activeTab.query
-    const {result, error} = await getDataWithQuery("events", query.fieldpath, query.op, query.value)
-    if (error) {
-      console.log("Error Fetching Events: ", error)
-      return
-    }
+      // Run query based on active tab.
+      const query = activeTab.query
+      const { result, error } = await getDataWithQuery(
+        'events',
+        query.fieldpath,
+        query.op,
+        query.value
+      )
+      if (error) {
+        console.log('Error Fetching Events: ', error)
+        return
+      }
 
-    console.log("Fetching Events Successfull")
+      console.log('Fetching Events Successfull')
     }
   }
 
