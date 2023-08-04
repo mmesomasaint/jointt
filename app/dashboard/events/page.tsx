@@ -4,6 +4,7 @@ import NoContent from '../components/nocontent'
 import Card from './components/card'
 import Button from '@/app/components/button'
 import Link from 'next/link'
+import type {Tab} from '../components/tab'
 
 export default function Events() {
   return (
