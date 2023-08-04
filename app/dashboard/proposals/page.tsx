@@ -11,7 +11,7 @@ export default function Proposals() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={['Inbox', 'Outbox']} initialTitle='Inbox' />
+            <TabHandler titles={['Inbox', 'Outbox']} />
           </div>
         </div>
         <hr className='bg-black/50' />

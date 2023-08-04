@@ -46,7 +46,6 @@ export default function Events() {
         <div className='mt-16 flex justify-start items-center gap-16'>
           <TabHandler
             titles={tabs.map(tab => tab.title)}
-            initialTitle={tabs[0].title}
           />
         </div>
       </div>

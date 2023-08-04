@@ -11,9 +11,9 @@ export default function TabHandler({
   initialTitle,
 }: {
   titles: string[]
-  initialTitle: string
+  initialTitle?: string
 }) {
-  const [activeTab, setActiveTab] = useState<string>(initialTitle)
+  const [activeTab, setActiveTab] = useState<string>(initialTitle || titles[0])
 
   return (
     <>

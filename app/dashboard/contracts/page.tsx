@@ -56,7 +56,7 @@ export default function Contracts() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={['Host', 'Recipient']} initialTitle='Host' />
+            <TabHandler titles={['Host', 'Recipient']} />
           </div>
         </div>
         <hr className='bg-black/50' />
