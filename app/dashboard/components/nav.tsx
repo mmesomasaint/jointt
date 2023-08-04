@@ -38,7 +38,7 @@ function NavLink({
   children,
 }: {
   href: string
-  active?: boolean
+  active: boolean
   children: React.ReactNode
 }) {
   return (
