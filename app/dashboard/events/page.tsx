@@ -1,3 +1,5 @@
+'use client'
+
 import Text from '@/app/components/text'
 import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
