@@ -66,7 +66,10 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <TabHandler titles={tabs.map((tab) => tab.title)} onSwitch={(active) => onTabSwitch(active)} />
+          <TabHandler
+            titles={tabs.map((tab) => tab.title)}
+            onSwitch={(active) => onTabSwitch(active)}
+          />
         </div>
       </div>
       <hr className='bg-black/50' />
