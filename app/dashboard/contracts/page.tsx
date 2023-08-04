@@ -2,6 +2,7 @@ import Text from '@/app/components/text'
 import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import ContractCard from './component/contractCard'
+import type { Tab } from '../components/tab'
 
 type Contract = {
   title: string
@@ -11,6 +12,25 @@ type Contract = {
   startDate: number
   endDate: number
 }
+
+const tabs: Tab[] = [
+  {
+    title: 'Host',
+    query: {
+      fieldpath: 'hostId',
+      op: '==',
+      value: 'myId',
+    },
+  },
+  {
+    title: 'Pending',
+    query: {
+      fieldpath: 'hostId',
+      op: '==',
+      value: 'myId',
+    },
+  },
+]
 
 const contracts: Contract[] = [
   {
