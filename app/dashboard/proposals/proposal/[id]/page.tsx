@@ -1,5 +1,7 @@
 import type { InferGetServerSidePropsType, GetStaticProps } from 'next'
+import { useRouter } from 'next/navigation'
 import Text from '@/app/components/text'
+import Button from '@/app/components/button'
 
 type ProposalType = {
   jobTitle: string
@@ -25,6 +27,8 @@ export const getStaticProps: GetStaticProps<{
 export default function ProposalPage({
   proposal,
 }: InferGetServerSidePropsType<typeof getStaticProps>) {
+  const router = useRouter()
+
   return (
     <div className='p-3 bg-gray-900/5 overflow-y-auto'>
       <div className='flex flex-col gap-3'>
@@ -45,6 +49,10 @@ export default function ProposalPage({
             {new Date(proposal.created).toLocaleDateString()}
           </Text>
         </div>
+      </div>
+      <div className='flex justify-center items-center gap-10'>
+        <Button type='button' className='bg-gray-600 border-gray-600' onClick={() => router.back()}>Close</Button>
+        <Button type='button'>Accept</Button>
       </div>
     </div>
   )
