@@ -16,7 +16,10 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <TabHandler titles={['Active', 'Pending', 'Completed']} initialTitle='Active' />
+          <TabHandler
+            titles={['Active', 'Pending', 'Completed']}
+            initialTitle='Active'
+          />
         </div>
       </div>
       <hr className='bg-black/50' />
