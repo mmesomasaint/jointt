@@ -26,7 +26,7 @@ export default function TabHandler({
   )
 }
 
-function Tab({
+export function Tab({
   active,
   onClick,
   children,
