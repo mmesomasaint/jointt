@@ -1,6 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import {
+  WhereFilterOp,
+  FieldPath,
+} from 'firebase/firestore'
 
 export default function TabHandler({
   titles,
@@ -46,4 +50,13 @@ export function Tab({
       {children}
     </button>
   )
+}
+
+type Tab = {
+  title: string
+  query: {
+    fieldpath: string | FieldPath
+    op: WhereFilterOp
+    value: unknown
+  }
 }
