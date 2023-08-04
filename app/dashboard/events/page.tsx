@@ -1,4 +1,5 @@
 'use client'
+
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
@@ -19,9 +20,15 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab onClick={() => handleTabs('active')} active={false}>Active</Tab>
-          <Tab onClick={() => handleTabs('active')} active={false}>Pending</Tab>
-          <Tab onClick={() => handleTabs('active')} active={false}>Records</Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>
+            Active
+          </Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>
+            Pending
+          </Tab>
+          <Tab onClick={() => handleTabs('active')} active={false}>
+            Records
+          </Tab>
         </div>
       </div>
       <hr className='bg-black/50' />
@@ -45,12 +52,48 @@ export default function Events() {
 }
 
 type StatusType = 'PENDING' | 'ONGOING' | 'COMPLETED'
-type EventType = { name: string; type: string; cost: number; status: StatusType; date: Date }
+type EventType = {
+  name: string
+  type: string
+  cost: number
+  status: StatusType
+  date: Date
+}
 
 const events: EventType[] = [
-  { name: 'Birthday Party', type: 'Party', cost: 20000, status: "COMPLETED", date: new Date() },
-  { name: 'Child Dedication', type: 'Party', cost: 8000, status: "ONGOING", date: new Date() },
-  { name: 'Convocation', type: 'Party', cost: 2000, status: "PENDING", date: new Date() },
-  { name: 'Burn Fire', type: 'Party', cost: 3000, status: "ONGOING", date: new Date() },
-  { name: 'Burial', type: 'Memorial', cost: 30000, status: "COMPLETED", date: new Date() },
+  {
+    name: 'Birthday Party',
+    type: 'Party',
+    cost: 20000,
+    status: 'COMPLETED',
+    date: new Date(),
+  },
+  {
+    name: 'Child Dedication',
+    type: 'Party',
+    cost: 8000,
+    status: 'ONGOING',
+    date: new Date(),
+  },
+  {
+    name: 'Convocation',
+    type: 'Party',
+    cost: 2000,
+    status: 'PENDING',
+    date: new Date(),
+  },
+  {
+    name: 'Burn Fire',
+    type: 'Party',
+    cost: 3000,
+    status: 'ONGOING',
+    date: new Date(),
+  },
+  {
+    name: 'Burial',
+    type: 'Memorial',
+    cost: 30000,
+    status: 'COMPLETED',
+    date: new Date(),
+  },
 ]
