@@ -99,7 +99,10 @@ export default function Contracts() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={['Host', 'Recipient']} onSwitch={active => onTabSwitch(active)} />
+            <TabHandler
+              titles={['Host', 'Recipient']}
+              onSwitch={(active) => onTabSwitch(active)}
+            />
           </div>
         </div>
         <hr className='bg-black/50' />
