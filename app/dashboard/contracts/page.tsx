@@ -3,7 +3,7 @@ import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import ContractCard from './component/contractCard'
 
-type ContractType = {
+type Contract = {
   title: string
   role: string
   host: string
@@ -12,7 +12,7 @@ type ContractType = {
   endDate: number
 }
 
-const contracts: ContractType[] = [
+const contracts: Contract[] = [
   {
     title: 'Birthday Party For MY 3yo Daughter.',
     role: 'Dancer',
