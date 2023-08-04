@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
-import {Tab} from '../components/tab'
+import { Tab } from '../components/tab'
 import NoContent from '../components/nocontent'
 import { useAuthContext } from '@/app/auth/authcontext'
 import getDataWithQuery from '../getQuery'
