@@ -97,7 +97,6 @@ export default function Career() {
       console.log('Profile Activation Error: ', error)
       return
     }
-
   }
 
   useEffect(() => {
@@ -106,7 +105,7 @@ export default function Career() {
       if (userData?.docs?.length) {
         setIsActivated(true)
         setShowActivatePrompt(false)
-        setActiveTab("Listing")
+        setActiveTab('Listing')
       } else setIsActivated(false)
     }
 
@@ -128,10 +127,11 @@ export default function Career() {
         />
       )}
       {activeTab === 'Activate' && (
-        <ActivationForm exitFn={() => {
-          setIsActivated(true)
-          setActiveTab('Jobs')
-        }}
+        <ActivationForm
+          exitFn={() => {
+            setIsActivated(true)
+            setActiveTab('Jobs')
+          }}
         />
       )}
       {activeTab === 'Create Job' && (
