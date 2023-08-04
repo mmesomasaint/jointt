@@ -1,5 +1,6 @@
 'use client'
 
+import {useState} from 'react'
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
@@ -8,7 +9,7 @@ import Button from '@/app/components/button'
 import Link from 'next/link'
 
 export default function Events() {
-  const handleTabs = (filter: string) => {}
+  const [activeTab, setActiveTab] = useState<string>('')
 
   return (
     <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
@@ -20,13 +21,13 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab onClick={() => handleTabs('active')} active={false}>
+          <Tab onClick={() => setActiveTab('Active')} active={activeTab === 'Active'}>
             Active
           </Tab>
-          <Tab onClick={() => handleTabs('active')} active={false}>
+          <Tab onClick={() => setActiveTab('Pending')} active={activeTab === 'Pending'}>
             Pending
           </Tab>
-          <Tab onClick={() => handleTabs('active')} active={false}>
+          <Tab onClick={() => setActiveTab('Records')} active={activeTab === 'Records'}>
             Records
           </Tab>
         </div>
