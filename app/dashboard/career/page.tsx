@@ -106,6 +106,7 @@ export default function Career() {
       if (userData?.docs?.length) {
         setIsActivated(true)
         setShowActivatePrompt(false)
+        setActiveTab("Listing")
       } else setIsActivated(false)
     }
 
