@@ -41,7 +41,9 @@ export default function ProposalPage({
         </div>
         <div className='flex flex-col gap-3'>
           <Text size='SMALL'>date:</Text>
-          <Text size='SEMIBOLD'>{new Date(proposal.created).toLocaleDateString()}</Text>
+          <Text size='SEMIBOLD'>
+            {new Date(proposal.created).toLocaleDateString()}
+          </Text>
         </div>
       </div>
     </div>
