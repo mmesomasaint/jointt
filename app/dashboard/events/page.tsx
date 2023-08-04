@@ -52,7 +52,7 @@ export default function Events() {
         return
       }
 
-      console.log('Fetching Events Successfull')
+      console.log('Fetching Events Successfull', result)
     }
   }
 
