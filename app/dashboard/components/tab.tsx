@@ -1,4 +1,26 @@
-export default function Tab({
+'use client'
+
+import {useState} from 'react'
+
+export default function TabHandler({titles}: {titles: string[]}) {
+  const [activeTab, setActiveTab] = useState<string>('')
+
+  return (
+    <>
+      {titles.map(title => (
+          <Tab
+          key={title}
+            onClick={() => setActiveTab(title)}
+            active={activeTab === title}
+          >
+            {title}
+          </Tab>
+      ))}
+    </>
+  )
+}
+
+function Tab({
   active,
   onClick,
   children,
