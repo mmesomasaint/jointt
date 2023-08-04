@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 
-export default function TabHandler({ titles }: { titles: string[] }) {
-  const [activeTab, setActiveTab] = useState<string>('')
+export default function TabHandler({ titles, initialTitle }: { titles: string[], initialTitle: string }) {
+  const [activeTab, setActiveTab] = useState<string>(initialTitle)
 
   return (
     <>
