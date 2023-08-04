@@ -52,7 +52,7 @@ export function Tab({
   )
 }
 
-type Tab = {
+export type Tab = {
   title: string
   query: {
     fieldpath: string | FieldPath
