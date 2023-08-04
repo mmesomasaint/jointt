@@ -51,7 +51,13 @@ export default function ProposalPage({
         </div>
       </div>
       <div className='flex justify-center items-center gap-10'>
-        <Button type='button' className='bg-gray-600 border-gray-600' onClick={() => router.back()}>Close</Button>
+        <Button
+          type='button'
+          className='bg-gray-600 border-gray-600'
+          onClick={() => router.back()}
+        >
+          Close
+        </Button>
         <Button type='button'>Accept</Button>
       </div>
     </div>
