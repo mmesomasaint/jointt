@@ -65,9 +65,7 @@ export default function Career() {
   const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Jobs')
   const [isActivated, setIsActivated] = useState<boolean>(false)
-  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(
-    isActivated === false
-  )
+  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
   const [careerProfile, setCareerProfile] = useState<CareerProfileType>({
     name: '',
     role: '',
@@ -106,7 +104,10 @@ export default function Career() {
         setIsActivated(true)
         setShowActivatePrompt(false)
         setActiveTab('Listing')
-      } else setIsActivated(false)
+      } else {
+        setIsActivated(false)
+        setShowActivatePrompt(true)
+      }
     }
 
     isCareerActive()
