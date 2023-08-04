@@ -4,32 +4,32 @@ import NoContent from '../components/nocontent'
 import Card from './components/card'
 import Button from '@/app/components/button'
 import Link from 'next/link'
-import type {Tab} from '../components/tab'
+import type { Tab } from '../components/tab'
 
 const tabs: Tab[] = [
   {
     title: 'Active',
     query: {
       fieldpath: 'status',
-      op: "==",
-      value: "ACTIVE"
-    }
+      op: '==',
+      value: 'ACTIVE',
+    },
   },
   {
     title: 'Pending',
     query: {
       fieldpath: 'status',
-      op: "==",
-      value: "PENDING"
-    }
+      op: '==',
+      value: 'PENDING',
+    },
   },
   {
     title: 'Completed',
     query: {
       fieldpath: 'status',
-      op: "==",
-      value: "COMPLETED"
-    }
+      op: '==',
+      value: 'COMPLETED',
+    },
   },
 ]
 
@@ -44,9 +44,7 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <TabHandler
-            titles={tabs.map(tab => tab.title)}
-          />
+          <TabHandler titles={tabs.map((tab) => tab.title)} />
         </div>
       </div>
       <hr className='bg-black/50' />
