@@ -1,6 +1,6 @@
 'use client'
 
-import {useState} from 'react'
+import { useState } from 'react'
 import Text from '@/app/components/text'
 import Tab from '../components/tab'
 import NoContent from '../components/nocontent'
@@ -21,13 +21,22 @@ export default function Events() {
           </Button>
         </div>
         <div className='mt-16 flex justify-start items-center gap-16'>
-          <Tab onClick={() => setActiveTab('Active')} active={activeTab === 'Active'}>
+          <Tab
+            onClick={() => setActiveTab('Active')}
+            active={activeTab === 'Active'}
+          >
             Active
           </Tab>
-          <Tab onClick={() => setActiveTab('Pending')} active={activeTab === 'Pending'}>
+          <Tab
+            onClick={() => setActiveTab('Pending')}
+            active={activeTab === 'Pending'}
+          >
             Pending
           </Tab>
-          <Tab onClick={() => setActiveTab('Records')} active={activeTab === 'Records'}>
+          <Tab
+            onClick={() => setActiveTab('Records')}
+            active={activeTab === 'Records'}
+          >
             Records
           </Tab>
         </div>
