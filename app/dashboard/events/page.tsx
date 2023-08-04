@@ -41,7 +41,6 @@ export default function Events() {
     const activeTab = tabs.find((tab) => tab.title === active)
 
     if (activeTab) {
-      // Run query based on active tab.
       const query = activeTab.query
       const { result, error } = await getDataWithQuery(
         'events',
