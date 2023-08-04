@@ -1,4 +1,8 @@
-import type { InferGetServerSidePropsType, GetStaticProps, GetStaticPaths } from 'next'
+import type {
+  InferGetServerSidePropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next'
 import { useRouter } from 'next/navigation'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
@@ -13,10 +17,10 @@ type ProposalType = {
 export const getStaticPaths: GetStaticPaths = async () => {
   // Fetch all the proposals sent to this user,
   // both the inbox and outbox.
-  
+
   return {
     paths: [],
-    fallback: true
+    fallback: true,
   }
 }
 
