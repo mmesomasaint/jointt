@@ -51,7 +51,7 @@ export default function Proposals() {
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
         <div className='p-3 pb-1 pt-12'>
           <div className='flex justify-between gap-10 items-center'>
-            <Text size='BOLD'>Contracts</Text>
+            <Text size='BOLD'>Proposals</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
             <TabHandler titles={tabs.map((tab) => tab.title)} />
