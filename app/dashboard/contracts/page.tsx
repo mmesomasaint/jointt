@@ -53,7 +53,7 @@ const contracts: Contract[] = [
 ]
 
 export default function Contracts() {
-  const {user} = useAuthContext()
+  const { user } = useAuthContext()
 
   const tabs: Tab[] = [
     {
