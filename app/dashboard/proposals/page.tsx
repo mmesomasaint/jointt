@@ -8,8 +8,8 @@ import getDataWithQuery from '../getQuery'
 import { useAuthContext } from '@/app/auth/authcontext'
 
 export default function Proposals() {
-  const {user} = useAuthContext()
-  
+  const { user } = useAuthContext()
+
   const tabs: Tab[] = [
     {
       title: 'Inbox',
