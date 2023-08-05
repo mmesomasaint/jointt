@@ -6,6 +6,7 @@ import NoContent from '../components/nocontent'
 import ContractCard from './component/contractCard'
 import type { Tab } from '../components/tab'
 import getDataWithQuery from '../getQuery'
+import { useAuthContext } from '@/app/auth/authcontext'
 
 type Contract = {
   title: string
@@ -15,25 +16,6 @@ type Contract = {
   startDate: number
   endDate: number
 }
-
-const tabs: Tab[] = [
-  {
-    title: 'Host',
-    query: {
-      fieldpath: 'hostId',
-      op: '==',
-      value: 'myId',
-    },
-  },
-  {
-    title: 'Pending',
-    query: {
-      fieldpath: 'hostId',
-      op: '==',
-      value: 'myId',
-    },
-  },
-]
 
 const contracts: Contract[] = [
   {
@@ -71,6 +53,27 @@ const contracts: Contract[] = [
 ]
 
 export default function Contracts() {
+  const {user} = useAuthContext()
+
+  const tabs: Tab[] = [
+    {
+      title: 'Host',
+      query: {
+        fieldpath: 'hostId',
+        op: '==',
+        value: user?.uid,
+      },
+    },
+    {
+      title: 'Pending',
+      query: {
+        fieldpath: 'hostId',
+        op: '==',
+        value: user?.uid,
+      },
+    },
+  ]
+
   const onTabSwitch = async (active: string) => {
     const activeTab = tabs.find((tab) => tab.title === active)
 
