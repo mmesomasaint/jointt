@@ -13,7 +13,7 @@ import ActivatePrompt from './components/activateprompt'
 import JobCard from './components/jobCard'
 import CreateJobForm from './components/createJobForm'
 
-type CareerProfileType = {
+type CareerProfile = {
   name: string
   role: string
   pay: number
@@ -66,7 +66,7 @@ export default function Career() {
   const [activeTab, setActiveTab] = useState<string>('Jobs')
   const [isActivated, setIsActivated] = useState<boolean>(false)
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
-  const [careerProfile, setCareerProfile] = useState<CareerProfileType>({
+  const [careerProfile, setCareerProfile] = useState<CareerProfile>({
     name: '',
     role: '',
     pay: 0,
