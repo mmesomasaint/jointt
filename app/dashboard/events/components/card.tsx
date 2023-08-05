@@ -12,7 +12,7 @@ export default function Card({
   date: Date
 }) {
   return (
-    <div className='w-full h-fit p-5 rounded-xl shadow-sm border border-gray-900/30'>
+    <div className='w-[70%] h-fit p-5 rounded-xl bg-gray-900/10 shadow-md border border-gray-900/30'>
       <div className='w-full flex justify-between items-center gap-10 mb-5'>
         <Text size='MEDIUM'>{name}</Text>
         <Text size='MEDIUM'>N{cost}</Text>
