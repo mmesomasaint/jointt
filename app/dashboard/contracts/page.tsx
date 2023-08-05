@@ -57,17 +57,17 @@ export default function Contracts() {
 
   const tabs: Tab[] = [
     {
-      title: 'Host',
+      title: 'Promisor',
       query: {
-        fieldpath: 'hostId',
+        fieldpath: 'PromisorId',
         op: '==',
         value: user?.uid,
       },
     },
     {
-      title: 'Pending',
+      title: 'Promisee',
       query: {
-        fieldpath: 'hostId',
+        fieldpath: 'PromiseeId',
         op: '==',
         value: user?.uid,
       },
