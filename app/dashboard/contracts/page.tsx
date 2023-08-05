@@ -11,8 +11,8 @@ import { useAuthContext } from '@/app/auth/authcontext'
 type Contract = {
   title: string
   role: string
-  host: string
-  recipient: string
+  promisorId: string
+  promiseeId: string
   startDate: number
   endDate: number
 }
@@ -21,32 +21,32 @@ const contracts: Contract[] = [
   {
     title: 'Birthday Party For MY 3yo Daughter.',
     role: 'Dancer',
-    host: 'Dr Mahatma Gaundi',
-    recipient: 'James Gunn',
+    promisorId: 'adfasdfasdf',
+    promiseeId: 'dafadfasdfas',
     startDate: new Date(Date.parse('07/09/2023')).getTime(),
     endDate: new Date(Date.parse('08/09/2023')).getTime(),
   },
   {
     title: 'Birthday Party For MY 3yo Daughter.',
     role: 'Dancer',
-    host: 'Dr Mahatma Gaundi',
-    recipient: 'James Gunn',
+    promisorId: 'adfasdfasdf',
+    promiseeId: 'dafadfasdfas',
     startDate: new Date(Date.parse('07/09/2023')).getTime(),
     endDate: new Date(Date.parse('08/09/2023')).getTime(),
   },
   {
     title: 'Birthday Party For MY 3yo Daughter.',
     role: 'Dancer',
-    host: 'Dr Mahatma Gaundi',
-    recipient: 'James Gunn',
+    promisorId: 'adfasdfasdf',
+    promiseeId: 'dafadfasdfas',
     startDate: new Date(Date.parse('07/09/2023')).getTime(),
     endDate: new Date(Date.parse('08/09/2023')).getTime(),
   },
   {
     title: 'Birthday Party For MY 3yo Daughter.',
     role: 'Dancer',
-    host: 'Dr Mahatma Gaundi',
-    recipient: 'James Gunn',
+    promisorId: 'adfasdfasdf',
+    promiseeId: 'dafadfasdfas',
     startDate: new Date(Date.parse('07/09/2023')).getTime(),
     endDate: new Date(Date.parse('08/09/2023')).getTime(),
   },
@@ -115,8 +115,8 @@ export default function Contracts() {
               <ContractCard
                 title={contract.title}
                 role={contract.role}
-                host={contract.host}
-                recipient={contract.recipient}
+                promisor={contract.promisorId}
+                promisee={contract.promiseeId}
                 startDate={contract.startDate}
                 endDate={contract.endDate}
               />

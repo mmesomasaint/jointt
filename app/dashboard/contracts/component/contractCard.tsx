@@ -3,15 +3,15 @@ import Text from '@/app/components/text'
 export default function ContractCard({
   title,
   role,
-  host,
-  recipient,
+  promisor,
+  promisee,
   startDate,
   endDate,
 }: {
   title: string
   role: string
-  host: string
-  recipient: string
+  promisor: string
+  promisee: string
   startDate: number
   endDate: number
 }) {
@@ -20,12 +20,12 @@ export default function ContractCard({
       <div className='flex flex-col gap-3'>
         <div className='flex justify-between items-center gap-10'>
           <div className='flex justify-start items-center gap-2'>
-            <Text size='SMALL'>Host:</Text>
-            <Text size='SMALL'>{host}</Text>
+            <Text size='SMALL'>Promisor:</Text>
+            <Text size='SMALL'>{promisor}</Text>
           </div>
           <div className='flex justify-start items-center gap-2'>
-            <Text size='SMALL'>Recipient:</Text>
-            <Text size='SMALL'>{recipient}</Text>
+            <Text size='SMALL'>Promisee:</Text>
+            <Text size='SMALL'>{promisee}</Text>
           </div>
         </div>
         <Text size='MEDIUM'>{title}</Text>
