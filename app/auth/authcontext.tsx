@@ -7,10 +7,10 @@ import firebase_app from '@/app/firebase'
 const auth = getAuth(firebase_app)
 
 type AuthContextType = {
-  user: User | null | undefined
+  user: User | null
 }
 
-export const AuthContext = createContext<AuthContextType>({ user: null })
+export const AuthContext = createContext<AuthContextType>({user: null})
 
 export const useAuthContext = () => useContext(AuthContext)
 
@@ -19,7 +19,7 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode
 }) => {
-  const [user, setUser] = useState<User | null | undefined>()
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
