@@ -9,7 +9,7 @@ export default function Dashboard() {
   const router = useRouter()
 
   useEffect(() => {
-    if (user == null) router.push('/auth/signin')
+    if (user === null) router.push('/auth/signin')
   }, [user])
   return (
     <div className='p-3 pt-12'>
