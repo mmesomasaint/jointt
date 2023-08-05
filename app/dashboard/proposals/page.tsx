@@ -5,27 +5,30 @@ import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
 import type { Tab } from '../components/tab'
 import getDataWithQuery from '../getQuery'
-
-const tabs: Tab[] = [
-  {
-    title: 'Inbox',
-    query: {
-      fieldpath: 'hostId',
-      op: '==',
-      value: 'myId',
-    },
-  },
-  {
-    title: 'Outbox',
-    query: {
-      fieldpath: 'recipientId',
-      op: '==',
-      value: 'myId',
-    },
-  },
-]
+import { useAuthContext } from '@/app/auth/authcontext'
 
 export default function Proposals() {
+  const {user} = useAuthContext()
+  
+  const tabs: Tab[] = [
+    {
+      title: 'Inbox',
+      query: {
+        fieldpath: 'hostId',
+        op: '==',
+        value: user?.uid,
+      },
+    },
+    {
+      title: 'Outbox',
+      query: {
+        fieldpath: 'recipientId',
+        op: '==',
+        value: user?.uid,
+      },
+    },
+  ]
+
   const onTabSwitch = async (active: string) => {
     const activeTab = tabs.find((tab) => tab.title === active)
 
