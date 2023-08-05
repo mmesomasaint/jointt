@@ -54,7 +54,7 @@ export default function Proposals() {
             <Text size='BOLD'>Proposals</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={tabs.map((tab) => tab.title)} />
+            <TabHandler titles={tabs.map((tab) => tab.title)} onSwitch={active => onTabSwitch(active)} />
           </div>
         </div>
         <hr className='bg-black/50' />
