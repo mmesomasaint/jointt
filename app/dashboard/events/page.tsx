@@ -66,7 +66,7 @@ export default function Events() {
             <Link href='events/host'>Host Event</Link>
           </Button>
         </div>
-        <div className='mt-16 flex justify-start items-center gap-16'>
+        <div className='mt-16 flex justify-center items-center gap-16'>
           <TabHandler
             titles={tabs.map((tab) => tab.title)}
             onSwitch={(active) => onTabSwitch(active)}
