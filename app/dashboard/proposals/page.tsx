@@ -1,8 +1,51 @@
+'use client'
+
 import Text from '@/app/components/text'
 import TabHandler from '../components/tab'
 import NoContent from '../components/nocontent'
+import type { Tab } from '../components/tab'
+import getDataWithQuery from '../getQuery'
+
+const tabs: Tab[] = [
+  {
+    title: 'Inbox',
+    query: {
+      fieldpath: 'hostId',
+      op: '==',
+      value: 'myId',
+    },
+  },
+  {
+    title: 'Outbox',
+    query: {
+      fieldpath: 'recipientId',
+      op: '==',
+      value: 'myId',
+    },
+  },
+]
 
 export default function Proposals() {
+  const onTabSwitch = async (active: string) => {
+    const activeTab = tabs.find((tab) => tab.title === active)
+
+    if (activeTab) {
+      const query = activeTab.query
+      const { result, error } = await getDataWithQuery(
+        'proposals',
+        query.fieldpath,
+        query.op,
+        query.value
+      )
+      if (error) {
+        console.log('Error Fetching Proposals: ', error)
+        return
+      }
+
+      console.log('Fetching Proposals Successfull', result)
+    }
+  }
+
   return (
     <>
       <div className='flex flex-col justify-start gap-0 overflow-hidden h-full'>
@@ -11,7 +54,7 @@ export default function Proposals() {
             <Text size='BOLD'>Contracts</Text>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
-            <TabHandler titles={['Inbox', 'Outbox']} />
+            <TabHandler titles={tabs.map(tab => tab.title)} />
           </div>
         </div>
         <hr className='bg-black/50' />
