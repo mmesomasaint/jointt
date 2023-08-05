@@ -21,7 +21,7 @@ type CareerProfileType = {
   userId?: string
 }
 
-type JobType = {
+type Job = {
   title: string
   description: string
   budget: number
@@ -31,7 +31,7 @@ type JobType = {
   created: number
 }
 
-const Jobs: JobType[] = [
+const Jobs: Job[] = [
   {
     title: 'A cook for birthday party',
     description: 'I need a cook for a birthday party of daughter',
