@@ -28,11 +28,11 @@ export const getStaticProps: GetStaticProps<{
   // Fetch profile based on id passed to params...
 
   const profile = {
-    name: "Amadi David",
-    role: "Dancer",
-    pay: "50",
+    name: 'Amadi David',
+    role: 'Dancer',
+    pay: '50',
     status: true,
-    userId: "dafasdfa"
+    userId: 'dafasdfa',
   }
   return { props: { profile } }
 }
@@ -40,7 +40,5 @@ export const getStaticProps: GetStaticProps<{
 export default function Profile({
   profile,
 }: InferGetServerSidePropsType<typeof getStaticProps>) {
-  return(
-    <div>This is the profile page and it belongs to {profile.userId}</div>
-  )
+  return <div>This is the profile page and it belongs to {profile.userId}</div>
 }
