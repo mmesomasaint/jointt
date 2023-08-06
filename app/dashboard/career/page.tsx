@@ -5,9 +5,6 @@ import Text from '@/app/components/text'
 import Button from '@/app/components/button'
 import { Tab } from '../components/tab'
 import NoContent from '../components/nocontent'
-import { useAuthContext } from '@/app/auth/authcontext'
-import getDataWithQuery from '../getQuery'
-import addData from '../addData'
 import ActivationForm from './components/activationform'
 import ActivatePrompt from './components/activateprompt'
 import JobCard from './components/jobCard'
@@ -68,18 +65,6 @@ export default function Career() {
 
   return (
     <>
-      {showActivatePrompt && (
-        <ActivatePrompt
-          handleClose={() => {
-            setShowActivatePrompt(false)
-            setActiveTab('Listing')
-          }}
-          handleActivate={() => {
-            setShowActivatePrompt(false)
-            setActiveTab('Activate')
-          }}
-        />
-      )}
       {activeTab === 'Activate' && (
         <ActivationForm
           exitFn={() => {
