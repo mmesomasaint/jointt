@@ -1,7 +1,5 @@
-import { MdClose } from 'react-icons/md'
 import Text from '@/app/components/text'
 import Button from '@/app/components/button'
-import Modal from '../../components/modal'
 
 export default function ActivatePrompt({
   handleActivate,
