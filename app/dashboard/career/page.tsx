@@ -90,9 +90,13 @@ export default function Career() {
         <div className='p-3 pb-1 pt-12'>
           <div className='flex justify-between gap-10 items-center'>
             <Text size='BOLD'>Career</Text>
-            <Button type='button' onClick={() => setActiveTab('Profile')} disabled={!isActivated}>
-                Profile
-              </Button>
+            <Button
+              type='button'
+              onClick={() => setActiveTab('Profile')}
+              disabled={!isActivated}
+            >
+              Profile
+            </Button>
           </div>
           <div className='mt-16 flex justify-center items-center gap-16'>
             <Tab
