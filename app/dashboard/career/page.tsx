@@ -11,14 +11,6 @@ import JobCard from './components/jobCard'
 import CreateJobForm from './components/createJobForm'
 import useCareerProfile from './components/usecareerprofile'
 
-type CareerProfile = {
-  name: string
-  role: string
-  pay: number
-  status: boolean
-  userId?: string
-}
-
 type Job = {
   title: string
   description: string
