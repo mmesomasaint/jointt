@@ -18,6 +18,7 @@ export default function useCareerProfile() {
       console.log('User Career Error: \n', error)
       return null
     }
+
     return result?.docs[0]
   }
 
@@ -32,7 +33,7 @@ export default function useCareerProfile() {
     }
 
     isCareerActive()
-  }, [])
+  }, [user])
 
   return {careerProfile}
 }
