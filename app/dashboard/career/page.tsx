@@ -65,7 +65,6 @@ export default function Career() {
   const [isActivated, setIsActivated] = useState<boolean>(
     Boolean(careerProfile)
   )
-  const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
   const [showActivationForm, setShowActivationForm] = useState<boolean>(false)
 
   useEffect(() => {
