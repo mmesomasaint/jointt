@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { DocumentData } from 'firebase/firestore'
 import getDataWithQuery from '../../getQuery'
 
-export default function useCareerProfile(userId) {
+export default function useCareerProfile(userId: string | undefined) {
   const [careerProfile, setCareerProfile] = useState<DocumentData>()
 
   const getUserCareerData = async () => {
@@ -29,7 +29,7 @@ export default function useCareerProfile(userId) {
     }
 
     isCareerActive()
-  }, [user])
+  }, [userId])
 
   return { careerProfile }
 }
