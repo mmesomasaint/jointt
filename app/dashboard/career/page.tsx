@@ -53,7 +53,7 @@ const Jobs: Job[] = [
 
 export default function Career() {
   const { careerProfile } = useCareerProfile()
-  const [activeTab, setActiveTab] = useState<string>('Jobs')
+  const [activeTab, setActiveTab] = useState<string>('Listing')
   const [isActivated, setIsActivated] = useState<boolean>(
     Boolean(careerProfile)
   )
