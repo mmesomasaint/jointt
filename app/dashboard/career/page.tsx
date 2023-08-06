@@ -60,9 +60,11 @@ const Jobs: Job[] = [
 ]
 
 export default function Career() {
-  const {careerProfile} = useCareerProfile()
+  const { careerProfile } = useCareerProfile()
   const [activeTab, setActiveTab] = useState<string>('Jobs')
-  const [isActivated, setIsActivated] = useState<boolean>(Boolean(careerProfile))
+  const [isActivated, setIsActivated] = useState<boolean>(
+    Boolean(careerProfile)
+  )
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
 
   useEffect(() => {
