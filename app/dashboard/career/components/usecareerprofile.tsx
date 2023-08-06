@@ -3,7 +3,7 @@ import { DocumentData } from "firebase/firestore";
 import getDataWithQuery from "../../getQuery";
 import { useAuthContext } from "@/app/auth/authcontext";
 
-export default function useCareerProfile(userId: string | null) {
+export default function useCareerProfile() {
   const [careerProfile, setCareerProfile] = useState<DocumentData>()
   const {user} = useAuthContext()
 
@@ -12,7 +12,7 @@ export default function useCareerProfile(userId: string | null) {
       'career_profiles',
       'userId',
       '==',
-      userId
+      user?.uid
     )
     if (error) {
       console.log('User Career Error: \n', error)
