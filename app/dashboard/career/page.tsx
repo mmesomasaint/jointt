@@ -9,6 +9,7 @@ import ActivationForm from './components/activationform'
 import ActivatePrompt from './components/activateprompt'
 import JobCard from './components/jobCard'
 import CreateJobForm from './components/createJobForm'
+import useCareerProfile from './components/usecareerprofile'
 
 type CareerProfile = {
   name: string
@@ -59,9 +60,15 @@ const Jobs: Job[] = [
 ]
 
 export default function Career() {
+  const {careerProfile} = useCareerProfile()
   const [activeTab, setActiveTab] = useState<string>('Jobs')
-  const [isActivated, setIsActivated] = useState<boolean>(false)
+  const [isActivated, setIsActivated] = useState<boolean>(Boolean(careerProfile))
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (Boolean(careerProfile)) setIsActivated(true)
+    else setIsActivated(false)
+  }, [careerProfile])
 
   return (
     <>
