@@ -9,7 +9,9 @@ export default function ActivatePrompt({
   return (
     <div className='flex flex-col gap-4 items-center'>
       <Text size='SMALL'>You must activate your career profile first.</Text>
-      <Button type='button' onClick={handleActivate}>Activate Now!</Button>
+      <Button type='button' onClick={handleActivate}>
+        Activate Now!
+      </Button>
     </div>
   )
 }
