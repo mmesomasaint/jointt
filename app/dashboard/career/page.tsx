@@ -129,21 +129,7 @@ export default function Career() {
               Create Job
             </Button>
           )}
-          {activeTab === 'Listing' &&
-            (Jobs.length > 0 ? (
-              Jobs.map((job) => (
-                <JobCard
-                  title={job.title}
-                  desc={job.description}
-                  roles={job.roles}
-                  budget={job.budget}
-                  expireDate={job.expiryDate}
-                />
-              ))
-            ) : (
-              <NoContent />
-            ))}
-          {activeTab === 'Invites' &&
+          {(activeTab === 'Listing' || activeTab === 'Invites') &&
             (Jobs.length > 0 ? (
               Jobs.map((job) => (
                 <JobCard
