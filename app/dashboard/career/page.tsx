@@ -10,6 +10,7 @@ import ActivatePrompt from './components/activateprompt'
 import JobCard from './components/jobCard'
 import CreateJobForm from './components/createJobForm'
 import useCareerProfile from './components/usecareerprofile'
+import { useAuthContext } from '@/app/auth/authcontext'
 
 type Job = {
   title: string
@@ -52,7 +53,8 @@ const Jobs: Job[] = [
 ]
 
 export default function Career() {
-  const { careerProfile } = useCareerProfile()
+  const {user} = useAuthContext()
+  const { careerProfile } = useCareerProfile(user?.uid)
   const [activeTab, setActiveTab] = useState<string>('Listing')
   const [isActivated, setIsActivated] = useState<boolean>(
     Boolean(careerProfile)
