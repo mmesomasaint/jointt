@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
-import {MdClose} from 'react-icons/md'
+import { MdClose } from 'react-icons/md'
 import Text from '@/app/components/text'
 import Modal from '../../components/modal'
 import Button from '@/app/components/button'
@@ -37,9 +37,9 @@ export default function ActivationForm({ exitFn }: { exitFn: () => void }) {
         className='relative p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
         onSubmit={onSubmitForm}
       >
-      <div className='absolute top-2 right-2 w-fit' onClick={exitFn}>
-        <MdClose className='text-blue-600 text-xl' />
-      </div>
+        <div className='absolute top-2 right-2 w-fit' onClick={exitFn}>
+          <MdClose className='text-blue-600 text-xl' />
+        </div>
         <Text size='SEMIBOLD'>Activation Form</Text>
         <label htmlFor='name' className='w-full'>
           <Text size='SMALL'>Name</Text>
