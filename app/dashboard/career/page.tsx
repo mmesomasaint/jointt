@@ -11,6 +11,7 @@ import JobCard from './components/jobCard'
 import CreateJobForm from './components/createJobForm'
 import useCareerProfile from './components/usecareerprofile'
 import { useAuthContext } from '@/app/auth/authcontext'
+import { useRouter } from 'next/navigation'
 
 type Job = {
   title: string
@@ -54,6 +55,7 @@ const Jobs: Job[] = [
 
 export default function Career() {
   const {user} = useAuthContext()
+  const router = useRouter()
   const { careerProfile } = useCareerProfile(user?.uid)
   const [activeTab, setActiveTab] = useState<string>('Listing')
   const [isActivated, setIsActivated] = useState<boolean>(
@@ -86,7 +88,7 @@ export default function Career() {
             <Text size='BOLD'>Career</Text>
             <Button
               type='button'
-              onClick={() => setActiveTab('Profile')}
+              onClick={() => router.push(`/profile/${user?.uid}`)}
               disabled={!isActivated}
               className='shadow-md disabled:bg-gray-900/50 disabled:border-gray-900/50'
             >
