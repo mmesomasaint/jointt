@@ -124,21 +124,29 @@ export default function Career() {
             <ActivatePrompt
               handleActivate={() => setShowActivationForm(true)}
             />
-          ) : Jobs.length > 0 ? (
-            Jobs.map((job) => (
-              <JobCard
-                title={job.title}
-                desc={job.description}
-                roles={job.roles}
-                budget={job.budget}
-                expireDate={job.expiryDate}
-              />
-            ))
-          ) : (
-            <NoContent />
-          )}
+          ) : <JobsRow jobs={Jobs} />}
         </div>
       </div>
+    </>
+  )
+}
+
+function JobsRow({ jobs }: {jobs: Job[]}) {
+  return (
+    <>
+    {Jobs.length > 0 ? (
+          jobs.map((job) => (
+            <JobCard
+              title={job.title}
+              desc={job.description}
+              roles={job.roles}
+              budget={job.budget}
+              expireDate={job.expiryDate}
+            />
+          ))
+        ) : (
+          <NoContent />
+        )}
     </>
   )
 }
