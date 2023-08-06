@@ -125,20 +125,24 @@ export default function Career() {
               Create Job
             </Button>
           )}
-          {(activeTab === 'Listing' || activeTab === 'Invites') && (!isActivated) ? <ActivatePrompt handleActivate={() => setShowActivationForm(true)} /> : 
-            (Jobs.length > 0 ? (
-              Jobs.map((job) => (
-                <JobCard
-                  title={job.title}
-                  desc={job.description}
-                  roles={job.roles}
-                  budget={job.budget}
-                  expireDate={job.expiryDate}
-                />
-              ))
-            ) : (
-              <NoContent />
-            ))}
+          {(activeTab === 'Listing' || activeTab === 'Invites') &&
+          !isActivated ? (
+            <ActivatePrompt
+              handleActivate={() => setShowActivationForm(true)}
+            />
+          ) : Jobs.length > 0 ? (
+            Jobs.map((job) => (
+              <JobCard
+                title={job.title}
+                desc={job.description}
+                roles={job.roles}
+                budget={job.budget}
+                expireDate={job.expiryDate}
+              />
+            ))
+          ) : (
+            <NoContent />
+          )}
         </div>
       </div>
     </>
