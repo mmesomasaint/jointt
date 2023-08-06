@@ -120,13 +120,12 @@ export default function Career() {
         </div>
         <hr className='bg-black/50' />
         <div className='flex-grow p-3 flex flex-col justify-start items-center gap-3 overflow-auto'>
-          {!isActivated && <NoContent />}
           {activeTab === 'Created' && (
             <Button type='button' onClick={() => setActiveTab('Create Job')}>
               Create Job
             </Button>
           )}
-          {(activeTab === 'Listing' || activeTab === 'Invites') &&
+          {(activeTab === 'Listing' || activeTab === 'Invites') && (!isActivated) ? <ActivatePrompt handleActivate={() => setShowActivationForm(true)} /> : 
             (Jobs.length > 0 ? (
               Jobs.map((job) => (
                 <JobCard
