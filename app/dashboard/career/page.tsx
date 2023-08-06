@@ -66,6 +66,7 @@ export default function Career() {
     Boolean(careerProfile)
   )
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
+  const [showActivationForm, setShowActivationForm] = useState<boolean>(false)
 
   useEffect(() => {
     if (Boolean(careerProfile)) setIsActivated(true)
@@ -74,11 +75,11 @@ export default function Career() {
 
   return (
     <>
-      {activeTab === 'Activate' && (
+      {showActivationForm && (
         <ActivationForm
           exitFn={() => {
             setIsActivated(true)
-            setActiveTab('Jobs')
+            setShowActivationForm(false)
           }}
         />
       )}
