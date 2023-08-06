@@ -54,8 +54,8 @@ const Jobs: Job[] = [
 ]
 
 export default function Career() {
-  const {user} = useAuthContext()
   const router = useRouter()
+  const { user } = useAuthContext()
   const { careerProfile } = useCareerProfile(user?.uid)
   const [activeTab, setActiveTab] = useState<string>('Listing')
   const [isActivated, setIsActivated] = useState<boolean>(
