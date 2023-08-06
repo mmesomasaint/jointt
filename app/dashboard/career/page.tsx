@@ -86,6 +86,7 @@ export default function Career() {
               type='button'
               onClick={() => setActiveTab('Profile')}
               disabled={!isActivated}
+              className='shadow-md disabled:bg-gray-900/50 disabled:border-gray-900/50'
             >
               Profile
             </Button>
