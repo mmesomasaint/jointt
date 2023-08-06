@@ -36,6 +36,7 @@ export default function ActivationForm({ exitFn }: { exitFn: () => void }) {
         className='p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
         onSubmit={onSubmitForm}
       >
+      <Text size='SEMIBOLD'>Activation Form</Text>
         <label htmlFor='name' className='w-full'>
           <Text size='SMALL'>Name</Text>
           <input
