@@ -6,7 +6,7 @@ import Modal from '../../components/modal'
 import Button from '@/app/components/button'
 import addData from '../../addData'
 
-export default function ActivationForm({ exitFn }: { exitFn: () => void }) {
+export default function ActivationForm({ closeFn, exitFn }: { closeFn: () => void, exitFn: () => void }) {
   const [profile, setProfile] = useState({
     name: '',
     role: '',
@@ -37,7 +37,7 @@ export default function ActivationForm({ exitFn }: { exitFn: () => void }) {
         className='relative p-5 flex flex-col gap-3 rounded-xl bg-white text-black'
         onSubmit={onSubmitForm}
       >
-        <div className='absolute top-2 right-2 w-fit' onClick={exitFn}>
+        <div className='absolute top-2 right-2 w-fit' onClick={closeFn}>
           <MdClose className='text-blue-600 text-xl' />
         </div>
         <Text size='SEMIBOLD'>Activation Form</Text>

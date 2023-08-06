@@ -68,6 +68,7 @@ export default function Career() {
     <>
       {showActivationForm && (
         <ActivationForm
+          closeFn={() => setShowActivationForm(false)}
           exitFn={() => {
             setIsActivated(true)
             setShowActivationForm(false)
