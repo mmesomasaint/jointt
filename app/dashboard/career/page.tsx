@@ -62,56 +62,9 @@ const Jobs: Job[] = [
 ]
 
 export default function Career() {
-  const { user } = useAuthContext()
   const [activeTab, setActiveTab] = useState<string>('Jobs')
   const [isActivated, setIsActivated] = useState<boolean>(false)
   const [showActivatePrompt, setShowActivatePrompt] = useState<boolean>(false)
-  const [careerProfile, setCareerProfile] = useState<CareerProfile>({
-    name: '',
-    role: '',
-    pay: 0,
-    status: false,
-    userId: user?.uid,
-  })
-
-  const getUserCareerData = async () => {
-    const { result, error } = await getDataWithQuery(
-      'career_profiles',
-      'userId',
-      '==',
-      user?.uid
-    )
-    if (error) {
-      console.log('User Career Error: \n', error)
-      return null
-    }
-    return result
-  }
-
-  const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const { result, error } = await addData('career_profiles', careerProfile)
-    if (error) {
-      console.log('Profile Activation Error: ', error)
-      return
-    }
-  }
-
-  useEffect(() => {
-    const isCareerActive = async () => {
-      const userData = await getUserCareerData()
-      if (userData?.docs?.length) {
-        setIsActivated(true)
-        setShowActivatePrompt(false)
-        setActiveTab('Listing')
-      } else {
-        setIsActivated(false)
-        setShowActivatePrompt(true)
-      }
-    }
-
-    isCareerActive()
-  }, [])
 
   return (
     <>
