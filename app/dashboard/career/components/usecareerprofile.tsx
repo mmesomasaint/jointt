@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { DocumentData } from "firebase/firestore";
-import getDataWithQuery from "../../getQuery";
-import { useAuthContext } from "@/app/auth/authcontext";
+import { useState, useEffect } from 'react'
+import { DocumentData } from 'firebase/firestore'
+import getDataWithQuery from '../../getQuery'
+import { useAuthContext } from '@/app/auth/authcontext'
 
 export default function useCareerProfile() {
   const [careerProfile, setCareerProfile] = useState<DocumentData>()
-  const {user} = useAuthContext()
+  const { user } = useAuthContext()
 
   const getUserCareerData = async () => {
     const { result, error } = await getDataWithQuery(
@@ -22,8 +22,6 @@ export default function useCareerProfile() {
     return result?.docs[0]
   }
 
-  
-
   useEffect(() => {
     const isCareerActive = async () => {
       const userData = await getUserCareerData()
@@ -35,5 +33,5 @@ export default function useCareerProfile() {
     isCareerActive()
   }, [user])
 
-  return {careerProfile}
+  return { careerProfile }
 }
