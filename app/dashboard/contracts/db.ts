@@ -1,5 +1,5 @@
 export type Contracts = {
-  id: string 
+  id: string
   jobId: string
   eventId: string
   period: number
