@@ -1,5 +1,6 @@
 export type Events = {
   id: string
+  hostId: string
   title: string
   type: string
   startDate: number
