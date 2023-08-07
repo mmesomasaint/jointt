@@ -4,6 +4,7 @@ export type Events = {
   type: string
   startDate: number
   endDate: number
+  jobIds: string[]
   edited: number
   created: number
 }
