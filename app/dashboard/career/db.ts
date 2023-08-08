@@ -22,4 +22,15 @@ export type CareerProfile = {
 }
 
 /** Create mock data for career profile */
-export const profiles: CareerProfile[] = []
+export const profiles: CareerProfile[] = [
+  {
+    id: "dafdasdfasdf1341dafsdf",
+    userId: "q4qeqrqer132452rwert245qefq",
+    roles: ["Dancer", "MC"],
+    payType: "HOURLY",
+    pay: 40,
+    ratings: [],
+    vetted: false,
+    created: new Date().getTime()
+  }
+]
