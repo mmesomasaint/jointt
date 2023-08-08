@@ -5,3 +5,8 @@ export type Contract = {
   period: number
   created: number
 }
+
+
+/** Mock Datas for contracts based on the type */
+export const contracts: Contract[] = [
+]
