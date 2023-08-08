@@ -1,4 +1,4 @@
-export type Contracts = {
+export type Contract = {
   id: string
   jobId: string
   eventId: string
