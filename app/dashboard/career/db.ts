@@ -18,3 +18,6 @@ export type CareerProfile = {
   vetted: boolean
   created: number
 }
+
+/** Create mock data for career profile */
+export const profiles: CareerProfile[] = []
