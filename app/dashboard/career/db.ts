@@ -9,3 +9,12 @@ export type Job = {
   edited: number
   created: number
 }
+
+export type CareerProfile = {
+  id: string
+  userId: string
+  roles: string[]
+  ratings: number[]
+  vetted: boolean
+  created: number
+}
