@@ -14,6 +14,8 @@ export type CareerProfile = {
   id: string
   userId: string
   roles: string[]
+  payType: 'FIXED' | 'HOURLY'
+  pay: number
   ratings: number[]
   vetted: boolean
   created: number
