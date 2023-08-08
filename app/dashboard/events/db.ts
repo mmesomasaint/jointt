@@ -9,3 +9,7 @@ export type Event = {
   edited: number
   created: number
 }
+
+
+/** Create mock data for the events type */
+export const events: Event[] = []
