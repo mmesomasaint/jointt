@@ -12,4 +12,6 @@ export type Event = {
 
 
 /** Create mock data for the events type */
-export const events: Event[] = []
+export const events: Event[] = [
+  {}
+]
