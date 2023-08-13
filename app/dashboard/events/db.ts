@@ -3,11 +3,11 @@ export type Event = {
   hostId: string
   title: string
   type: string
-  startDate: number
-  endDate: number
+  startDate: timestamp
+  endDate: timestamp
   jobIds: string[]
-  edited: number
-  created: number
+  edited: timestamp
+  created: timestamp
 }
 
 
