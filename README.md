@@ -14,12 +14,12 @@ You can also easily reject the suggestions and select or invite your contractors
 
 ## Parties Involved 
 
-The Event
-The Contractor 
-The Host
-The Jobs
-The Contract
-The Proposal
+* The Event
+* The Contractor 
+* The Host
+* The Jobs
+* The Contract
+* The Proposal
 
 #### To Explain:
 The `Host` creates an `Event` with lots of `Jobs` listed or sent as invites to some specified contractors selected by the `Host` or suggested automatically.
