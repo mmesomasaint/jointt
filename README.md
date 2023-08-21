@@ -4,7 +4,7 @@
 ## Built with firebase auth, firebase firestore, Nextjs and Tailwind
 
 An untrained event planner can oragnise a team of contractors to make an event successful.
-This project is basically about easing the finding of contractors by someone who doesnt or hasn't ever organized an event in their career.
+This project is basically about easing the finding of contractors for someone who doesnt or hasn't ever organized an event in their career and doesnt wish to ask around.
 
 ## HowIt Works 
 
