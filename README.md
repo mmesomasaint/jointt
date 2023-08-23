@@ -1,7 +1,7 @@
 # Jointt - Bring your event to live.
 ## An Online Event Handling Workshop for seamless kick-start of any & every events. Links a host to contractors for his event based on filters and specifications
 
-## Built with firebase auth, firebase firestore, Nextjs and Tailwind
+## Built with firebase authentication, firebase firestore, Nextjs and Tailwind.
 
 An untrained event planner can oragnise a team of contractors to make an event successful.
 This project is basically about easing the finding of contractors for someone who doesnt or hasn't ever organized an event in their career and doesnt wish to ask around.
