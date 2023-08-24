@@ -1,5 +1,5 @@
 # Jointt - Bring your event to live.
-## An Online Event Handling Workshop for seamless kick-start of any & every events. Links a host to contractors for his event based on filters and specifications
+## An Online Event Handling Workshop for seamless kick-start of any & every events. Links a host to contractors for his event based on filters and specifications from you the host
 
 ## Built with firebase authentication, firebase firestore, Nextjs and Tailwind.
 
