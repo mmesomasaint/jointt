@@ -6,7 +6,7 @@
 An untrained event planner can oragnise a team of contractors to make an event successful.
 This project is basically about easing the finding of contractors for someone who doesnt or hasn't ever organized an event in their career and doesnt wish to ask around.
 
-## HowIt Works 
+## How It Works 
 
 All you have t do is create an event, describing the `Name`, `Type` and `Size` or `Budget` of the event and automatic sugestions of contractors with diverse specifications with the various infrastructure and tips to run a successful event.
 You can also easily reject the suggestions and select or invite your contractors your self, also hire your location.
