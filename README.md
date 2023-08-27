@@ -20,7 +20,7 @@ You can also easily reject the suggestions and select or invite your contractors
 * The Contract
 * The Proposal
 
-#### To Explain:
+#### Explanation:
 The `Host` creates an `Event` with lots of `Jobs` listed or sent as invites to some specified contractors selected by the `Host` or suggested automatically.
 The `Contractor` either accepts the invite or send a `Proposal` to a `Job` listing. 
 When a `Proposal` is accepted by the `Host` or a `Job` invite is accepted by a `Contractor`. Then a `Contract` is created and issued to them both to make ajustments based on job or agreement which get into registra until the work is done and the work and pay released to both parties.
